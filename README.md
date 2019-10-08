@@ -5,6 +5,6 @@ CSCE 431 Project
 2. Kassandra
 3. Hailey
 4. Tylor
-5. Zach
+5. Zach Hein
 6. Viwat
 Team Drive: https://drive.google.com/drive/u/0/folders/0ALkWLyNteESJUk9PVA
