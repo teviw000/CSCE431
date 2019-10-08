@@ -2,7 +2,7 @@
 CSCE 431 Project
 ### Team Members
 1. Ryan Mickus
-2. Kassandra
+2. Kassandra Guzman
 3. Hailey
 4. Tylor
 5. Zach
