@@ -76,4 +76,4 @@ Feature: Search/Find Page
     I want to provide a robust and concise set of search parameters to quickly show info
 ```
 ### Lo-fi GUI Mockups
-Kassy put stuff here
+Mockups can be found in the READMEimages folder
