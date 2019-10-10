@@ -75,5 +75,26 @@ Feature: Search/Find Page
     So that students can find a place very quickly
     I want to provide a robust and concise set of search parameters to quickly show info
 ```
+
 ### Lo-fi GUI Mockups
-Kassy put stuff here
+
+#### Card View
+
+![Card View](./READMEimages/CardViewMockup.jpg)
+
+#### Expanded Card View
+
+![Expanded Card View](./READMEimages/ExpandedCardViewMockup.jpg)
+
+#### Category Search Page
+
+![Category Search Page](./READMEimages/CategorySearchPageMockup.jpg)
+
+#### Help Page
+
+![Help Page](./READMEimages/HelpPageMockup.jpg)
+
+#### Search Result Page
+
+![Search Result Page](./READMEimages/SearchResultPageMockup.jpg)
+
