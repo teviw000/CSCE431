@@ -8,7 +8,7 @@
 3. Haley Ferguson
 4. Tylor Herndon
 5. Zach Hein
-6. Viwat
+6. Viwat Te
 
 ### Team Drive
 https://drive.google.com/drive/u/0/folders/0ALkWLyNteESJUk9PVA
