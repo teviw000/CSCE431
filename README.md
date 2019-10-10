@@ -47,6 +47,9 @@ I already screwed that up writing this README. This involves clicking the big st
 
 Try to name tasks relatively short names. If more info is needed, use the description of that task.
 
+## Yelp API
+For this project, we will be using a Yelp Rails API. The info can be found here: https://github.com/Yelp/yelp-ruby
+
 ## Iteration 0 Details
 ### First meeting info
 Our first meeting with J. THREADGILL, went well. We hashed out big picture ideas, and settled on some nice features he wanted implemented. We want a place where students can quickly search for a place while studying abroad. Students should be able to rate places on specific features, like price, safety, ease of access, language, etc. We also want to encourage users to write reviews. We talked about a resource page, containing emergency contact information from several resources. Our client also wanted us to style the website similar to A&M color themes, so it is recognized distincly as a Texas A&M product.
