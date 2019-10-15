@@ -47,6 +47,31 @@ I already screwed that up writing this README. This involves clicking the big st
 
 Try to name tasks relatively short names. If more info is needed, use the description of that task.
 
+## Building and running the server
+### Install Ruby on Rails and some dependencies
+```
+$sudo apt install ruby
+$sudo apt install rails
+$sudo apt install lippq-dev
+$sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev
+```
+### Getting yarn
+```
+$ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+$ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+$ sudo apt update
+$ sudo apt install yarn
+```
+### Update yarn
+```
+$ yarn install --check-files
+```
+### Bundle application
+```
+$ bundle install
+```
+
+
 ## Yelp API
 For this project, we will be using a Yelp Rails API. The info can be found here: https://github.com/Yelp/yelp-ruby
 
