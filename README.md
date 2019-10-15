@@ -50,10 +50,10 @@ Try to name tasks relatively short names. If more info is needed, use the descri
 ## Building and running the server
 ### Install Ruby on Rails and some dependencies
 ```
-$sudo apt install ruby
-$sudo apt install rails
-$sudo apt install lippq-dev
-$sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev
+$ sudo apt install ruby
+$ sudo apt install rails
+$ sudo apt install lippq-dev
+$ sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev
 ```
 ### Getting yarn
 ```
