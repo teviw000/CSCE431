@@ -68,7 +68,13 @@ $ yarn install --check-files
 ```
 ### Bundle application
 ```
+$ sudo gem update --system
+$ bundle update --bundler
 $ bundle install
+```
+### Run server
+```
+$ rails s
 ```
 
 
