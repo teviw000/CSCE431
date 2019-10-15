@@ -52,7 +52,7 @@ Try to name tasks relatively short names. If more info is needed, use the descri
 ```
 $ sudo apt install ruby
 $ sudo apt install rails
-$ sudo apt install lippq-dev
+$ sudo apt install libpq-dev
 $ sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev
 ```
 ### Getting yarn
