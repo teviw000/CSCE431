@@ -72,6 +72,11 @@ $ sudo gem update --system
 $ bundle update --bundler
 $ bundle install
 ```
+### add Cucumber dependency
+```
+$ rails generate cucumber:install
+$ rails rake cucumber
+```
 ### Run server
 ```
 $ rails s
