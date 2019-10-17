@@ -66,6 +66,14 @@ $ sudo apt install yarn
 ```
 $ yarn install --check-files
 ```
+### Installing sqlite3
+```
+$ sudo gem install sqlite3
+```
+### Getting current bundler version
+```
+$ bundle update --bundler
+```
 ### Bundle application
 ```
 $ sudo gem update --system
