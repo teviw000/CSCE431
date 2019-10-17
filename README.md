@@ -53,6 +53,7 @@ Try to name tasks relatively short names. If more info is needed, use the descri
 $ sudo apt install ruby
 $ sudo apt install rails
 $ sudo apt install libpq-dev
+$ sudo apt install libsqlite3-dev
 $ sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev
 ```
 ### Getting yarn
@@ -65,10 +66,6 @@ $ sudo apt install yarn
 ### Update yarn
 ```
 $ yarn install --check-files
-```
-### Installing sqlite3
-```
-$ sudo gem install sqlite3
 ```
 ### Getting current bundler version
 ```
