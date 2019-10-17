@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'review/index'
+  get 'review/new'
+  get 'review/edit'
+  resources :review, except: :destroy
+  root 'review#index'
+
 end
