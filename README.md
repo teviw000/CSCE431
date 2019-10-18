@@ -86,6 +86,16 @@ $ rails rake cucumber
 ```
 $ rails s
 ```
+## Heroku
+### buildpacks
+```
+heroku buildpacks:set heroku/ruby
+heroku buildpacks:add -index 1 heroku/nodejs
+```
+### deploy
+```
+git push subtree --prefix reviews heroku master
+```
 
 
 ## Yelp API
