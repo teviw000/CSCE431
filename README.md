@@ -52,6 +52,8 @@ Try to name tasks relatively short names. If more info is needed, use the descri
 ```
 $ sudo apt install ruby
 $ sudo apt install rails
+$ sudo apt install libpq-dev
+$ sudo apt install libsqlite3-dev
 $ sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev
 ```
 ### Getting yarn
@@ -65,9 +67,24 @@ $ sudo apt install yarn
 ```
 $ yarn install --check-files
 ```
+### Getting current bundler version
+```
+$ bundle update --bundler
+```
 ### Bundle application
 ```
+$ sudo gem update --system
+$ bundle update --bundler
 $ bundle install
+```
+### add Cucumber dependency
+```
+$ rails generate cucumber:install
+$ rails rake cucumber
+```
+### Run server
+```
+$ rails s
 ```
 
 
