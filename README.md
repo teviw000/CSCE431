@@ -152,3 +152,6 @@ Feature: Search/Find Page
 
 ![Search Result Page](./READMEimages/SearchResultPageMockup.jpg)
 
+### Hi-Fi GUI Mockups
+https://xd.adobe.com/view/1b1a4066-3b7e-486e-5421-cefc778deea7-6d2b/
+
