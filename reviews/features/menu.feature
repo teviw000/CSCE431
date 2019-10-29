@@ -6,3 +6,9 @@ Feature: Create a menu bar
 Scenario: Test for card presence
     Given I am on the home page
     Then I should see class "menu"
+    Then I should see id "tamu_logo"
+    Then I should see id "vert_bar"
+    Then I should see id "name_tag"
+    Then I should see id "search"
+    Then I should see id "help"
+    Then I should see id "login"
