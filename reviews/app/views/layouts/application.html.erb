@@ -12,8 +12,13 @@
   <body>
     <nav class="menu">
       <%= image_tag("TAM-Logo-white.png", :alt => "TAMU logo", :id => "tamu_logo", :class => "logo") %>
-      <div class="vl"/>
-      <h1>TEST</h1>
+      <%= image_tag("vert_bar.png", :alt => "vertical seperator", :id => "vert_bar", ) %>
+      <%= image_tag("name_tag.png", :alt => "Texas A&M University Education Abroad", :id => "name_tag", :class => "name_tag") %>
+      <%= image_tag("search.png", :alt => "search", :id => "search", :style => "float: right;") %>
+      <h2 style = "float: right;">
+        <%=link_to "GET HELP",reviews_path(), :class => "link", :style => "margin-right: 10px;"%>
+        <%=link_to "LOGIN", reviews_path(), :class => "link", :style => "margin-right: 10px;"%>
+      </h2>
     </nav>
     <%= yield %>
   </body>
