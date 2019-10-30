@@ -114,6 +114,14 @@ Then /^(?:|I )should see class "([^"]*)"$/ do |text|
   end
 end
 
+Then /^(?:|I )should see id "([^"]*)"$/ do |text|
+  if page.respond_to? :should
+    page.should have_selector('#' + text)
+  else
+    assert page.have_selector?('#' +text)
+  end
+end
+
 Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
   regexp = Regexp.new(regexp)
 
