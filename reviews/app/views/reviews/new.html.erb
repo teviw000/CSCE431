@@ -3,5 +3,11 @@
 <div class="review page">
     <h3>Leave a Review Here</h3>
 </div>
-<%= text_field_tag 'new_review', nil, class: "review_text_field", readonly: false %>
-<%= f.text_field :new_review, :class=>"review_text_field" %>
+<%= -#text_field_tag 'new_review', nil, class: "review_text_field", readonly: false %>
+<%= -#f.text_field :new_review, :class=>"review_text_field" %>
+
+<%= form_for(:ad, :url => {:action => 'create'}) do |f| %>
+    <%= f.text_field(:name) %>
+    <%= f.text_area(:text, "", :size => "50x10") %>
+    <%= submit_tag("Submit") %>
+<% end %>
