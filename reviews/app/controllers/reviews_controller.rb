@@ -4,4 +4,7 @@ class ReviewsController < ApplicationController
 
   def new
   end
+
+  def emergency
+  end
 end
