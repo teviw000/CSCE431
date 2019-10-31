@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
     @category = Category.new(category_params = "")
 
     if @category.save
-      redirect_to :action => "http://localhost:3000"
+      redirect_to :action => "\"
     end
   end
 
