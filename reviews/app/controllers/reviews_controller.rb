@@ -14,6 +14,7 @@ class ReviewsController < ApplicationController
 
     if @category.save
       redirect_to :action => "http://localhost:3000"
+    end
   end
 
 end
