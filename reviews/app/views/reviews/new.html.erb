@@ -6,7 +6,7 @@
 <%= -#text_field_tag 'new_review', nil, class: "review_text_field", readonly: false %>
 <%= -#f.text_field :new_review, :class=>"review_text_field" %>
 
-<%= form_for do |f| %>
+<%= form_for @review do |f| %>
     <%= f.text_field() %>
     <%= f.text_area(:size => "50x10") %>
     <%= submit_tag("Submit") %>
