@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    redirect_to :back
   end
 
 end
