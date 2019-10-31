@@ -5,7 +5,6 @@
 </div>
 
 <%= form_for @review do |f| %>
-    <%= f.text_field :review %>
     <%= f.text_area :review, :cols => 30, :rows => 10 %>
     <%= submit_tag("Submit") %>
 <% end %>
