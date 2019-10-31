@@ -3,13 +3,10 @@ class ReviewsController < ApplicationController
   end
 
   def new
+    @review = Review.new
   end
 
   def emergency
-  end
-
-  def review_page
-    @review = review.new
   end
 
 end
