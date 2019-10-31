@@ -9,4 +9,7 @@ class ReviewsController < ApplicationController
   def emergency
   end
 
+  def create
+  end
+
 end
