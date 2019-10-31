@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    redirect_back(fallback_location: fallback_location)
+    redirect_to :review
   end
 
 end
