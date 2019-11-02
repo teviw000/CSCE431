@@ -69,10 +69,12 @@ $ yarn install --check-files
 ```
 ### Getting current bundler version
 ```
+(while in reviews subdirectory)
 $ bundle update --bundler
 ```
 ### Bundle application
 ```
+(while in reviews subdirectory)
 $ sudo gem update --system
 $ bundle update --bundler
 $ bundle install
