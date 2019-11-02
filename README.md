@@ -99,7 +99,13 @@ git push subtree --prefix reviews heroku master
 
 
 ## Yelp API
-For this project, we will be using a Yelp Rails API. The info can be found here: https://github.com/Yelp/yelp-ruby
+For this project, we will be using a Yelp Rails API. The info can be found here: https://www.yelp.com/fusion
+
+### Client ID
+DU6fRrEESFRJ0M6fohdcCw
+
+### API Key
+I8-CjEP4T1mcf5wRmihQCQ1A25o8Pmfr4GD0vzcxuxRn9P1y1aQQOkU5UHSIBXLRjPGXnNaDysZSPGWNAFunxBnmWjdSCl7mT5EuS11RFXjTRuxPdto2DqJs9166XXYx
 
 ## Iteration 0 Details
 ### First meeting info
