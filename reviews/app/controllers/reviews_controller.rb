@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
     @category = Category.new(category_params = "")
 
     if @category.save
-      redirect_to :action => "\"
+      redirect_to :action => "/"
     end
   end
 
