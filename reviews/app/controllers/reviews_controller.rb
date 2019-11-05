@@ -37,9 +37,9 @@ class ReviewsController < ApplicationController
     #https://stackoverflow.com/questions/35496179/uninitialized-constant-userscontrollercategories
     #@category = Category.new(category_params = "")
 
-    #if @category.save
-      #redirect_to :action => "\"
-    #end
+    if @category.save
+      redirect_to :action => "/"
+    end
   end
 
 end
