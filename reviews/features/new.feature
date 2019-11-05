@@ -5,4 +5,4 @@ Feature: create review page
 
 Scenario: Test for review presence
     Given I am on the review page
-    Then I should see class "review page"
+    Then I should see class "review_page"
