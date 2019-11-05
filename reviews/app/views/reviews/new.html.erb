@@ -2,7 +2,9 @@
     <h1>Leave a Review Here</h1>
 </div>
 
-<%= form_for @review do |f| %>
-    <%= f.text_area :review, :cols => 30, :rows => 10 %>
-    <%= submit_tag("Submit") %>
-<% end %>
+<div class="review_text">
+    <%= form_for @review do |f| %>
+        <%= f.text_area :review, :cols => 30, :rows => 10 %>
+        <%= submit_tag("Submit") %>
+    <% end %>
+</div>
