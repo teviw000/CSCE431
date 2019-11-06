@@ -98,6 +98,10 @@ When /^(?:|I )choose "([^"]*)"$/ do |field|
   choose(field)
 end
 
+When /I click on the "(.+)" link/ do |locator|
+  page.click_link locator
+end
+
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
   if page.respond_to? :should
     page.should have_content(text)
