@@ -1,15 +1,15 @@
 <h1>Search for a reviews!</h1>
 <div class="search_bar">    
   <%= form_tag(reviews_path, method: :get) do %>
-    <%= text_field_tag :near, params[:near], placeholder: "City or Location" %>
-    <%= text_field_tag :find, params[:find], placeholder: "Pizza, Tacos, Nail Salons, etc." %>
-    <%= submit_tag "search" %>
+    <%= text_field_tag :near, params[:near], placeholder: "City or Location", id: "sb_near" %>
+    <%= text_field_tag :find, params[:find], placeholder: "Pizza, Tacos, Nail Salons, etc.", id: "sb_find" %>
+    <%= submit_tag "search", id: "sb_search"%>
   <% end %>
 </div>
 
 <% if @results.is_a?(Array) %>
-  <% @results.each do |result| %>
-    <%= link_to review_path(id: result["id"]) do %>
+  <% @results.each_with_index do |result, index| %>
+    <%= link_to review_path(id: result["id"]), id: "card_" + index.to_s do %>
       <div class="card">
           <%= content_tag :h3, result["name"] %>
       </div>
