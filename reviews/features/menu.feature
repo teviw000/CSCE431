@@ -10,10 +10,19 @@ Scenario: Test for menu presence
     Then I should see id "vert_bar"
     Then I should see id "name_tag"
     Then I should see id "search"
-    Then I should see id "help"
+    Then I should see id "get_help"
     Then I should see id "login"
 
 Scenario: Test get help link
-    Given that I am on the home page
-    When I follow id "help"
-    Then I should see id "menu"
+    Given I am on the home page
+    When I follow "get_help"
+    Then I should see class "emergency"
+
+Scenario: Test the logo links back to index
+    Given I am on the home page
+    When I follow "tamu_logo_link"
+    Then I should see class "menu"
+    When I follow "vert_bar_link"
+    Then I should see class "menu"
+    When I follow "name_tag_link"
+    Then I should see class "menu"
