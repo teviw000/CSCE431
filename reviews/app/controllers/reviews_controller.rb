@@ -21,7 +21,6 @@ class ReviewsController < ApplicationController
   def show
     @yelp_review_id = params[:id]
     @yelp_review_info = business(@yelp_review_id)
-    puts @yelp_review_info["image_url"]
     #To see typing of @yelp_review_info, see https://www.yelp.com/developers/documentation/v3/business
   end
 
