@@ -13,12 +13,7 @@ Scenario: Test for menu presence
     Then I should see id "help"
     Then I should see id "login"
 
-Feature: Go to emergency page
-    As a user
-    I want to click on the get help link
-    So that I can find emergency contact information
-
 Scenario: Test get help link
     Given that I am on the home page
-    When I click on "help"
-    Then I should see "get_help_page"
+    When I follow id "help"
+    Then I should see id "menu"
