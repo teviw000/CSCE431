@@ -106,11 +106,27 @@ Then /^(?:|I )should see "([^"]*)"$/ do |text|
   end
 end
 
+Then /^(?:|I )should see a "([^"]*)" card$/ do |text| 
+  if page.respond_to? :should
+    page.should have_content(text)
+  else
+    assert page.has_content?(text)
+  end
+end
+
 Then /^(?:|I )should see class "([^"]*)"$/ do |text|
   if page.respond_to? :should
     page.should have_selector('.' + text)
   else
     assert page.have_selector?('.' +text)
+  end
+end
+
+Then /^(?:|I )should not see class "([^"]*)"$/ do |text|
+  if page.respond_to? :should
+    !page.should have_selector('.' + text)
+  else
+    !assert page.have_selector?('.' +text)
   end
 end
 

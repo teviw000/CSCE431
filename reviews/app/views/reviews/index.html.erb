@@ -1,32 +1,18 @@
-<h1>Reviews#index</h1>
-  <p>Find me in app/views/reviews/index.html.erb</p>
-
+<h1>Search for a reviews!</h1>
 <div class="search_bar">    
-  <%= form_tag(reviews_path method: :get) do %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search" %>
+  <%= form_tag(reviews_path, method: :get) do %>
+    <%= text_field_tag :near, params[:near], placeholder: "City or Location", id: "sb_near" %>
+    <%= text_field_tag :find, params[:find], placeholder: "Pizza, Tacos, Nail Salons, etc.", id: "sb_find" %>
+    <%= submit_tag "search", id: "sb_search"%>
   <% end %>
-</div?
-
-<table>
-  <thead>
-    <tr>
-      <th> Name </th>
-      <th> City </th<
-      <th> Country </th>
-      <th> Review </th>
-      <th> Cost </th>
-      <th> Description </th>
-      <th> Phone </th>
-    </tr>
-  </thead>
-
-</table>
-
-<br>
-
-<%= link_to 'Review', new_review_path %>
-
-<div class="card">
-    <h3>A Card</h3>
 </div>
+
+<% if @results.is_a?(Array) %>
+  <% @results.each_with_index do |result, index| %>
+    <%= link_to review_path(id: result["id"]), id: "card_" + index.to_s do %>
+      <div class="card">
+          <%= content_tag :h3, result["name"] %>
+      </div>
+    <% end%>
+  <% end %>
+<% end %>

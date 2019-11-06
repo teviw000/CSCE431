@@ -3,7 +3,7 @@ Feature: Create a menu bar
     I want a menu bar to show on every page
     So that I can quickly navigate the website
 
-Scenario: Test for card presence
+Scenario: Test for menu presence
     Given I am on the home page
     Then I should see class "menu"
     Then I should see id "tamu_logo"
