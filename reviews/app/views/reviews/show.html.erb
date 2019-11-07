@@ -1,0 +1,8 @@
+<div class="show page">
+    <h1>See Reviews Here</h1>
+    <% if !@yelp_review_info.empty? %>
+        <%= content_tag :h2, @yelp_review_info["name"] %>
+        <%= content_tag :h3, @yelp_review_info["is_closed"] ? "Currently Closed" : "Currently Open" %>
+        <%= image_tag @yelp_review_info["image_url"], size: "200" %>
+    <% end %>
+</div>

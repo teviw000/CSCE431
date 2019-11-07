@@ -21,6 +21,9 @@ module NavigationHelpers
             
         when /^the review\s?page$/
             '/reviews/new'
+
+        when /^the show_mad_taco\s?page$/
+            'reviews/Ir0e6qwBbOmi-doKce4PEg'
         # Add more mappings here.
         # Here is an example that pulls values out of the Regexp:
         #

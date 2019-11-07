@@ -19,6 +19,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 # UML Diagram gneration
 gem 'railroady', '~> 1.5', '>= 1.5.2'
+# HTTP
+gem 'http'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
