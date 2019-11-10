@@ -10,12 +10,12 @@ Scenario: Test for menu presence
     Then I should see id "vert_bar"
     Then I should see id "name_tag"
     Then I should see id "search"
-    Then I should see id "get_help"
+    Then I should see id "contact"
     Then I should see id "login"
 
 Scenario: Test get help link
     Given I am on the home page
-    When I follow "get_help"
+    When I follow "contact"
     Then I should see class "emergency"
 
 Scenario: Test the logo links back to index
