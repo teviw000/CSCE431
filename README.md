@@ -96,7 +96,7 @@ heroku buildpacks:add -index 1 heroku/nodejs
 ```
 ### deploy
 ```
-git push subtree --prefix reviews heroku master
+git subtree push --prefix reviews heroku master
 ```
 
 
