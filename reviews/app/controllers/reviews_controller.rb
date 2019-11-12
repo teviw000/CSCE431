@@ -15,7 +15,10 @@ class ReviewsController < ApplicationController
     end
   end
 
+
   def new
+    @review = ""
+    @rating = 5
   end
 
   def show
