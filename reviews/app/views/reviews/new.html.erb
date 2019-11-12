@@ -26,16 +26,10 @@
     <button type="button" class="btn btn-default btn-lg">
     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
     </button>
-    <%= label_tag 'Rating' %>
+    <%= label_tag 'Overall Rating' %>
 </div>
 
 <div class="price">
-    <button type="button" class="btn btn-default btn-lg">
-    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-default btn-lg">
-    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
     <button type="button" class="btn btn-default btn-lg">
     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
     </button>
@@ -67,25 +61,6 @@
     <%= label_tag 'Safety' %>
 </div>
 
-<div class="food">
-    <button type="button" class="btn btn-default btn-lg">
-    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-default btn-lg">
-    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-default btn-lg">
-    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-default btn-lg">
-    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-default btn-lg">
-    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <%= label_tag 'How\'s the food?' %>
-</div>
-
 <div class="service">
     <button type="button" class="btn btn-default btn-lg">
     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -105,27 +80,29 @@
     <%= label_tag 'How\'s the service?' %>
 </div>
 
-<div class="cash_credit">
-    <%= label_tag 'Cash or Credit?' %>
-    <button type="button" class="btn btn-default btn-lg"> Cash
-    </button>
-    <button type="button" class="btn btn-default btn-lg"> Credit
-    </button>
+<div class="cash">
+    <%= label_tag 'Is it cash only?' %>
+    <%= check_box_tag 'English?', value = '1', checked = false %>
 </div>
 
 <div class="english">
-    <%= label_tag 'English?' %>
+    <%= label_tag 'Do they speak English?' %>
     <%= check_box_tag 'English?', value = '1', checked = false %>
 </div>
 
 <div class="tips">
-<%= label_tag 'Tips?' %>
+<%= label_tag 'Is it appropriate to leave tips?' %>
     <%= check_box_tag 'Tips?', value = '0', checked = false %>
 </div>
 
 <div class="wifi">
-<%= label_tag 'WiFi?' %>
+<%= label_tag 'Do they have WiFi?' %>
     <%= check_box_tag 'Tips?', value = '0', checked = false %>
+</div>
+
+<div class="wheelchair">
+    <%= label_tag 'Is it wheelchair accessible?' %>
+    <%= check_box_tag 'English?', value = '1', checked = false %>
 </div>
 
 <div class="view_only">

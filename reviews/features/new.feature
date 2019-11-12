@@ -16,7 +16,7 @@ Scenario: Test for all features
     Then I should see class "price"
     Then I should see class "food"
     Then I should see class "service"
-    Then I should see class "cash_credit"
+    Then I should see class "cash"
     Then I should see class "english"
     Then I should see class "tips"
     Then I should see class "wifi"
