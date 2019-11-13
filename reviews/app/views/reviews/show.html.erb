@@ -3,6 +3,19 @@
     <% if !@yelp_review_info.empty? %>
         <%= content_tag :h2, @yelp_review_info["name"] %>
         <%= content_tag :h3, @yelp_review_info["is_closed"] ? "Currently Closed" : "Currently Open" %>
-        <%= image_tag @yelp_review_info["image_url"], size: "200" %>
+        <h4>Rating:</h4>
+		<%= content_tag :h4, @yelp_review_info["rating"] %>
+	<h4>Price:</h4> 
+		<%= content_tag :h4, @yelp_review_info["price"] %>
+	<h4>Phone Number:</h4>
+		<%= content_tag :h4, @yelp_review_info["display_phone"] %>
+	<h4>Number of Yelp Reviews</h4>
+		<%= content_tag :h4, @yelp_review_info["review_count"] %>
+	<h4>
+		<%= content_tag :h4, @yelp_review_info["coordinates"] %>
+		<%= content_tag :h4, @yelp_review_info["location"] %>
+		<%= content_tag :h4, @yelp_review_info["location.city"] %> 
+	<%= image_tag @yelp_review_info["image_url"], size: "200" %>
+	<%= link_to reviews_new_path(format: params[:id]) %>
     <% end %>
 </div>
