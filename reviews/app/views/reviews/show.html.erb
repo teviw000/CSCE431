@@ -28,7 +28,10 @@
         </h4>
 	
 	<%= image_tag @yelp_review_info["image_url"], size: "200" %>
-	<button type="button" class="btn btn-default btn-lg">
-    <%= link_to 'Leave A Review', controller: "reviews", action: "leave_review", id: params[:id] %>
+
+	<div id="leave_review">
+		<button type="button" class="btn btn-default btn-lg">
+    		<%= link_to 'Leave A Review', controller: "reviews", action: "leave_review", id: params[:id] %>
+	</div>    
     <% end %>
 </div>
