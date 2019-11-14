@@ -88,6 +88,47 @@ $ rails rake cucumber
 ```
 $ rails s
 ```
+## Building and running the server - Mac 
+### Install Ruby on Rails and some dependencies
+```
+$ brew install ruby
+$ gem install rails
+$ brew install postgresql
+$ brew install sqlite3
+$ gem update --system
+$ xcode-select --install # Then agree to the terms, even if you have done this before!
+$ gem install nokogiri
+```
+### Getting yarn
+```
+$ brew install yarn
+```
+### Update yarn
+```
+$ yarn install --check-files
+```
+### Getting current bundler version
+```
+(while in reviews subdirectory)
+$ gem install bundler --user-install
+$ gem install bundler
+```
+### Bundle application
+```
+(while in reviews subdirectory)
+$ sudo gem update --system
+$ bundle update --bundler
+$ bundle install
+```
+### add Cucumber dependency
+```
+$ rails generate cucumber:install
+$ rails rake cucumber
+```
+### Run server
+```
+$ rails s
+```
 ## Heroku
 ### buildpacks
 ```
