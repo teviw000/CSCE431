@@ -3,7 +3,7 @@ Feature: Get info from Search box
     So that we can query results
     I want to pass user info to the yelp API
 
-Scenario: Test that seach bar has multiple parts
+Scenario: Test that search bar has multiple parts
     Given I am on the home page
     Then I should see class "search_bar"
     Then I should see id "sb_near"
