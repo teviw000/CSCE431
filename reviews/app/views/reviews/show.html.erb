@@ -18,8 +18,9 @@
 
 		<%= content_tag :h4, @yelp_review_info["coordinates"] %>
 		<%= content_tag :h4, @yelp_review_info["location"] %>
-		<%= content_tag :h4, @yelp_review_info["location.city"] %> 
+		<%= content_tag :h4, @yelp_review_info["location"]["city"] %> 
 	<%= image_tag @yelp_review_info["image_url"], size: "200" %>
-	<%= link_to reviews_new_path(format: params[:id]) %>
+	<button type="button" class="btn btn-default btn-lg">
+    <%= link_to 'Leave A Review', controller: "reviews", action: "leave_review", id: params[:id] %>
     <% end %>
 </div>
