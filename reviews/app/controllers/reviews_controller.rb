@@ -22,6 +22,11 @@ class ReviewsController < ApplicationController
     @yelp_review_id = params[:id]
     @yelp_review_info = business(@yelp_review_id)
     #To see typing of @yelp_review_info, see https://www.yelp.com/developers/documentation/v3/business
+    
+    #holds data for show.html
+    #works for regular strings and ints, but not objects like location so far
+    array = [ @yelp_review_info["location.city"] ]
+    @print = array.map { |i| "Testing: #{i}" }
   end
 
   def emergency
