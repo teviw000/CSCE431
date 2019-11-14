@@ -3,6 +3,35 @@
     <% if !@yelp_review_info.empty? %>
         <%= content_tag :h2, @yelp_review_info["name"] %>
         <%= content_tag :h3, @yelp_review_info["is_closed"] ? "Currently Closed" : "Currently Open" %>
-        <%= image_tag @yelp_review_info["image_url"], size: "200" %>
+        <h4>Rating:
+                <%=  @yelp_review_info["rating"] %>
+        </h4>
+        <h4>Price:
+                <%= @yelp_review_info["price"] %>
+        </h4>
+        <h4>Address:
+                <%= @yelp_review_info["location"]["address1"] %>
+                <%= ", " %>
+                <%= @yelp_review_info["location"]["city"] %>
+                <%= ", " %>
+                <%= @yelp_review_info["location"]["state"] %>
+                <%= ", " %>
+                <%= @yelp_review_info["location"]["zip_code"] %>
+        </h4>
+        <h4>Hours
+                <%= @yelp_review_info["hours"][0]["open"][0]["start"] %>
+                <%= " - " %>
+                <%= @yelp_review_info["hours"][0]["open"][0]["end"] %>
+        </h4>
+        <h4>Phone Number:
+                <%= @yelp_review_info["display_phone"] %>
+        </h4>
+	
+	<%= image_tag @yelp_review_info["image_url"], size: "200" %>
+
+	<div id="leave_review">
+		<button type="button" class="btn btn-default btn-lg">
+    		<%= link_to 'Leave A Review', controller: "reviews", action: "leave_review", id: params[:id] %>
+	</div>    
     <% end %>
 </div>

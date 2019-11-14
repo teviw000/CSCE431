@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
   end
 
 
-  def new
+  def leave_review
     @review = ""
     @rating = 5
   end
