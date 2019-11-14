@@ -11,7 +11,11 @@
 		<%= content_tag :h4, @yelp_review_info["display_phone"] %>
 	<h4>Number of Yelp Reviews</h4>
 		<%= content_tag :h4, @yelp_review_info["review_count"] %>
-	<h4>
+	<h4> New Info </h4>
+		<% @print.each do |val| %>
+  			<%= val %>
+		<% end %>
+
 		<%= content_tag :h4, @yelp_review_info["coordinates"] %>
 		<%= content_tag :h4, @yelp_review_info["location"] %>
 		<%= content_tag :h4, @yelp_review_info["location.city"] %> 
