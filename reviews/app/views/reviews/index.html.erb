@@ -1,14 +1,37 @@
 <head> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Yanone+Kaffeesatz:700&display=swap" rel="stylesheet">
 </head>
-<h1>Search for a reviews!</h1>
-<div class="search_bar">    
-  <%= form_tag(reviews_path, method: :get) do %>
-    <%= text_field_tag :near, params[:near], placeholder: "City or Location", id: "sb_near" %>
-    <%= text_field_tag :find, params[:find], placeholder: "Pizza, Tacos, Nail Salons, etc.", id: "sb_find" %>
-    <%= submit_tag "search", id: "sb_search"%>
-  <% end %>
-</div>
+
+<body class="index-background">
+    <div class="big_container"> 
+        <h1 class="h1">WHOOP!</h1>
+        <h2 class="index-subheading">Aggie Reviews for TAMU Study Abroads</h2>
+        
+        <%= form_tag(reviews_path, method: :get) do %>
+        <div class="input-group mb-3" id="center"> <!-- Search Bar Group -->
+            <!-- 'Find' Static Label -->
+            <div class="input-group-prepend" id="joint-search-bar"> 
+                <div class="input-group-prepend">
+                    <span class="input-group-text left-search_bar search-labels" id="inputGroup-sizing-sm">Find</span>
+                </div>
+                <%= text_field_tag :find, params[:find], :class => "form-control middle-search-bar search_bar", placeholder: "Pizza, Tacos, Nail Salons, etc.", id: "sb_find" %>
+                <!-- 'Near' Static Label -->
+                <div class="input-group-prepend">
+                    <span class="input-group-text middle-search-bar search-labels" id="inputGroup-sizing-sm">Near</span>
+                </div>
+                <%= text_field_tag :near, params[:near], :class => "form-control middle-search-bar search_bar", placeholder: "City or Location", id: "sb_near" %>
+            </div>
+            <!-- Search Button -->
+            <div class="input-group-append">
+                <%= button_tag(:type => 'submit', :class => "btn btn-primary search-button", :id => "sb_search") do %>
+                    <span class="glyphicon glyphicon-search "></span>
+                <% end %>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</body>
 
 <% if @results.is_a?(Array) %>
   <% @results.each_with_index do |result, index| %>

@@ -4,11 +4,36 @@
 body{
     padding:0;
     margin:0;
+    height: 100%;
 }
 
+html { 
+     height: 100%; 
+}
+
+/**** Image ****/ 
 img{
     height: 100%;
     float: left;
+}
+
+/****Typography ****/
+// WHOOP Header
+.h1 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 80px !important;
+    color: white !important; 
+}
+
+// Tagline 
+.index-subheading { 
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px; 
+    color: white !important; 
+}
+
+#center { // Center anything with a flexbox 
+    justify-content: center; 
 }
 
 .vl {
@@ -17,7 +42,6 @@ img{
     margin-top: 10%;
     float: left;
 }
-
 
 .card {
     background-color: grey;
@@ -40,7 +64,84 @@ img{
 .link {
     color: white;
     text-decoration: none;
+}
+
+// Button Styles 
+.btn-primary { 
+    background-color: #500000 !important;
+    border-color: #500000 !important;
+    color: white !important;
+}
+
+.btn-primary:hover { 
+    background-color: #6b0000 !important;
+    border-color: #6b0000 !important;
+}
+
+
+.big_container { // Container for Index Things
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    height: 60%; 
+    align-items: center; 
+}
+
+.index-background {
+    background-image: url(new-2.jpg);
+    background-size: contain;
+    background-color: rgba(33,33,33,0.2);
+    background-position: bottom;
+    background-blend-mode: overlay;
+}
+
+#joint-search-bar { // Search Bar Container (Sets Size)
+    width: 750px !important;
+}
+
+.search_bar { // Text Field Search Bars
+    font-size: 1.8em !important; 
+    font-family: 'Open Sans', sans-serif !important;
+    height: calc(1.5em + .75rem + 10px) !important;
+    padding-top: 1em !important; 
+    padding-bottom: 1em !important;
+    border-left: none !important;
+}
+
+.search_bar:before { 
+    color: #e0e0e0 !important;
+}
+
+.form-control:focus { // Removes Blue Shadow when Text Field is in focus 
+    border: 1px solid #ced4da !important; 
+    box-shadow: none !important; 
+    border-left: none !important; 
     
+}
+
+.left-search_bar { // rounds only the left edges of the left search bar 
+    border-radius: .5em 0em 0em .5em !important;
+}
+
+.middle-search-bar {  // makes edges of middle search bar items sharp
+    border-radius: 0em !important;
+}
+
+.search-labels { // 'Find' and 'Near' Labels in Search Bar 
+    background-color: white !important; 
+    border-right: none !important; 
+    font-size: 1.8em !important; 
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 700 !important;
+}
+
+.search-button { // Search Button
+    font-size: 2em !important;
+    border-radius: 0em .5em .5em 0em !important; // rounds only the right edges of button
+    height: calc(1.5em + .75rem + 7px) !important;
+    padding-top: .25em !important; 
+    padding-left: 1em !important; 
+    padding-right: 1em !important; 
 }
 
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
