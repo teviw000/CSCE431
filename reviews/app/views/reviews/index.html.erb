@@ -1,9 +1,4 @@
-<head> 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Yanone+Kaffeesatz:700&display=swap" rel="stylesheet">
-</head>
-
-<body class="index-background">
+<div class="index-background">
     <div class="big_container"> 
         <h1 class="h1">WHOOP!</h1>
         <h2 class="index-subheading">Aggie Reviews for TAMU Study Abroads</h2>
@@ -31,7 +26,7 @@
         </div>
         <% end %>
     </div>
-</body>
+</div>
 
 <% if @results.is_a?(Array) %>
   <% @results.each_with_index do |result, index| %>
