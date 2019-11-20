@@ -90,12 +90,14 @@ img{
     align-items: center; 
 }
 
-.index-background {
+.index-background { // Background Image
     background-image: url(new-2.jpg);
-    background-size: contain;
+    background-size: cover;
     background-color: rgba(33,33,33,0.2);
-    background-position: bottom;
+    background-position: center bottom;
     background-blend-mode: overlay;
+    overflow: hidden; 
+    height: 100%;
 }
 
 #joint-search-bar { // Search Bar Container (Sets Size)
@@ -116,10 +118,9 @@ img{
 }
 
 .form-control:focus { // Removes Blue Shadow when Text Field is in focus 
-    border: 1px solid #ced4da !important; 
-    box-shadow: none !important; 
-    border-left: none !important; 
-    
+    border: 1px solid #ced4da !important;
+    box-shadow: none !important;
+    border-left: none !important;
 }
 
 .left-search_bar { // rounds only the left edges of the left search bar 
@@ -131,7 +132,7 @@ img{
 }
 
 .search-labels { // 'Find' and 'Near' Labels in Search Bar 
-    background-color: white !important; 
+    background-color: white !important;
     border-right: none !important; 
     font-size: 1.8em !important; 
     font-family: 'Open Sans', sans-serif !important;
