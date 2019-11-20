@@ -27,7 +27,11 @@
       </h2>
     </nav>
 
-    
+    <% if logged_in? %>
+      <h1>
+        <%= session[:user] %>
+      </h1>
+    <%end%>
     
     <%= yield %>
   </body>
