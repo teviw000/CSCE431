@@ -1,26 +1,24 @@
-<head> 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Yanone+Kaffeesatz:700&display=swap" rel="stylesheet">
-</head>
-
-<body class="index-background">
+<div class="index-background">
     <div class="big_container"> 
         <h1 class="h1">WHOOP!</h1>
         <h2 class="index-subheading">Aggie Reviews for TAMU Study Abroads</h2>
         
-        <%= form_tag(reviews_path, method: :get) do %>
+        <%= form_tag(reviews_path, method: :get, :id => "search_form") do %>
         <div class="input-group mb-3" id="center"> <!-- Search Bar Group -->
             <!-- 'Find' Static Label -->
             <div class="input-group-prepend" id="joint-search-bar"> 
                 <div class="input-group-prepend">
                     <span class="input-group-text left-search_bar search-labels" id="inputGroup-sizing-sm">Find</span>
                 </div>
-                <%= text_field_tag :find, params[:find], :class => "form-control middle-search-bar search_bar", placeholder: "Pizza, Tacos, Nail Salons, etc.", id: "sb_find" %>
+                <%= text_field_tag :find, params[:find], :class => "form-control middle-search-bar search_bar", placeholder: "Pizza, Tacos, Nail Salons, etc.", autocomplete: "off", id: "sb_find" %>
                 <!-- 'Near' Static Label -->
                 <div class="input-group-prepend">
                     <span class="input-group-text middle-search-bar search-labels" id="inputGroup-sizing-sm">Near</span>
                 </div>
-                <%= text_field_tag :near, params[:near], :class => "form-control middle-search-bar search_bar", placeholder: "City or Location", id: "sb_near" %>
+                <%= text_field_tag :near, params[:near], :class => "form-control middle-search-bar search_bar", placeholder: "City or Location", autocomplete: "off", list: "dd_near", id: "sb_near" %>
+                <datalist id="dd_near">
+                    <option class="option">Current Location</option>
+                </datalist>
             </div>
             <!-- Search Button -->
             <div class="input-group-append">
@@ -31,14 +29,20 @@
         </div>
         <% end %>
     </div>
-</body>
+</div>
 
-<% if @results.is_a?(Array) %>
-  <% @results.each_with_index do |result, index| %>
-    <%= link_to review_path(id: result["id"]), id: "card_" + index.to_s do %>
-      <div class="card">
-          <%= content_tag :h3, result["name"] %>
-      </div>
-    <% end%>
-  <% end %>
+<% if @results.is_a?(Array) && @results.length != 0 %>
+    <div id="cards">
+        <% @results.each_with_index do |result, index| %>
+            <div class="card">
+                <%= link_to review_path(id: result["id"]), id: "card_" + index.to_s do %>
+                    <%= content_tag :h3, result["name"] %>
+                <% end %>
+                <%= content_tag :p, result["categories"][0]["title"] ? result["categories"][0]["title"] : "No Category Info" %>
+                <%= content_tag :p, result["price"] ? result["price"] : "No Price Info" %>
+                <%= content_tag :p, result["location"]["address1"] ? result["location"]["address1"] : "No Street Address" %>
+                <%= content_tag :p, result["location"]["city"] ? result["location"]["city"] : "No City Address"%>
+            </div>
+        <% end %>
+    </div>
 <% end %>
