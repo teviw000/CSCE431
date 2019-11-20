@@ -19,7 +19,7 @@
       <%= link_to image_tag("search.png", :alt => "search", :id => "search", :style => "float: right;") %>
       <h2 style = "float: right;">
         <%=link_to "CONTACT", reviews_emergency_path(), :id => "contact", :class => "link", :style => "margin-right: 10px;"%>
-        <%=link_to "LOGIN", login_path(), :id => "login", :class => "link", :style => "margin-right: 10px;"%>
+        <%=link_to "LOGIN", user_google_oauth2_omniauth_authorize_path(), :id => "login", :class => "link", :style => "margin-right: 10px;"%>
       </h2>
     </nav>
     <%= yield %>
