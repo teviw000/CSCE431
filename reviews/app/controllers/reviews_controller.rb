@@ -29,7 +29,13 @@ class ReviewsController < ApplicationController
 
   def leave_review
     #@reviews = Reviews.new
-    @reviews = "" #temporary fix so that app will run
+    #@reviews = "" #temporary fix so that app will run
+    @review = Review.new
+    @review["business_id"] = params[:id]
+    @review["user_email"] = "ryan@example.com"
+    puts @review
+    puts @review["business_id"]
+    puts @review["rating"]
   end
 
   def show

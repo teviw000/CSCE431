@@ -1,6 +1,52 @@
 <div class="review_page">
     <h1>Leave a Review Here</h1>
 </div>
+<% form_for(@review) do |f| %>
+    <p>
+        <% f.label :comment %><br />
+        <% f.text_area :comment %>
+    </p>
+    <p>
+        <% f.label :rating %><br />
+        <% f.number_field :rating, in: 1..5, steps: 1 %>
+    </p>
+    <p>
+        <% f.label :price %><br />
+        <% f.number_field :price, in: 1..5, steps: 1 %>
+    </p>
+    <p>
+        <% f.label :safety %><br />
+        <% f.number_field :safety, in: 1..5, steps: 1 %>
+    </p>
+    <p>
+        <% f.label :service %><br />
+        <% f.number_field :service, in: 1..5, steps: 1 %>
+    </p>
+    <p>
+        <% f.label :cash_only %><br />
+        <% f.radio_button :cash_only, "Do they only accept cash?" %>
+    </p>
+    <p>
+        <% f.label :english %><br />
+        <% f.radio_button :english, "Do they speak english?" %>
+    </p>
+    <p>
+        <% f.label :tips %><br />
+        <% f.radio_button :tips, "Are you expected to tip?" %>
+    </p>
+    <p>
+        <% f.label :wifi %><br />
+        <% f.radio_button :wifi, "Do they have WiFi?" %>
+    </p>
+    <p>
+        <% f.label :wheelchair %><br />
+        <% f.radio_button :wheelchair, "Is it wheelchair accessible" %>
+    </p>
+
+    <%= f.submit "Create" %>
+<% end %>
+
+<!--
 <div class="review_page_contents">
     <form action="/reviews" method="POST">
         <%= text_area_tag(:param_text, nil, :size => "24x6") %>
@@ -62,4 +108,5 @@
         <%= link_to 'Submit', reviews_path %>
     </div>
 <% end %>
+-->
 
