@@ -4,7 +4,7 @@
 const channels = require.context('.', true, /_channel\.js$/)
 channels.keys().forEach(channels)
 
-$(document).ready(function() {
+$(document).on("turbolinks:load", function() {
     // Function to handle when searching, handle cases for Current Location/Specific Location
     $("#search_form").submit(() => {
         const find = $("#sb_find").val();
