@@ -20,10 +20,10 @@ module NavigationHelpers
             '/reviews/emergency'
             
         when /^the review\s?page$/
-            '/reviews/new'
+            'reviews/leave_review/os-fZ4atEmOxbIo36kG9gA'
 
         when /^the show_mad_taco\s?page$/
-            'reviews/Ir0e6qwBbOmi-doKce4PEg'
+            'reviews/os-fZ4atEmOxbIo36kG9gA'
         # Add more mappings here.
         # Here is an example that pulls values out of the Regexp:
         #

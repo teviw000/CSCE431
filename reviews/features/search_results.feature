@@ -7,7 +7,7 @@ Scenario: Test that Mad Taco has a page
     Given I am on the home page
     When I fill in "near" with "College Station"
     When I fill in "find" with "Tacos"
-    When I press "search"
+    When I press "button"
     Then I should see a "Mad Taco" card
-    When I follow "card_0"
+    When I follow "card_1"
     Then I should see "Mad Taco"
