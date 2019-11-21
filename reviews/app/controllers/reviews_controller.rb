@@ -63,8 +63,24 @@ class ReviewsController < ApplicationController
     puts params[:param_service]
     puts "******************************"
     #render plain: params[:my_data].inspect #display on website in plaintext
-    
-    @reviews = Reviews.new(params[:param_text])
+    #create params hash to have all parameters in a single parameter
+    #validates_presence_of :business_id, :user_email, :comment, :rating, :price, :safety, :service, :cash_only, :english, :tips, :wifi, :wheelchair
+    review_parameters = {
+      :business_id => params[:id],
+      :user_email => "zach@example.com",
+      :comment => params[:param_text],
+      :rating => params[:param_rating].to_i,
+      :price => params[:param_price].to_i,
+      :safety => params[:param_safety].to_i,
+      :service => params[:param_service].to_i,
+      :cash_only => params[:param_cash]["result"] == "0" ? false : true,
+      :english => params[:param_english]["result"] == "0" ? false : true,
+      :tips => params[:param_tips]["result"] == "0" ? false : true,
+      :wifi => params[:param_wifi]["result"] == "0" ? false : true,
+      :wheelchair => params[:param_wheelchair]["result"] == "0" ? false : true
+    }
+    puts review_parameters
+    @reviews = Review.new(review_parameters)
     # respond_to do |format|
     #   if @reviews.save
     #     format.html { redirect_to @reviews, notice: 'Review was successfully created.' }

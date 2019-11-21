@@ -50,10 +50,16 @@
 
         <button type="button" class="btn btn-default btn-lg">
         <%= link_to 'Cancel', reviews_path %>
-
-        <input type=submit>
+        
+        <%= submit_tag "Submit", :value => params[:id], :name => "id" %>
     </form>
 </div>
 
+<%= form_tag leave_review_path, :method => 'get' do %>
+    <div class="submit_cancel">
+        
+        <button type="button" class="btn btn-default btn-lg">
+        <%= link_to 'Submit', reviews_path %>
+    </div>
 <% end %>
 
