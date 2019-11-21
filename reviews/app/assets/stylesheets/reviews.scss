@@ -1,6 +1,7 @@
 // Place all the styles related to the reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// This is mar
 body{
     padding:0;
     margin:0;
@@ -23,6 +24,8 @@ img{
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 80px !important;
     color: white !important; 
+    line-height: 1 !important; 
+    margin-bottom: 0 !important; 
 }
 
 // Tagline 
@@ -30,6 +33,7 @@ img{
     font-family: 'Open Sans', sans-serif;
     font-size: 20px; 
     color: white !important; 
+    margin-bottom: 0.8em !important; 
 }
 
 #center { // Center anything with a flexbox 
@@ -78,7 +82,7 @@ img{
     border-color: #6b0000 !important;
 }
 
-
+// Index Styles
 .big_container { // Container for Index Things
     display: flex; 
     flex-direction: column;
@@ -101,7 +105,7 @@ img{
     width: 750px !important;
 }
 
-.search_bar { // Text Field Search Bars
+.search-bar { // Text Field Search Bars
     font-size: 1.8em !important; 
     font-family: 'Open Sans', sans-serif !important;
     height: calc(1.5em + .75rem + 10px) !important;
@@ -110,7 +114,7 @@ img{
     border-left: none !important;
 }
 
-.search_bar:before { 
+.search-bar:before { 
     color: #e0e0e0 !important;
 }
 
@@ -120,11 +124,24 @@ img{
     border-left: none !important;
 }
 
-.left-search_bar { // rounds only the left edges of the left search bar 
+.middle-search-bar {  // makes edges of middle search bar items sharp
+    border-radius: 0em !important;
+}
+
+.left-search-item { // rounds only the left edges of the left search bar 
     border-radius: .5em 0em 0em .5em !important;
 }
 
-.middle-search-bar {  // makes edges of middle search bar items sharp
+.search-component { // Holds Label and Search Bar
+    display: flex; 
+    flex-flow: row;
+}
+
+.right-search-item { // rounds only the left edges of the 'Near' label
+   border-radius: 0em !important;
+}
+
+.right-search-bar {  // makes edges of 'Near' search bar items sharp
     border-radius: 0em !important;
 }
 
@@ -142,7 +159,62 @@ img{
     height: calc(1.5em + .75rem + 7px) !important;
     padding-top: .25em !important; 
     padding-left: 1em !important; 
-    padding-right: 1em !important; 
+    padding-right: 1em !important;
+}
+.search-button-text { 
+    display: none; 
+}
+
+/** Mobile CSS **/
+@media (max-width: 750px) {
+    .h1 {
+        margin-bottom: 0 !important; 
+        line-height: 1.0 !important; 
+    }
+        .menu { // Top Nav Bar
+        display: flex; 
+//        justify-content: space-between;
+//    align-items: center;
+    }
+    
+    .input-group { // Holds Search Bars and Search Button 
+        flex-direction: column !important;
+        margin-top: 12px !important; 
+    }
+    
+    .search-component { // Holds Label and Search Bar
+        flex-direction: row; 
+    }
+    
+    .search-button-text { // Displays 'Search' on Search Button
+        display: inline-block;
+        font-family: 'Open Sans', sans-serif !important;
+        font-weight: 600; 
+    }
+
+    .left-search-item { // rounds only the left edges of the 'Find' label
+        border-radius: .5em 0em 0em 0em !important;
+    }
+
+    .middle-search-bar {  // makes edges of 'Find' search bar items sharp
+        border-radius: 0em .5em 0em 0em !important;
+    }
+    
+    .right-search-item { // rounds only the left edges of the 'Near' label
+        border-radius: 0em 0em 0em .5em !important;
+    }
+
+    .right-search-bar {  // makes edges of 'Near' search bar items sharp
+        border-radius: 0em 0em .5em 0em !important;
+    }
+
+    .search-button { // Search Button
+        border-radius: .5em !important; // rounds all edges
+        width: 100% !important;
+        margin-top: 5px;
+        height: calc(1.5em + .75rem + 7px) !important;
+    }
+
 }
 
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
