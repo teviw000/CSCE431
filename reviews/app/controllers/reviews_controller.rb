@@ -2,6 +2,8 @@ require File.dirname(__FILE__) + '/yelpAPI'
 require 'json'
 
 class ReviewsController < ApplicationController
+  protect_from_forgery with: :null_session
+
   def index
     # Make sure both parameters are present
     if !params[:near].blank? and !params[:find].blank?
@@ -17,8 +19,18 @@ class ReviewsController < ApplicationController
 
 
   def leave_review
-    @review = ""
-    @rating = 5
+    @review = params[:param_review]
+    @rating = params[:param_rating]
+    @price = params[:param_price]
+    @safety = params[:param_safety]
+    @service = params[:param_service]
+    @cash = params[:param_cash]
+    @english = params[:param_english]
+    @tips = params[:param_tips]
+    @wifi = params[:param_wifi]
+    @wheelchair = params[:param_wheelchair]
+    @submit = params[:param_submit]
+    # block comment: ctrl-k-c, uncomment: ctrol-k-u
   end
 
   def show
@@ -35,13 +47,12 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    #I don't think this will work until a seperate .rb file and/or class is created?
-    #https://stackoverflow.com/questions/35496179/uninitialized-constant-userscontrollercategories
-    #@category = Category.new(category_params = "")
+    
 
-    if @category.save
-      redirect_to :action => "/"
-    end
+
+    @review = review.new(params) #something like this
+
+    redirect_to reviews_path
   end
 
 end
