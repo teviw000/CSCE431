@@ -6,18 +6,4 @@ Feature: create review page
 Scenario: Test for review presence
     Given I am on the review page
     Then I should see class "review_page"
-    Then I should see class "review_text"
-
-Scenario: Test for all features
-    Given I am on the review page
-    Then I should see class "review_text"
-    Then I should see class "rating"
-    Then I should see class "safety"
-    Then I should see class "price"
-    Then I should see class "food"
-    Then I should see class "service"
-    Then I should see class "cash"
-    Then I should see class "english"
-    Then I should see class "tips"
-    Then I should see class "wifi"
-    Then I should see class "submit_cancel"
+    Then I should see class "review_page_contents"

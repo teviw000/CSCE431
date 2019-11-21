@@ -19,18 +19,8 @@ class ReviewsController < ApplicationController
 
 
   def leave_review
-    @review = params[:param_review]
-    @rating = params[:param_rating]
-    @price = params[:param_price]
-    @safety = params[:param_safety]
-    @service = params[:param_service]
-    @cash = params[:param_cash]
-    @english = params[:param_english]
-    @tips = params[:param_tips]
-    @wifi = params[:param_wifi]
-    @wheelchair = params[:param_wheelchair]
-    @submit = params[:param_submit]
-    # block comment: ctrl-k-c, uncomment: ctrol-k-u
+    #@reviews = Reviews.new
+    @reviews = "" #temporary fix so that app will run
   end
 
   def show
@@ -47,10 +37,30 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    puts "******************************"
+    puts params[:param_text]
+    puts params[:param_cash]
+    puts params[:param_english]
+    puts params[:param_tips]
+    puts params[:param_wifi]
+    puts params[:param_wheelchair]
+    puts params[:param_rating]
+    puts params[:param_price]
+    puts params[:param_safety]
+    puts params[:param_service]
+    puts "******************************"
+    #render plain: params[:my_data].inspect #display on website in plaintext
     
-
-
-    @review = review.new(params) #something like this
+    @reviews = Reviews.new(params[:param_text])
+    # respond_to do |format|
+    #   if @reviews.save
+    #     format.html { redirect_to @reviews, notice: 'Review was successfully created.' }
+    #     format.json { render json: @reviews, status: :created, location: @reviews }
+    #   else
+    #     format.html { render action: "new" }
+    #     format.json { render json: @reviews.errors, status: :unprocessable_entity }
+    #   end
+    # end
 
     redirect_to reviews_path
   end

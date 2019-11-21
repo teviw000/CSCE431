@@ -1,149 +1,59 @@
 <div class="review_page">
     <h1>Leave a Review Here</h1>
 </div>
+<div class="review_page_contents">
+    <form action="/reviews" method="POST">
+        <%= text_area_tag(:param_text, nil, :size => "24x6") %>
 
-<form action="/reviews" method="POST">
-  <input type="text" name="my_data">
-  <input type=submit>
-</form>
-
-<%= form_tag leave_review_path, :method => 'POST' do %>
-    <input type="text" name="my_data">
-    <input type=submit>
-<% end %>
-
-<%= form_tag leave_review_path, :method => 'get' do %>
-    <div class="review_text">
-        <% if !@review.nil?%>
-            <%= form_for @review do |f| %>
-                <%= f.text_area :review, :cols => 50, :rows => 10 %>
-            <% end %>
-        <% end %>
-    </div>
-<% end %>
-
-<%= form_tag leave_review_path, :method => 'get' do %>
-    <div class="rating">
-        <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <%= label_tag 'Overall Rating' %>
-    </div>
-<% end %>
-
-<%= form_tag leave_review_path, :method => 'get' do %>
-    <div class="price">
-        <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <%= label_tag 'Price' %>
-    </div>
-<% end %>
-
-<%= form_tag leave_review_path, :method => 'get' do %>
-    <div class="safety">
-        <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <%= label_tag 'Safety' %>
-    </div>
-<% end %>
-
-<%= form_tag leave_review_path, :method => 'get' do %>
-    <div class="service">
-        <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <%= label_tag 'How\'s the service?' %>
-    </div>
-<% end %>
-
-<%= form_tag leave_review_path, :method => 'get' do %>
-    <div class="cash">
-        <%= label_tag(:param_cash, "Is it cash only?") %>
+        <%= label_tag(:param_cash, "Do they only take cash?") %>
         <%= check_box 'param_cash', 'result', {}, 1, 0 %>
-    </div>
-<% end %>
 
-<%= form_tag leave_review_path, :method => 'get' do %>
-    <div class="english">
-        <%= label_tag 'Do they speak English?' %>
-        <%= check_box_tag 'English?', value = '1', checked = false %>
-    </div>
-<% end %>
+        <%= label_tag(:param_english, "Do they speak English?") %>
+        <%= check_box 'param_english', 'result', {}, 1, 0 %>
 
-<%= form_tag leave_review_path, :method => 'get' do %>
-    <div class="tips">
-    <%= label_tag 'Is it appropriate to leave tips?' %>
-        <%= check_box_tag 'Tips?', value = '0', checked = false %>
-    </div>
-<% end %>
+        <%= label_tag(:param_tips, "Is it appropriate to leave tips?") %>
+        <%= check_box 'param_tips', 'result', {}, 1, 0 %>
 
-<%= form_tag leave_review_path, :method => 'get' do %>
-    <div class="wifi">
-    <%= label_tag 'Do they have WiFi?' %>
-        <%= check_box_tag 'Tips?', value = '0', checked = false %>
-    </div>
-<% end %>
+        <%= label_tag(:param_wifi, "Do they have WiFi?") %>
+        <%= check_box 'param_wifi', 'result', {}, 1, 0 %>
 
-<%= form_tag leave_review_path, :method => 'get' do %>
-    <div class="wheelchair">
-        <%= label_tag 'Is it wheelchair accessible?' %>
-        <%= check_box_tag 'English?', value = '1', checked = false %>
-    </div>
-<% end %>
+        <%= label_tag(:param_wheelchair, "Are they wheelchair accessible?") %>
+        <%= check_box 'param_wheelchair', 'result', {}, 1, 0 %>
 
-<%= form_tag leave_review_path, :method => 'get' do %>
-    <div class="submit_cancel">
+        <%= label_tag(:param_rating, "Rating") %>
+        <%= radio_button_tag(:param_rating, "1") %>
+        <%= radio_button_tag(:param_rating, "2") %>
+        <%= radio_button_tag(:param_rating, "3") %>
+        <%= radio_button_tag(:param_rating, "4") %>
+        <%= radio_button_tag(:param_rating, "5", true) %>
+
+        <%= label_tag(:param_price, "Price") %>
+        <%= radio_button_tag(:param_price, "1") %>
+        <%= radio_button_tag(:param_price, "2") %>
+        <%= radio_button_tag(:param_price, "3") %>
+        <%= radio_button_tag(:param_price, "4") %>
+        <%= radio_button_tag(:param_price, "5", true) %>
+
+        <%= label_tag(:param_safety, "Safety") %>
+        <%= radio_button_tag(:param_safety, "1") %>
+        <%= radio_button_tag(:param_safety, "2") %>
+        <%= radio_button_tag(:param_safety, "3") %>
+        <%= radio_button_tag(:param_safety, "4") %>
+        <%= radio_button_tag(:param_safety, "5", true) %>
+
+        <%= label_tag(:param_service, "Service") %>
+        <%= radio_button_tag(:param_service, "1") %>
+        <%= radio_button_tag(:param_service, "2") %>
+        <%= radio_button_tag(:param_service, "3") %>
+        <%= radio_button_tag(:param_service, "4") %>
+        <%= radio_button_tag(:param_service, "5", true) %>
+
         <button type="button" class="btn btn-default btn-lg">
         <%= link_to 'Cancel', reviews_path %>
-        <button type="button" class="btn btn-default btn-lg">
-        <%= link_to 'Submit', reviews_path %>
-    </div>
+
+        <input type=submit>
+    </form>
+</div>
+
 <% end %>
 
-
-<%#= Provide Ryan a list of all tags that will be used in the review page
-(review=text, rating=integer, english=boolean, etc) %>
