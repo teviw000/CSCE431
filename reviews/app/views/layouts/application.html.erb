@@ -21,8 +21,6 @@
       <%else%>
         <h1><%=link_to "LOGIN", login_path(), :id => "login", :class => "link"%></h1>
       <%end%>
-      
-      <%= link_to image_tag("search.png", :alt => "search", :id => "search", :style => "float: right;") %>
     </nav>
 
     <% if logged_in? %>
