@@ -1,49 +1,57 @@
 <div class="review_page">
     <h1>Leave a Review Here</h1>
 </div>
-<% form_for(@review) do |f| %>
-    <p>
-        <% f.label :comment %><br />
-        <% f.text_area :comment %>
+<%= form_for(@review) do |f| %>
+    <p style="display: none">
+        <%= f.label :business_id %>
+        <%= f.text_field :business_id, value: params[:id]%>
+    </p>
+    <p style="display: none">
+        <%= f.label :user_email %>
+        <%= f.text_field :user_email, value: "ryan@example.com"%>
     </p>
     <p>
-        <% f.label :rating %><br />
-        <% f.number_field :rating, in: 1..5, steps: 1 %>
+        <%= f.label :comment %><br />
+        <%= f.text_area :comment %>
     </p>
     <p>
-        <% f.label :price %><br />
-        <% f.number_field :price, in: 1..5, steps: 1 %>
+        <%= f.label :rating %><br />
+        <%= f.number_field :rating, in: 1..5, steps: 1 %>
     </p>
     <p>
-        <% f.label :safety %><br />
-        <% f.number_field :safety, in: 1..5, steps: 1 %>
+        <%= f.label :price %><br />
+        <%= f.number_field :price, in: 1..5, steps: 1 %>
     </p>
     <p>
-        <% f.label :service %><br />
-        <% f.number_field :service, in: 1..5, steps: 1 %>
+        <%= f.label :safety %><br />
+        <%= f.number_field :safety, in: 1..5, steps: 1 %>
     </p>
     <p>
-        <% f.label :cash_only %><br />
-        <% f.radio_button :cash_only, "Do they only accept cash?" %>
+        <%= f.label :service %><br />
+        <%= f.number_field :service, in: 1..5, steps: 1 %>
     </p>
     <p>
-        <% f.label :english %><br />
-        <% f.radio_button :english, "Do they speak english?" %>
+        <%= f.label :cash_only, "Do they accept Cash?", value: true %><br />
+        <%= f.radio_button :cash_only, true, :checked => false, :value => true %>
     </p>
     <p>
-        <% f.label :tips %><br />
-        <% f.radio_button :tips, "Are you expected to tip?" %>
+        <%= f.label :english, "Do they speak English?", value: true %><br />
+        <%= f.radio_button :english, true, :checked => false, :value => true %>
     </p>
     <p>
-        <% f.label :wifi %><br />
-        <% f.radio_button :wifi, "Do they have WiFi?" %>
+        <%= f.label :tips, "Are you expected to tip?", value: true %><br />
+        <%= f.radio_button :tips, true, :checked => false, :value => true %>
     </p>
     <p>
-        <% f.label :wheelchair %><br />
-        <% f.radio_button :wheelchair, "Is it wheelchair accessible" %>
+        <%= f.label :wifi, "Do they have WiFi?", value: true %><br />
+        <%= f.radio_button :wifi, true, :checked => false, :value => true %>
+    </p>
+    <p>
+        <%= f.label :wheelchair, "Is it wheelchair accessible?", value: true %><br />
+        <%= f.radio_button :wheelchair, true, :checked => false, :value => true %>
     </p>
 
-    <%= f.submit "Create" %>
+    <%= f.submit "Create", disabled: false%>
 <% end %>
 
 <!--
