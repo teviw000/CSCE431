@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_15_005631) do
+ActiveRecord::Schema.define(version: 2019_11_20_062029) do
+
+  create_table "users", force: :cascade do |t|
 
   create_table "reviews", force: :cascade do |t|
     t.string "business_id"
