@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_062029) do
-
-  create_table "users", force: :cascade do |t|
+ActiveRecord::Schema.define(version: 2019_11_21_233128) do
 
   create_table "reviews", force: :cascade do |t|
     t.string "business_id"
@@ -27,6 +25,11 @@ ActiveRecord::Schema.define(version: 2019_11_20_062029) do
     t.boolean "tips"
     t.boolean "wifi"
     t.boolean "wheelchair"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
