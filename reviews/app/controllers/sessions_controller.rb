@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
     def create
         user_info = request.env["omniauth.auth"]
 
-        # user           = User.new
+        user           = User.new
         # user.id        = user_info["uid"]
         # user.name      = user_info["info"]["name"]
         # user.email     = user_info["info"]["email"]
