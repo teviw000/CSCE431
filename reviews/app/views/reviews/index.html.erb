@@ -31,17 +31,32 @@
     </div>
 </div>
 
-<% if @results.is_a?(Array) && @results.length != 0 %>
+<% if @display_results.is_a?(Array) && @display_results.length != 0 %>
     <div id="cards">
-        <% @results.each_with_index do |result, index| %>
-            <div class="card">
-                <%= link_to review_path(id: result["id"]), id: "card_" + index.to_s do %>
-                    <%= content_tag :h3, result["name"] %>
-                <% end %>
-                <%= content_tag :p, result["categories"][0]["title"] ? result["categories"][0]["title"] : "No Category Info" %>
-                <%= content_tag :p, result["price"] ? result["price"] : "No Price Info" %>
-                <%= content_tag :p, result["location"]["address1"] ? result["location"]["address1"] : "No Street Address" %>
-                <%= content_tag :p, result["location"]["city"] ? result["location"]["city"] : "No City Address"%>
+        <% @display_results.each_with_index do |result, index| %>
+            <div class="our-card">
+                <div class="image-box">
+                    <p>An Image will go here</p>
+                </div>
+                <div class="text-box">
+                    <div class="business-info">
+                        <%= link_to review_path(id: result["id"]), id: "card_" + index.to_s do %>
+                            <%= content_tag :h3, result["name"] %>
+                        <% end %>
+                        <%= content_tag :p, result["type"] %>
+                        <%= content_tag :p, "Price: " + result["price"].to_s %>
+                        <%= content_tag :p, result["address"] %>
+                    </div>
+                    <div class="aggie-reviews">
+                        <%= content_tag :p, "Price: " + result["service"].to_s %>
+                        <%= content_tag :p, "Price: " + result["safety"].to_s %>
+                    </div>
+                    <div class="tag-info">
+                        <% result["tags"].each do |tag| %>
+                            <%= content_tag :span, tag %>
+                        <% end %>
+                    </div>
+                </div>
             </div>
         <% end %>
     </div>

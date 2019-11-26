@@ -44,10 +44,25 @@ img{
     float: left;
 }
 
-.card {
-    background-color: grey;
-    width: 30%;
-    height: 150px;
+.our-card {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    height: 250px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 5px 10px 20px #888888;;
+}
+
+.image-box {
+    display: inline-block;
+    width: 25%;
+}
+
+.text-box{
+    display: inline-block;
+    width: 75%;
 }
 
 .menu {
