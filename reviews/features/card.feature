@@ -5,4 +5,7 @@ Feature: Create a basic card
 
 Scenario: Test for card presence
     Given I am on the home page
-    Then I should not see class "card"
+    When I fill in "near" with "College Station"
+    When I fill in "find" with "Tacos"
+    When I press "button"
+    Then I should see class "card"
