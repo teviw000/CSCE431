@@ -8,7 +8,11 @@
     </div>
     <div id="review_user_email_block" style="display: none">
         <%= f.label :user_email %>
-        <%= f.text_field :user_email, value: "ryan@example.com"%>
+        <%if logged_in?%>
+            <%= f.text_field :user_email, value: current_user.email%>
+        <%else%>
+            <%= f.text_field :user_email, value: "not logged in"%>
+        <%end%>
     </div>
     <div id="review_comment_block">
         <%= f.label :comment %><br />

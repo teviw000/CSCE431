@@ -5,9 +5,11 @@ $(document).on("turbolinks:load", function() {
     console.log('here')
     // Function to handle when submitting review, checking for empty input
     $("#new_review").submit(() => {
-        ////////////////////////////////
-        /* TODO: Check for user email */
-        ////////////////////////////////
+        //if not logged in
+        if ($("#review_user_email").val() === "not logged in") {
+            alert("Please log in before leaving a review")
+            return false;
+        }
 
         // If comment section is empty
         if ($("#review_comment").val() === "") {
