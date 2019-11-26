@@ -91,4 +91,105 @@ module ReviewsHelper
         response = HTTP.auth("Bearer #{API_KEY}").get(url)
         response.parse
     end
+
+    def get_display_results(yelp_result)
+        display_results = []
+        if (!yelp_result.is_a?(Hash))
+            puts "not a hash"
+            return display_results
+        end
+        if (!yelp_result.key?("businesses"))
+            puts "no businesses"
+            return display_results
+        end
+        yelp_result["businesses"].each do |biz|
+            display_results.push(build_display_result(biz))
+        end
+        return display_results
+    end
+
+    def build_display_result(business)
+        result = Hash.new
+        result["id"] = business["id"]
+        result["name"] = business["name"]
+        result["image"] = business["image_url"]
+        if (business["categories"].length > 0)
+            result["type"] = business["categories"][0]["title"]
+        else
+            result["type"] = "No Business Type"
+        end
+        result["address"] = business["location"]["address1"]
+
+        student_reviews = Review.where(business_id: business["id"])
+        if (student_reviews.length == 0)
+            result["price"] = -1
+            result["rating"] = -1
+            result["service"] = -1
+            result["safety"] = -1
+            result["tags"] = []
+        else 
+            
+            result["price"] = get_average(student_reviews, "price")
+            result["rating"] = get_average(student_reviews, "rating")
+            result["service"] = get_average(student_reviews, "service")
+            result["safety"] = get_average(student_reviews, "safety")
+            result["tags"] = get_tags(student_reviews)
+        end
+        return result
+    end
+
+    def get_average(reviews, key)
+        count = 0
+        total = 0
+        reviews.each do |review| 
+            if (review[key].is_a?(Numeric))
+                total = total + review[key]
+                count = count + 1
+            end
+        end
+        return (total / count)
+    end
+
+    def get_tags(reviews)
+        count = reviews.length
+        cash_only_count = 0
+        english_count = 0
+        tips_count = 0
+        wifi_count = 0
+        wheelchair_count = 0
+        reviews.each do |review|
+            if (review["cash_only"] == true)
+                cash_only_count += 1
+            end
+            if (review["english"] == true)
+                english_count += 1
+            end
+            if (review["tips"] == true)
+                tips_count += 1
+            end
+            if (review["wifi"] == true)
+                wifi_count += 1
+            end
+            if (review["wheelchair"] == true)
+                wheelchair_count += 1
+            end
+        end
+        tags = []
+        if (cash_only_count > count/2)
+            tags.push("cash_only")
+        end
+        if (english_count > count / 2)
+            tags.push("english")
+        end
+        if (tips_count > count / 2)
+            tags.push("tips")
+        end
+        if (wifi_count > count / 2)
+            tags.push("wifi")
+        end
+        if (wheelchair_count > count / 2)
+            tags.push("wheelchair")
+        end
+        return tags
+    end
 end

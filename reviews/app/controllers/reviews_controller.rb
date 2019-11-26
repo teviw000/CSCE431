@@ -7,22 +7,21 @@ class ReviewsController < ApplicationController
 
   def index
     # Make sure both parameters are present
-    #puts params
     if !params[:near].blank? and !params[:find].blank?
-      
       @near = params[:near]
       @find = params[:find]
       if @near === "Current Location"
         @latitude = params[:lat]
         @longitude = params[:long]
-        @results = yelp_help_location(@find, @latitude, @longitude)["businesses"]
+        @results = yelp_help_location(@find, @latitude, @longitude)
       else
         # Query yelp to get @find related businesses @near a location
-        @results = yelp_help(@find, @near)["businesses"]
+        @results = yelp_help(@find, @near)
         #To see typing of @results, see https://www.yelp.com/developers/documentation/v3/business_search
       end
+      @display_results = get_display_results(@results)
     else 
-      @results = []
+      @display_results = []
     end
   end
 
