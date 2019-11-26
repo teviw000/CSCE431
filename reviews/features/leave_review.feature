@@ -8,4 +8,4 @@ Scenario: Test Leave a Review Button
 	Then I should see id "leave_review"
 	Then I should see class "btn"
 	When I follow "Leave A Review"
-	Then I should see class "review_page"
+	Then I should see id "review_page"
