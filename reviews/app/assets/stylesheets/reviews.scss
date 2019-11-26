@@ -181,6 +181,10 @@ img{
     display: none; 
 }
 
+.menu-button { 
+       display: none; 
+    }
+
 /** Mobile CSS **/
 @media (max-width: 750px) {
     .h1 {
@@ -278,18 +282,9 @@ img{
     .nav { 
         flex-direction: row !important;
         justify-content: space-between;
-//        align-items: center!important;
-//        display: inline-flex;
-    }
-    .overlay { 
-//        width: 30% !important; 
     }
     
     .b { 
-//        background-image: url(menu.svg);
-//        display: flex; 
-//        width: 40px !important; 
-//        height: 40px !important;
         display: flex;
         background-color: transparent!important; 
         background-repeat: no-repeat;
@@ -302,6 +297,7 @@ img{
     }
     
     .menu-button { 
+        display: flex; 
         background-color: transparent!important; 
         background-repeat: no-repeat;
         border: none; 
@@ -319,8 +315,7 @@ img{
     }
     
     .container { 
-        padding: 0 !important; 
-//        margin-top: 1.5em !important; 
+        padding: 0 !important;  
         display: flex; 
     }
 
