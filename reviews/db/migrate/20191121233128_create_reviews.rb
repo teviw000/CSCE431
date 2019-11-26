@@ -1,6 +1,5 @@
 class CreateReviews < ActiveRecord::Migration[6.0]
   def change
-    drop_table :reviews
     create_table :reviews do |t|
       t.string :business_id
       t.string :user_email
