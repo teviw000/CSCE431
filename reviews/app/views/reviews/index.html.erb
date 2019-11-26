@@ -2,13 +2,10 @@
     <div class="big_container"> 
         <h1 class="h1">WHOOP!</h1>
         <h2 class="index-subheading">Aggie Reviews for TAMU Study Abroads</h2>
-        
-        
-        
+        <!-- Search Bar Group -->
         <%= form_tag(reviews_path, method: :get, :id => "search_form", :class => "search-flex") do %>
-        <div class="input-group mb-3 search-flex" id="center"> <!-- Search Bar Group -->
+        <div class="input-group mb-3 search-flex" id="center">
             <!-- 'Find' Static Label -->
-<!--            <div class="input-group-prepend" id="joint-search-bar"> -->
             <div class="search-component">
                 <div class="input-group-prepend">
                     <span class="input-group-text left-search-item search-labels" id="inputGroup-sizing-sm">Find</span>
@@ -33,7 +30,6 @@
                 <% end %>
             </div>
         </div>
-<!--        </div>-->
         <% end %>
     </div>
 </div>
