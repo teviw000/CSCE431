@@ -9,19 +9,66 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Yanone+Kaffeesatz:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
   </head>
 
-  <body>
-    <nav class="menu">
-      <%= link_to image_tag("TAM-Logo-white.png", :alt => "TAMU logo", :id => "tamu_logo", :class => "logo"), reviews_path(), :id => "tamu_logo_link" %>
-      <%= link_to image_tag("vert_bar.png", :alt => "vertical seperator", :id => "vert_bar", ), reviews_path(), :id => "vert_bar_link"%>
-      <%= link_to image_tag("name_tag.png", :alt => "Texas A&M University Education Abroad", :id => "name_tag", :class => "name_tag"), reviews_path(), :id => "name_tag_link" %>
-      <%= link_to image_tag("search.png", :alt => "search", :id => "search", :style => "float: right;") %>
-      <h2 style = "float: right;">
-        <%=link_to "CONTACT", reviews_emergency_path(), :id => "contact", :class => "link", :style => "margin-right: 10px;"%>
-        <%=link_to "LOGIN", login_path(), :id => "login", :class => "link", :style => "margin-right: 10px;"%>
-      </h2>
+    <body>
+        <nav class="nav">
+          <%= link_to image_tag("WHOOP-logo.png", :alt => "TAMU logo", :id => "tamu_logo", :class => "logo navbar-brand"), reviews_path(), :id => "tamu_logo_link" %>
+          <%= link_to image_tag("search.png", :alt => "search", :id => "search", :style => "float: right;", :class => "nav-links") %>
+        <h2 style = "float: right;" class="nav-links">
+            <%=link_to "CONTACT", reviews_emergency_path(), :id => "contact", :class => "link", :style => "margin-right: 10px;"%>
+            <%=link_to "LOGIN", login_path(), :id => "login", :class => "link", :style => "margin-right: 10px;"%>
+        </h2>
+<!--
+        <div> 
+            <button class="btn" type="button"> 
+            DropDown
+            </button>
+            
+        </div>
+-->
+
+<!--
+        <div class="dropdown">
+            <button class=" dropdown-toggle navbar-btn pull-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+            </button>
+            <div class="dropdown-menu nav flex-column nav-pills nav-fill" aria-labelledby="dropdownMenuButton">
+                
+            </div>
+        </div>
+-->
+
+<!--
+      <button type="button" class="navbar-toggle collapsed btn b" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="glyphicon glyphicon-menu-hamburger b" style="color:blue"></span>
+        </button> 
+
+-->
+        <button class="navbar-toggle pull-right  menu-button" type="button" data-toggle="collapse" data-target="#dropdown-menu">
+<!--             <span class=""></span>-->
+            <i class="material-icons b">
+              menu
+            </i>
+        </button>
+  
+            
+    <div class="container overlay">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse container" id="dropdown-menu">
+            <ul class="m">
+                <li> <%=link_to "CONTACT", reviews_emergency_path(), :id => "contact", :class => "dropdown-item"%> </li>
+                <li> <%=link_to "LOGIN", login_path(), :id => "login", :class => "dropdown-item"%> </li>
+            </ul>
+        </div>
+    </div>
+        
     </nav>
     <%= yield %>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
