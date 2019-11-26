@@ -38,7 +38,7 @@ html,body{
   flex-basis: auto;
   flex-shrink: 0;
 
-  height: 30%;
+  height: auto;
   align-items: center;
  -webkit-flex-flow: row wrap;
   flex-start: center;
@@ -77,10 +77,30 @@ html,body{
 
 }
 
+a:visited {
+  color: #500000;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: grey;
+  text-decoration: underline;
+}
+
+/* selected link */
+a:active {
+  color: #500000;
+  text-decoration: underline;
+
+}
+
 .links{
   font-size: 15px;
   color: grey;
   text-decoration: underline;
 }
+
+
 
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
