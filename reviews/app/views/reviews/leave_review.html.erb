@@ -6,9 +6,11 @@
         <%= f.label :business_id %>
         <%= f.text_field :business_id, value: params[:id]%>
     </div>
-    <div id="review_user_email_block" style="display: none">
-        <%= f.label :user_email %>
-        <%= f.text_field :user_email, value: "ryan@example.com"%>
+    <div id="review_user_email_block">
+        <%if logged_in? %>
+            <%= f.label :user_email %>
+            <%= current_user.email%>
+        <%end%>
     </div>
     <div id="review_comment_block">
         <%= f.label :comment %><br />
