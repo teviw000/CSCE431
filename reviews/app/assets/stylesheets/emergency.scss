@@ -17,17 +17,9 @@ html,body{
   text-align: center;
 }
 
-.emergency{
-        text-align: center;       
-}     
-
-#center { // Center anything with a flexbox
-  justify-content: center;
-}
-
 .flex-container {
   font-family: 'Open Sans', sans-serif;
-  font-size: 20px;
+  font-size: 15px;
   color: white !important;
 
   display: flex;
@@ -53,13 +45,9 @@ html,body{
   box-shadow: 10px 5px 18px grey;
 }
 
-#tamu, #tamu_office, #police, #other {
- border:1px dotted white;
-}
-
 .column{
   background: white;
-  padding: 10px;
+  padding: 5px;
   width: auto;
   height: auto;
   margin-top: 5px;
@@ -71,34 +59,103 @@ html,body{
   color:#500000;
   font-weight: bold;
 
- text-align: center;
-  line-height: 25px;
+  text-align: center;
+  line-height: 19px;
   //display: inline-flex;
 
 }
 
-a:visited {
-  color: #500000;
-  text-decoration: none;
+.intl_column{
+  background: white;
+  padding: 5px;
+  width: auto;
+  height: auto;
+  margin-top: 5px;
+  
+
+  font-size: 20px;
+  align-items: center;
+
+  color:#500000;
+  font-weight: bold;
+
+  text-align: left;
+  line-height: 20px;
+  //display: inline-flex;
+
 }
+
+
+a:link{
+  font-size: 15px;
+  //color: #500000; //this affects the link for the login page
+  text-decoration: none !important;
+}
+
+//this affects the link for the contact page in the top header
+//a:visited {
+//  font-size: 20px;
+//  color: #500000;
+//  text-decoration: none !important;
+//}
 
 /* mouse over link */
 a:hover {
-  color: grey;
-  text-decoration: underline;
+  font-size: 15px;
+  color: #500000;
+  text-decoration: none !important;
 }
 
 /* selected link */
 a:active {
+  font-size: 15px;
   color: #500000;
-  text-decoration: underline;
+  text-decoration: none !important;
 
 }
 
-.links{
+.link_phone{
+  font-size:15px;
+  //color: grey;
+  text-decoration: none !important;
+  display: inline-block;
+}
+
+.link_email{
+  font-size:15px;
+  //color: grey;
+  text-decoration: none !important;
+  display: inline-block;
+}
+
+.link_tamu{
+  font-size:15px;
+  color: #500000;
+  text-decoration: underline !important;
+  display: inline-block;
+}
+
+.text{
   font-size: 15px;
   color: grey;
-  text-decoration: underline;
+  text-decoration: underline !important;
+  display: inline-block;
+}
+
+.intl_text{
+  font-size: 15px;
+  color: grey;
+  text-decoration: underline !important;
+  display: inline-block;
+  //align-text: left;
+}
+
+.intl_num{
+  font-size: 15px;
+  color: #500000;
+  text-decoration: none !important;
+  display: inline-block;
+  //align-text: left;
 }
 
 
