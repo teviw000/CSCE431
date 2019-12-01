@@ -2,20 +2,23 @@
     <div class="big_container"> 
         <h1 class="h1">WHOOP!</h1>
         <h2 class="index-subheading">Aggie Reviews for TAMU Study Abroads</h2>
-        
-        <%= form_tag(reviews_path, method: :get, :id => "search_form") do %>
-        <div class="input-group mb-3" id="center"> <!-- Search Bar Group -->
+      
+        <!-- Search Bar Group -->
+        <%= form_tag(reviews_path, method: :get, :id => "search_form", :class => "search-flex") do %>
+        <div class="input-group mb-3 search-flex" id="center">
             <!-- 'Find' Static Label -->
-            <div class="input-group-prepend" id="joint-search-bar"> 
+            <div class="search-component">
                 <div class="input-group-prepend">
-                    <span class="input-group-text left-search_bar search-labels" id="inputGroup-sizing-sm">Find</span>
+                    <span class="input-group-text left-search-item search-labels" id="inputGroup-sizing-sm">Find</span>
                 </div>
-                <%= text_field_tag :find, params[:find], :class => "form-control middle-search-bar search_bar", placeholder: "Pizza, Tacos, Nail Salons, etc.", autocomplete: "off", id: "sb_find" %>
-                <!-- 'Near' Static Label -->
+                <%= text_field_tag :find, params[:find], :class => "form-control middle-search-bar search-bar", placeholder: "Pizza, Museums, etc.", autocomplete: "off", id: "sb_find" %>
+            </div>
+            <!-- 'Near' Static Label -->
+            <div class="search-component"> 
                 <div class="input-group-prepend">
-                    <span class="input-group-text middle-search-bar search-labels" id="inputGroup-sizing-sm">Near</span>
+                    <span class="input-group-text right-search-item search-labels" id="inputGroup-sizing-sm">Near</span>
                 </div>
-                <%= text_field_tag :near, params[:near], :class => "form-control middle-search-bar search_bar", placeholder: "City or Location", autocomplete: "off", list: "dd_near", id: "sb_near" %>
+                <%= text_field_tag :near, params[:near], :class => "form-control right-search-bar search-bar", placeholder: "City or Location", autocomplete: "off", list: "dd_near", id: "sb_near" %>
                 <datalist id="dd_near">
                     <option class="option">Current Location</option>
                 </datalist>
@@ -23,7 +26,8 @@
             <!-- Search Button -->
             <div class="input-group-append">
                 <%= button_tag(:type => 'submit', :class => "btn btn-primary search-button", :id => "sb_search") do %>
-                    <span class="glyphicon glyphicon-search "></span>
+                    <span class="search-button-text">Search</span>
+                    <span class="glyphicon glyphicon-search"></span>
                 <% end %>
             </div>
         </div>
