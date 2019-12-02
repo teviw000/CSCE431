@@ -7,54 +7,22 @@ class ReviewsController < ApplicationController
 
   def index
     # Make sure both parameters are present
-    #puts params
     if !params[:near].blank? and !params[:find].blank?
-      
       @near = params[:near]
       @find = params[:find]
       if @near === "Current Location"
         @latitude = params[:lat]
         @longitude = params[:long]
-        @results = yelp_help_location(@find, @latitude, @longitude)["businesses"]
+        @results = yelp_help_location(@find, @latitude, @longitude)
       else
         # Query yelp to get @find related businesses @near a location
-        @results = yelp_help(@find, @near)["businesses"]
+        @results = yelp_help(@find, @near)
         #To see typing of @results, see https://www.yelp.com/developers/documentation/v3/business_search
       end
-
-      # dealing with student order
-      @stu_reviewed = []
-      @left_over = []
-      querey = Review.distinct.select("business_id")
-      puts(querey)
-      @results.each do |result|        
-        querey.where(business_id: result["id"]).each do |review|
-          if review["business_id"] == result["id"]
-            @stu_reviewed << result
-          end
-        end
-      end
-      
-      
-      @results.each do |result|
-        found = false
-        @stu_reviewed.each do |stu|
-          if result["id"] == stu["id"]
-            found = true
-          end
-        end
-        if found == false
-          @left_over << result
-        end
-      end
-
-      @results = @stu_reviewed
-      @results += @left_over
-      # students are displayed first
-      
-
+      @display_results = get_display_results(@results)
+      @display_results = get_correct_order(@display_results)
     else 
-      @results = []
+      @display_results = []
     end
   end
 
