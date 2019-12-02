@@ -21,6 +21,38 @@ class ReviewsController < ApplicationController
         @results = yelp_help(@find, @near)["businesses"]
         #To see typing of @results, see https://www.yelp.com/developers/documentation/v3/business_search
       end
+
+      # dealing with student order
+      @stu_reviewed = []
+      @left_over = []
+      querey = Review.distinct.select("business_id")
+      puts(querey)
+      @results.each do |result|        
+        querey.where(business_id: result["id"]).each do |review|
+          if review["business_id"] == result["id"]
+            @stu_reviewed << result
+          end
+        end
+      end
+      
+      
+      @results.each do |result|
+        found = false
+        @stu_reviewed.each do |stu|
+          if result["id"] == stu["id"]
+            found = true
+          end
+        end
+        if found == false
+          @left_over << result
+        end
+      end
+
+      @results = @stu_reviewed
+      @results += @left_over
+      # students are displayed first
+      
+
     else 
       @results = []
     end
