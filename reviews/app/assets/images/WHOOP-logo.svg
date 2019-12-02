@@ -11,7 +11,7 @@
       <path id="Path_8" data-name="Path 8" d="M140.77,169.318a2.907,2.907,0,1,1,2.907,2.9A2.9,2.9,0,0,1,140.77,169.318Zm5.109,0a2.2,2.2,0,1,0-2.2,2.335,2.232,2.232,0,0,0,2.2-2.335Zm-3.32-1.672h1.224c.788,0,1.213.279,1.213.964a.82.82,0,0,1-.855.919l.889,1.438H144.4l-.861-1.438h-.369v1.415h-.6Zm.615,1.4h.559c.363,0,.676-.045.676-.485s-.352-.451-.665-.451h-.559Z" transform="translate(-75.552 -95.475)" fill="#fff"/>
     </g>
     <line id="Line_1" data-name="Line 1" y2="76" transform="translate(114.5 0.5)" fill="none" stroke="#fff" stroke-width="2"/>
-    <text id="Texas_A_M_University_WHOOP" data-name="Texas A&amp;M University
-WHOOP" transform="translate(135 26)" fill="#fff" font-size="18" font-family="OpenSans-Semibold, Open Sans" font-weight="600"><tspan x="0" y="0">TEXAS A&amp;M UNIVERSITY</tspan><tspan font-size="30" font-family="OpenSans, Open Sans" font-weight="400"><tspan x="0" y="37">WHOOP</tspan></tspan></text>
+    <path id="Texas_A_M_University_WHOOP" data-name="Texas A&amp;M University
+WHOOP" transform="translate(135 26)" fill="#fff" font-size="18" font-family="OpenSans-Semibold, Open Sans" font-weight="600"><tspan x="0" y="0">TEXAS A&amp;M UNIVERSITY</tspan><tspan font-size="30" font-family="OpenSans, Open Sans" font-weight="400"><tspan x="0" y="37">WHOOP</tspan></tspan></path>
   </g>
 </svg>

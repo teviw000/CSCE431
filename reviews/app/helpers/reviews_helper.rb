@@ -192,4 +192,16 @@ module ReviewsHelper
         end
         return tags
     end
+
+    def get_correct_order(old_results)
+        new_results = []
+        old_results.each_with_index do |result, index|
+            if (result["rating"] != -1)
+                # If this review has student reviews, put it at the beginning of the new array
+                new_results.push(old_results.delete_at(index))
+            end 
+        end
+        new_results += old_results
+        return new_results
+    end
 end

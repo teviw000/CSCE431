@@ -20,6 +20,7 @@ class ReviewsController < ApplicationController
         #To see typing of @results, see https://www.yelp.com/developers/documentation/v3/business_search
       end
       @display_results = get_display_results(@results)
+      @display_results = get_correct_order(@display_results)
     else 
       @display_results = []
     end
