@@ -56,7 +56,6 @@ module ReviewsHelper
             location: location,
         }
         response = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
-        # puts(response)
         response.parse
     end
 

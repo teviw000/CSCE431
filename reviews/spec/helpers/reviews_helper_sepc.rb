@@ -15,30 +15,34 @@ RSpec.describe ReviewsHelper, type: :helper do
 
   #need to determine why its not getting businesses from the query
 
-  describe "#search", type: :request do
-    it "response to a search location" do
-      response = helper.search("&find=food","?near=colleg station")
-      puts(response)
-      expect(response[:length].to_i).to be > 0
+  describe "#search" do
+    it "Checks that a search has a response with businesses" do
+      response = helper.search("food","colleg station")
+      expect(response["total"].to_i).to be > 0
     end    
   end
 
-  describe "#search_location", type: :request do
-    it "response to searching current locatoin" do
+  describe "#search_location" do
+    it "Checks that searching current location has a response with businesses" do
       # uses the lat and long of college station
-      response = helper.search_location("&find=food",30.613971800352598,-96.32022857666016)
-      expect(response[:length].to_i>0).to be > 0
+      response = helper.search_location("food",30.613971800352598,-96.32022857666016)
+      expect(response["total"].to_i).to be > 0
     end
   end
 
-  describe "#business", type: :request do
-    it "looking up a specific business" do
+  describe "#business" do
+    it "Checks if looking up a business is successful" do
       id = "_CgYVNP8zavac_XKLpKwoQ"
       name = "Howdy's Texas Grill'd Pizza"
       resposne = helper.business(id)
-      puts(response)
-      expect(response[:namne]).to eq(name)
+      expect(response.status).to eq 200
     end
   end
+
+  describe "#get_display_results" do  
+    
+  end
+
+
 end
 
