@@ -145,4 +145,126 @@ img{
     padding-right: 1em !important; 
 }
 
+$gutter: 20px;
+
+.show-card {
+	background-color: grey;
+    	width: 30%;
+    	height: 50%;
+}
+.container,
+.element {
+    padding: $gutter / 2;
+}
+
+.flex {
+	display: flex;
+	box-sizing: border-box;
+}
+
+.row {
+    flex-flow: row wrap;
+}
+
+.col {
+    flex-flow: column wrap;
+}
+
+.element {
+	min-width: 100px;
+}
+
+.content {
+	flex: 1 100%;
+}
+
+.structure {
+	min-height: 120px;
+}
+
+.break {
+ 	flex-basis: 100%;
+  	height: 0;
+}
+
+.structure-1 {
+        flex: 1 percentage(1/2);
+}
+
+.show-image {
+        flex: 1 percentage(1/6);
+}
+
+.structure-split {
+	flex: 1 percentage(5/6);
+}
+.show-title {
+	flex: 1 percentage(4/6);
+}
+
+.structure-1-2-1 {
+	flex: 1 percentage(1/6);
+}
+
+.show-review,
+.show-btn {
+	flex: 1 percentage(1/2);
+}
+
+.structure-2 {
+	flex: 1 percentage(1);
+}
+
+.show-hours {
+	flex: 1 percentage(2/6);
+}
+
+
+.show-contact {
+	flex: 1 percentage(1/6);
+}
+
+.show-about {
+	flex: 1 percentage(2/6);
+}
+
+.structure-3 {
+	flex: 1 percentage(1);
+}
+
+.show-review-service {
+	flex: 1 percentage(1/5);
+}
+
+.show-review-safety {
+	flex: 1 percentage(1/5);
+}
+
+.structure-4{
+	flex: percentage(1);
+}
+
+.show-comments {
+	flex: 1 percentage(1);
+}
+
+.structure {
+	flex: 1 percentage(1);
+}
+
+.show-item{
+	flex: 1 percentage(1/6);
+}
+
+@media (max-width: 768px) {
+	.structure-1,
+	.structure-2,
+	.f,
+	.structure-2-2{
+		flex: 1 100%;
+		min-height: 480px;
+	}
+}
+
+
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
