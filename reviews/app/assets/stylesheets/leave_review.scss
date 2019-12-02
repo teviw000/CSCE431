@@ -1,0 +1,88 @@
+// Place all the styles related to the leave_review controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.review_header {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 60px !important;
+    color: black !important;
+    text-align: left; 
+}
+
+.rating_header {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px !important;
+    color: black !important;
+    text-align: left; 
+}
+
+
+.review_ratings{
+    display: flex;
+    width: 600px;
+    justify-content: space-between;
+}
+
+.price_style{
+    display: flex;
+    width: 500px;
+}
+
+.textbox_style{
+    display: flex;
+    width: 500px;
+}
+
+.tags_label{
+    display: flex;
+    width: 500px;
+}
+.tags{
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.review_buttons{
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+
+// Button Styles 
+.btn-primary-review { 
+    background-color: #500000 !important;
+    border-color: #500000 !important;
+    color: white !important;
+    //color: #500000 !important;
+    background: transparent;
+    border: none;
+    padding: 0;
+    //width: 25px;
+    //height: 25px;
+}
+
+/*.glyphicon-thumbs-up {
+    color: #500000
+}*/
+
+.hidden{
+    display: none;
+}
+
+.btn-primary-review:hover { 
+    background-color: #6b0000 !important;
+    border-color: #6b0000 !important;
+}
+
+.btn-primary-review:not(:disabled):not(.disabled).active, .btn-primary-review:not(:disabled):not(.disabled):active {
+    background-color: #240101 !important;
+    //background-color: #500000 !important;
+}
+
+
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
