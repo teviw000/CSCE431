@@ -56,6 +56,7 @@ module ReviewsHelper
             location: location,
         }
         response = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
+        # puts(response)
         response.parse
     end
 
@@ -66,8 +67,8 @@ module ReviewsHelper
             latitude: latitude,
             longitude: longitude,
         }
-        reponse = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
-        reponse.parse
+        response = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
+        response.parse
     end
 
 
@@ -89,7 +90,8 @@ module ReviewsHelper
     def business(business_id)
         url = "#{API_HOST}#{BUSINESS_PATH}#{business_id}"
         response = HTTP.auth("Bearer #{API_KEY}").get(url)
-        response.parse
+        # puts(response)
+        return response.parse
     end
 
     def get_display_results(yelp_result)
