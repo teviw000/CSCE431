@@ -34,7 +34,15 @@ $(document).on("turbolinks:load", function() {
     // If there are cards, scroll to them
     if ($("#cards").length === 1) {
         $([document.documentElement, document.body]).animate({
-            scrollTop: $("#cards").offset().top 
+            scrollTop: $("#cards").offset().top - 50 
         }, 1000);
     }
+
+    $(".our-card").mouseenter(function() {
+        $(this).css("box-shadow", "5px 5px 20px #888888");
+    });
+
+    $(".our-card").mouseleave(function() {
+        $(this).css("box-shadow", "5px 5px 10px #888888");
+    });
 });
