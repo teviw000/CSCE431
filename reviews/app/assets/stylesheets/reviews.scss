@@ -33,7 +33,10 @@ img{
     font-family: 'Open Sans', sans-serif;
     font-size: 20px; 
     color: white !important; 
-    margin-bottom: 0.8em !important; 
+    margin-bottom: 0.8em !important;
+    text-align: center !important;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #center { // Center anything with a flexbox 
@@ -64,12 +67,17 @@ img{
     height: 75px;
 }
 .logo {
-    height: 100%;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 4em !important;
+    color: white !important; 
+//    line-height: 1 !important; 
+    margin-bottom: 0 !important; 
+    margin-left: 15px; 
 }
 
 .nav { 
-    background-color: #500000 !important; 
-    align-items: center;
+    background-color: #500000 !important;
+    justify-content: space-between !important; 
 }
 
 .name_tag {
@@ -184,13 +192,32 @@ img{
 }
 
 .container { 
-    display: none; 
+    display: none !important; 
 }
 
 .menu-button { 
        display: none; 
     }
 
+.nav-actions { 
+    display: flex !important; 
+    align-items: center !important;
+    justify-content: space-between;
+    margin-right: 15px !important; 
+}
+
+.nav-links { 
+    font-size: 1.8em !important;
+}
+
+.nav-links:hover { 
+    text-decoration: underline !important;
+    color: white !important; 
+}
+
+.search-nav-icon { 
+    height: 1.2em !important; 
+}
 /*****  Mobile CSS  *****/
 @media (max-width: 750px) {
     .h1 {
@@ -201,14 +228,16 @@ img{
     .menu { // Top Nav Bar
         display: flex; 
         justify-content: space-between;
-//    align-items: center;
     }
     
     .logo { // Sizes logo for mobile
         height: 60px !important; 
     }
     .nav-links { // Hides links
-        display: none;
+        display: none !important;
+    }
+    .nav-actions { 
+        display: none !important; 
     }
     
     .input-group { // Holds Search Bars and Search Button 
@@ -287,6 +316,7 @@ img{
     .nav { 
         flex-direction: row !important;
         justify-content: space-between;
+        align-content: center !important; 
     }
     
     .b { 
@@ -317,6 +347,10 @@ img{
     .container { 
         padding: 0 !important;  
         display: flex; 
+    }
+    
+    .index-subheading { 
+        margin-bottom: 0em !important;
     }
 
 }
