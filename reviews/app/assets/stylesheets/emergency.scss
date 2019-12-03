@@ -18,62 +18,54 @@ html,body{
 }
 
 .flex-container {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 15px;
-  color: white !important;
-
   display: flex;
+  justify-content: center;
+  Justify-content: space-evenly;
   flex-direction: row;
-  display: inline-flex;
-
-  flex-grow: auto;
-  flex-basis: auto;
-  flex-shrink: auto;
-
-  height: auto;
+  padding: 35px;
+  
   align-items: center;
  -webkit-flex-flow: row wrap;
   flex-start: center;
 
-  padding:50px;
-  width: 500px;
- //margin-top: 30px;
-  //margin-left: 77px;
-  word-break:break;
-  margin: 4.5%;
-
-  justify-content: center;
-  justify-content: space-around;
-  box-shadow: 10px 5px 18px grey;
 }
 
-.column{
-  //display: flex;
+.column{s
   background: white;
-  padding: 5px;
-  width: auto;
-  height: auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  color: white !important;
+
+  padding: 25px;
+  width: 450px;
+  height: 350px;
   margin-top: 5px;
   
   justify-content: center;
   font-size: 20px;
   align-items: center;
   
-  //flex-basis: auto;
   color:#500000;
   font-weight: bold;
 
   text-align: center;
-  line-height: 19px;
+  line-height: 20px;
+
+  box-shadow: 10px 5px 18px grey;
 
 }
 
+
 .intl_column{
-  //display: flex;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  color: white !important;
+
+
   background: white;
-  padding: 5px;
-  width: auto;
-  height: auto;
+  padding: 25px;
+  width: 450px;
+  height: 350px;
   margin-top: 5px;
   
 
@@ -85,7 +77,9 @@ html,body{
   
   justify-content: center;
   text-align: left;
-  line-height: 20px;
+  line-height: 19px;
+
+  box-shadow: 10px 5px 18px grey;
 
 }
 
@@ -162,6 +156,10 @@ a:active {
   //align-text: left;
 }
 
-
+.text_title{
+  font-size: 20px;
+  color: #500000 !important;
+  text-align: center;
+}
 
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
