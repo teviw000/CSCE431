@@ -151,6 +151,10 @@ $gutter: 20px;
 	background-color: grey;
     	width: 30%;
     	height: 50%;
+	display: flex;
+	flex-direction: row;
+	margin-top: 30px;
+    	margin-bottom: 30px;
 }
 .container,
 .element {
@@ -181,79 +185,59 @@ $gutter: 20px;
 .structure {
 	min-height: 120px;
 }
-
-.break {
- 	flex-basis: 100%;
-  	height: 0;
-}
-
 .structure-1 {
         flex: 1 percentage(1/2);
 }
 
 .show-image {
+	border: 1px solid red;
         flex: 1 percentage(1/6);
 }
 
 .structure-split {
 	flex: 1 percentage(5/6);
-}
-.show-title {
-	flex: 1 percentage(4/6);
+	border: 1px solid purple;
 }
 
-.structure-1-2-1 {
+.structure-split-1{
+	flex: 1 percentage(1);
+	border: 1px solid cyan; 
+}
+
+.show-title {
+	border: 3px solid red;
+	flex: 1 percentage(5/6);
+}
+
+.show-review-box {
 	flex: 1 percentage(1/6);
 }
-
-.show-review,
-.show-btn {
-	flex: 1 percentage(1/2);
+.structure1-2-1 {
+	flex: 1 percentage(1/6);
+	
 }
 
-.structure-2 {
+.show-btn, .show-review {
+	border: 3px solid green;
+	flex: 1 percentage(1/2);
+	width: 500px;
+}
+
+.structure-split-2 {
+	border: 1px solid black;
 	flex: 1 percentage(1);
 }
 
 .show-hours {
-	flex: 1 percentage(2/6);
+	flex: 1 percentage(2/5);
 }
 
-
 .show-contact {
-	flex: 1 percentage(1/6);
+	flex: 1 percentage(1/5);
 }
 
 .show-about {
-	flex: 1 percentage(2/6);
-}
-
-.structure-3 {
-	flex: 1 percentage(1);
-}
-
-.show-review-service {
-	flex: 1 percentage(1/5);
-}
-
-.show-review-safety {
-	flex: 1 percentage(1/5);
-}
-
-.structure-4{
-	flex: percentage(1);
-}
-
-.show-comments {
-	flex: 1 percentage(1);
-}
-
-.structure {
-	flex: 1 percentage(1);
-}
-
-.show-item{
-	flex: 1 percentage(1/6);
+	flex: 1 percentage(2/5);
 }
 
 @media (max-width: 768px) {

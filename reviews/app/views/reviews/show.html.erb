@@ -1,35 +1,64 @@
 <div class="show page">
     <h1>See Reviews Here</h1>
     <% if !@yelp_review_info.empty? %>
-	<div class="container show-card" %>
+	<div class="flex container show-card" %>
 		<div class="flex row structure" %>
-			<div class="flex row structure-1" %>
+			<div class="flex col structure-1" %>
 				<div class="flex element show-image" %>
 					<div class="content" %>
-						<%= image_tag @yelp_review_info["image_url"], size: "150" %>
+						<%= image_tag @yelp_review_info["image_url"], size: "200" %>
 					</div>
 				</div>
-				<div class="flex element show-title" %>
-					<div class="content">
-						<%= content_tag :h2, @yelp_review_info["name"] %>
-						<%= content_tag :h3, @yelp_review_info["is_closed"] ? "Currently Closed" : "Currently Open" %>
+				<div class="flex row structure-split" %>
+					<div class="flex col structure-split-1" %>
+						<div class="flex element show-title" %>
+							<div class="content">
+								<%= content_tag :h2, @yelp_review_info["name"] %>
+								<%= content_tag :h3, @yelp_review_info["is_closed"] ? "Currently Closed" : "Currently Open" %>
+							</div>
+						</div>
+						<div class="flex row show-review-box" %>
+							<div class="flex col structure1-2-1" %>
+                                                        	<div class="flex element show-review" %>
+									<div class="content" %>
+										Reviews
+									</div>
+								</div>
+								<div class="flex element show-review" %>
+									<div class="content" %>
+										<div id="leave_review">
+               										 <button type="button" class="btn btn-default btn-lg">
+               										 <%= link_to 'Leave A Review', controller: "reviews", action: "leave_review", id: params[:id] %>
+        									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="flex row structure-split-2" %>
+						<div class="flex element show-hours" %>	
+							<div class="content" %>
+								Content
+							</div>
+						</div>
+						<div class="flex element show-contact" %>
+							<div class="content" %>
+								Do this
+							</div>
+						</div>
+						<div class="flex element show-about" %>
+							<div class="content" %>
+								Do this
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="flex col structure1-2-1" %>
-					<div class="show-review" %>
-						Aggie quick review look
-					</div>
-					<div class="show-btn" %>
-						<div id="leave_review">
-               						<button type="button" class="btn btn-default btn-lg">
-               						<%= link_to 'Leave A Review', controller: "reviews", action: "leave_review", id: params[:id] %>
-        					</div>
-					</div>
-				</div> 
 			</div>
 		</div>
 	</div>
 
+
+<!--
 	<h4>Rating:
                 <%=  @yelp_review_info["rating"] %>
         </h4>
@@ -57,6 +86,7 @@
 	<div id="leave_review">
 		<button type="button" class="btn btn-default btn-lg">
     		<%= link_to 'Leave A Review', controller: "reviews", action: "leave_review", id: params[:id] %>
-	</div>    
+	</div>
+-->    
     <% end %>
 </div>
