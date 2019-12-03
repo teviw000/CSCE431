@@ -148,7 +148,10 @@ module ReviewsHelper
                 count = count + 1
             end
         end
-        return (total / count)
+        if (count == 0)
+            return 0
+        end
+        return (total.to_f / count.to_f)
     end
 
     def get_tags(reviews)
@@ -195,14 +198,8 @@ module ReviewsHelper
     end
 
     def get_correct_order(old_results)
-        new_results = []
-        old_results.each_with_index do |result, index|
-            if (result["rating"] != -1)
-                # If this review has student reviews, put it at the beginning of the new array
-                new_results.push(old_results.delete_at(index))
-            end 
-        end
-        new_results += old_results
-        return new_results
+        new_results = old_results.select {|result| result["rating"] != -1}
+        other_results = old_results.select {|result| result["rating"] == -1}
+        return new_results + other_results
     end
 end

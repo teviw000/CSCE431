@@ -36,7 +36,7 @@ RSpec.describe ReviewsHelper, type: :helper do
       id = "_CgYVNP8zavac_XKLpKwoQ"
       name = "Howdy's Texas Grill'd Pizza"
       resposne = helper.business(id)
-      # puts(response)
+      puts(response["name"])
       expect(response.status).to eq 200
     end
   end
@@ -67,19 +67,51 @@ RSpec.describe ReviewsHelper, type: :helper do
 
   describe "#get_average" do
     it "Checks that the average was calculated correctly" do
+      reviews = [{"rating" => 5}, {"rating" => nil}, {"rating" => 3}, {"rating" => 4}, {"rating" => nil}, {"rating" => 1}, {"rating" => 5}, {"rating" => 3}]
+      result = helper.get_average(reviews, "rating")
+      result_2 = helper.get_average([], "rating")
+      result_3 = helper.get_average(reviews, "price")
+      expect(result).to eq 3.5
+      expect(result_2).to eq 0
+      expect(result_3).to eq 0
       # TODO
     end
   end
 
   describe "#get_tags" do
     it "Returns a list of the valid tags" do
+      reviews = [
+        {"cash_only" => true, "english" => true, "tips" => false, "wifi" => true, "wheelchair" => false},
+        {"cash_only" => false, "english" => true, "tips" => false, "wifi" => true, "wheelchair" => false},
+        {"cash_only" => false, "english" => true, "tips" => false, "wifi" => true, "wheelchair" => false},
+        {"cash_only" => false, "english" => true, "tips" => true, "wifi" => true, "wheelchair" => false},
+        {"cash_only" => false, "english" => false, "tips" => true, "wifi" => true, "wheelchair" => false},
+        {"cash_only" => false, "english" => true, "tips" => false, "wifi" => true, "wheelchair" => false},
+        {"cash_only" => false, "english" => true, "tips" => true, "wifi" => true, "wheelchair" => false}        
+      ]
+      result = helper.get_tags(reviews)
+      result_2 = helper.get_tags([])
+      expect(result).to eq ["english", "wifi"]
+      expect(result_2).to eq []
       # TODO
     end
   end
 
   describe "#get_correct_order" do
     it "Orders the reviews to put student reviews first" do
-      # TODO
+      reviews = [
+        {"rating" => 4.3},
+        {"rating" => -1},
+        {"rating" => 2.7},
+        {"rating" => 3.5},
+        {"rating" => -1},
+        {"rating" => -1},
+        {"rating" => 4.5},
+      ]
+      result = helper.get_correct_order(reviews)
+      result_2 = helper.get_correct_order([])
+      expect(result).to eq [{"rating" => 4.3}, {"rating" => 2.7}, {"rating" => 3.5}, {"rating" => 4.5}, {"rating" => -1}, {"rating" => -1}, {"rating" => -1}]
+      expect(result_2).to eq []
     end
   end
 
