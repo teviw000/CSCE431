@@ -258,8 +258,38 @@ $gutter: 20px;
 	flex: auto;
 }
 
+.show-language {
+	border: 4px solid blue;
+        flex: 1 auto;
+}
 
-@media (max-width: 768px) {
+.show-wifi {
+	border: 4px solid blue;
+        flex: 1 auto;
+}
+
+.show-cash {
+	border: 4px solid blue;
+        flex: 1 auto;
+}
+
+.show-wheelchair-accessible {
+	border: 4px solid blue;
+        flex: 1 auto;
+}
+
+.show-reservations {
+	border: 4px solid blue;
+        flex: 1 auto;
+}
+
+.show-tips {
+	border: 4px solid blue;
+        flex: 1 auto;
+}
+
+
+@media (max-width: 1000px) {
 	.structure-1,
 	.structure-2,
 	.f,
