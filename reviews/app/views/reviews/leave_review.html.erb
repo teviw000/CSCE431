@@ -61,39 +61,59 @@
         </div>
     
         <div id="review_cash_only_block" class="row">
-            <%= f.label :cash_only, "Do they accept Cash?", value: true %><br />
-            <span>No</span>
-            <%= f.radio_button :cash_only, false, :checked => false, :value => false %>
-            <span>Yes</span>
-            <%= f.radio_button :cash_only, true, :checked => false, :value => true %>
+            <div class=column1>
+                <%= f.label :cash_only, "Do they accept Cash?", value: true %><br />
+            </div>
+            <div class=column2>
+                <span>No</span>
+                <%= f.radio_button :cash_only, false, :checked => false, :value => false %>
+                <span>Yes</span>
+                <%= f.radio_button :cash_only, true, :checked => false, :value => true %>
+            </div>
         </div>
         <div id="review_english_block" class="row">
-            <%= f.label :english, "Do they speak English?", value: true %><br />
-            <span>No</span>
-            <%= f.radio_button :english, false, :checked => false, :value => false %>
-            <span>Yes</span>
-            <%= f.radio_button :english, true, :checked => false, :value => true %>
+            <div class=column1>
+                <%= f.label :english, "Do they speak English?", value: true %><br />
+            </div>
+            <div class=column2>
+                <span>No</span>
+                <%= f.radio_button :english, false, :checked => false, :value => false %>
+                <span>Yes</span>
+                <%= f.radio_button :english, true, :checked => false, :value => true %>
+            </div>
         </div>
         <div id="review_tips_block" class="row">
-            <%= f.label :tips, "Are you expected to tip?", value: true %><br />
-            <span>No</span>
-            <%= f.radio_button :tips, false, :checked => false, :value => false %>
-            <span>Yes</span>
-            <%= f.radio_button :tips, true, :checked => false, :value => true %>
+            <div class=column1>
+                <%= f.label :tips, "Are you expected to tip?", value: true %><br />
+            </div>
+            <div class=column2>
+                <span>No</span>
+                <%= f.radio_button :tips, false, :checked => false, :value => false %>
+                <span>Yes</span>
+                <%= f.radio_button :tips, true, :checked => false, :value => true %>
+            </div>
         </div>
         <div id="review_wifi_block" class="row">
-            <%= f.label :wifi, "Do they have WiFi?", value: true %><br />
-            <span>No</span>
-            <%= f.radio_button :wifi, false, :checked => false, :value => false %>
-            <span>Yes</span>
-            <%= f.radio_button :wifi, true, :checked => false, :value => true %>
+            <div class=column1>
+                <%= f.label :wifi, "Do they have WiFi?", value: true %><br />
+            </div>
+            <div class=column2>
+                <span>No</span>
+                <%= f.radio_button :wifi, false, :checked => false, :value => false %>
+                <span>Yes</span>
+                <%= f.radio_button :wifi, true, :checked => false, :value => true %>
+            </div>
         </div>
         <div id="review_wheelchair_block" class="row">
-            <%= f.label :wheelchair, "Is it wheelchair accessible?", value: true %><br />
-            <span>No</span>
-            <%= f.radio_button :wheelchair, false, :checked => false, :value => false %>
-            <span>Yes</span>
-            <%= f.radio_button :wheelchair, true, :checked => false, :value => true %>
+            <div class=column1>
+                <%= f.label :wheelchair, "Is it wheelchair accessible?", value: true %><br />
+            </div>
+            <div class=column2>
+                <span>No</span>
+                <%= f.radio_button :wheelchair, false, :checked => false, :value => false %>
+                <span>Yes</span>
+                <%= f.radio_button :wheelchair, true, :checked => false, :value => true %>
+            </div>
         </div>
     
         <div id="review_comment_block" class="row">

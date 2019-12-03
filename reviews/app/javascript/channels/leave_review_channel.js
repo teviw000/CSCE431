@@ -10,7 +10,7 @@ $(document).on("turbolinks:load", function() {
             alert("Please log in before leaving a review")
             return false;
         }
-
+        /*
         // If comment section is empty
         if ($("#review_comment").val() === "") {
             alert("Please leave a comment");
@@ -61,6 +61,7 @@ $(document).on("turbolinks:load", function() {
             alert("Please specify whether this place is wheelchair accessible");
             return false;
         }
+        */
         return true
     });
 });

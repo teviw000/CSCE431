@@ -333,9 +333,26 @@ img{
     justify-content: center; 
 }
 
-.row { 
-    width: 100%; 
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.column1 { 
+    width: 25%; 
     display: flex !important; 
+    //flex-direction: column;
+    //justify-content: space-between !important;
+    font-size: 1.5em; 
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.column2 {
+    width: 50%; 
+    display: flex !important; 
+    //flex-direction: column;
     justify-content: space-between !important;
     font-size: 1.5em; 
     margin-right: 0 !important;
