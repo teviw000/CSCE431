@@ -321,44 +321,6 @@ img{
     height: 1.2em !important; 
 }
 
-.reviews-card { 
-    width: 85%; 
-    background-color: white; 
-    box-shadow: 5px 5px 20px #9e9e9e;
-    padding: 30px; 
-}
-
-.page-body { 
-    display: flex; 
-    justify-content: center; 
-}
-
-.row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.column1 { 
-    width: 25%; 
-    display: flex !important; 
-    //flex-direction: column;
-    //justify-content: space-between !important;
-    font-size: 1.5em; 
-    margin-right: 0px !important;
-    margin-left: 0px !important;
-}
-
-.column2 {
-    width: 50%; 
-    display: flex !important; 
-    //flex-direction: column;
-    justify-content: space-between !important;
-    font-size: 1.5em; 
-    margin-right: 0 !important;
-    margin-left: 0 !important;
-}
-
 /*****  Mobile CSS  *****/
 @media (max-width: 750px) {
     .h1 {
