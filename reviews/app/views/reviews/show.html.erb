@@ -38,17 +38,21 @@
 					<div class="flex row structure-split-2" %>
 						<div class="flex element show-hours" %>	
 							<div class="content" %>
-								Content
+								<h4> Hours </h4>
+								<%=@yelp_review_info["hours"][0]["open"][0]["start"] %>
+               							<%= " - " %>
+								<%= @yelp_review_info["hours"][0]["open"][0]["end"] %>
 							</div>
 						</div>
 						<div class="flex element show-contact" %>
 							<div class="content" %>
-								Do this
+								<h4>Contact</h4>
+								<%= @yelp_review_info["display_phone"] %>
 							</div>
 						</div>
 						<div class="flex element show-about" %>
 							<div class="content" %>
-								Do this
+								Some review that will be placed here later, pulled from database
 							</div>
 						</div>
 					</div>
