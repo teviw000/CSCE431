@@ -25,6 +25,9 @@ ActiveRecord::Schema.define(version: 2019_11_21_233128) do
     t.boolean "tips"
     t.boolean "wifi"
     t.boolean "wheelchair"
+    t.string "uid"
+    t.string "name"
+    t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
