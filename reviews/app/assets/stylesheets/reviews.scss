@@ -457,4 +457,150 @@ img{
 
 }
 
+.show-card {
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+	height: 350px;
+	margin: auto;
+	margin-top: 30px;
+  	margin-bottom: 30px;
+   	box-shadow: 5px 5px 10px #888888;
+}
+
+.structure-1 {
+	display: flex;
+	flex-flow: column wrap;
+	width: 100%;
+	height: 100%;
+	flex: 1 percentage(4/7);
+}
+.structure-2 {
+        display: flex;
+        flex-flow: column wrap;
+        width: 100%;
+        height: 100%;
+        flex: 1 percentage(2/7);
+}
+
+.structure-3 {
+        display: flex;
+        flex-flow: column wrap;
+        width: 100%;
+        height: 100%;
+        flex: 1 percentage(1/7);
+}
+
+.show-image {
+	display: flex;
+ 	width: 15%;
+	img {
+		padding: 20px;
+	}
+}
+
+.show-text-box {
+	display: flex;
+	flex-wrap: wrap;
+	width: 85%;
+	height: 100%;
+	.sub-text-box-1 {
+		height: 33%;
+		.show-title-box {
+			width: 50%;
+			display: flex;
+        		flex-wrap: wrap;
+         		&.right {
+               			text-align: right;
+               			width: 25%;
+            			}
+            		&.left {
+                		text-align: left;
+                		width: 75%;
+            		}
+			.show-sub-item {
+                		width: auto;
+                		max-width: fit-content;
+                		padding: 5px 20px 5px 0px;
+                		font-size: 20px;
+                		color: #888888;
+                		img {
+                    			height: auto;
+                    			padding-top: 7px;
+                		}
+                		&.title {
+                    			width: auto;
+                    			font-weight: bold;
+                    			text-transform: uppercase;
+                    			color: black;
+                   			&:hover {
+                        			color: #500000;
+                        			text-decoration: none;
+                    			}
+                		}
+                		&.address {
+                    			width: auto;
+                		}
+			}
+		}
+	}
+	.show-business-info {
+        	display: flex;
+        	justify-content: space-around;
+        	min-height: 50%;
+       		height: 50%;
+        	width: 100%;
+        	.sub-item {
+        		flex-grow: 1;
+        	}
+    	}
+    	.show-aggie-reviews {
+        	display: flex;
+        	min-height: 25%;
+       		height: auto;
+        	width: 100%;
+        	.show-sub-item {
+            		width: auto;
+            		padding: 5px 15px 5px 0px;
+            		font-size: 20px;
+            		color: black;
+            		img {
+                		height: auto;
+                		padding-top: 7px;
+            		}
+        	}
+    	}
+    	.show-tag-info {
+        	display: flex;
+        	flex-wrap: wrap;
+        	height: auto;
+        	min-height: 25%;
+        	width: 100%;
+        	.show-sub-item {
+            		width: auto;
+            		//padding: 5px 30px 5px 0px;
+            		font-size: 18px;
+            		color: #500000;
+            		text-transform: uppercase;
+            		font-weight: bold;
+            		height: auto;
+            		img {
+                		display: inline-block;
+                		float: none;
+            		}
+            		p {
+                		display: inline-block;
+                		white-space: nowrap;
+                		margin-right: 15px;
+                		margin-bottom: 0px;
+            		}
+        	}
+    	}
+    	.break {
+        	flex-basis: 100%;
+       		height: 0px;
+   	 }
+}
+
+
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
