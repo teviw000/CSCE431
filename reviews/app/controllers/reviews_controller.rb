@@ -19,7 +19,16 @@ class ReviewsController < ApplicationController
         @results = yelp_help(@find, @near)
         #To see typing of @results, see https://www.yelp.com/developers/documentation/v3/business_search
       end
+      
+
       @display_results = get_display_results(@results)
+
+      if !params[:sort_by].blank?
+        if param[:sort_by] == 'highest rated first'
+          @display_results = get_high_rate_first(@display_results)
+        end
+      end
+
       @display_results = get_correct_order(@display_results)
     else 
       @display_results = []

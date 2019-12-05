@@ -202,4 +202,8 @@ module ReviewsHelper
         other_results = old_results.select {|result| result["rating"] == -1}
         return new_results + other_results
     end
+
+    def get_high_rate_first(old_results)
+        new_results = old_results.sort_by {|result| -result['rating']}
+    end
 end
