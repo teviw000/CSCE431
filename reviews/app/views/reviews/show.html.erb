@@ -1,5 +1,114 @@
 <div class="show page">
     <h1>See Reviews Here</h1>
+	<div class="show-card" >
+		<div class="structure-1" >
+			<div class="show-image" >
+				<%= image_tag @yelp_review_info["image_url"], size: "220" %>
+			</div>
+			<div class="show-text-box" >
+ 				<div class="show-sub-text-box show-business-info" >
+					<div class="show-title-box left" >
+						<div class="show-sub-item2" >
+							<%= content_tag :h1, @yelp_review_info["name"] %>
+						</div>
+						<div class="show-sub-item" >
+							<%= content_tag :p, @yelp_review_info["categories"][0]["alias"] %>
+						</div>
+						<div class="show-sub-item">	
+		        				<% if @avg_user_rating < 0.5%>
+                               	    				<%= content_tag :p, "No Price Information" %>
+                               				<% elsif @avg_user_rating < 1.5%>
+                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                               				<% elsif @avg_user_rating < 2.5%>
+                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                               				<% elsif @avg_user_rating < 3.5%>
+                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                               				<% elsif @avg_user_rating < 4.5%>
+                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                               	 			   	<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                               	 			   	<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                              				<% elsif @avg_user_rating > 4.5%>
+                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                               					<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                               				<% end %>
+						Dollar Rating     		 		
+						</div> 
+						<div class="break"></div>
+						<div class="sub-item address">
+                               				<%= content_tag :div, @yelp_review_info["location"]["display_address"] %>                           			</div>
+						</div>
+					<div class="show-title-box right" >
+						<div class="structure-split" >
+							<div class="show-rating" >
+								Aggie Review
+							</div>
+							<div class="show-button" >
+								<div id="leave_review">
+        							        <button type="button" class="btn btn-default btn-lg">
+        							        <%= link_to 'Leave A Review', controller: "reviews", action: "leave_review", id: params[:id] %>
+        							</div>
+							</div>
+						</div>
+					</div>
+					</div>
+				<div class="show-sub-text-box show-aggie-reviews" >
+					<div class="show-sub-item s1-left" >
+						<%= content_tag :h2, "Hours:" %>
+						<%= @yelp_review_info["hours"][0]["open"][0]["start"] %>
+                				<%= " - " %>
+                				<%= @yelp_review_info["hours"][0]["open"][0]["end"] %>
+					</div>
+					<div class="show-sub-item s1-center" >
+						<%= content_tag :h2, "Contact:" %>
+						<%= content_tag :h2, @yelp_review_info["display_phone"] %>
+					</div>
+					<div class="show-sub-item s1-right" >
+						About
+					</div>
+				</div>
+				</div>
+			</div>
+		<div class="structure-2" >
+			<h2>Aggie Reviews Portion</h2>
+		</div>
+                <div class="structure-3" >
+			
+                            <div class="sub-item">
+                                <%= image_tag("gigs_maroon.svg", size: "20") %>
+                                <%= content_tag :p, "Cash Only" %>
+                            </div>
+                        
+                        
+                            <div class="sub-item">
+                                <%= image_tag("circle-check_maroon.svg", size: "20") %>
+                                <%= content_tag :p, "Speaks English" %>
+                            </div>
+                       
+                            <div class="sub-item">
+                                <%= image_tag("dollar-sign_maroon.svg", size: "20") %>
+                                <%= content_tag :p, "Tips Encouraged" %>
+                            </div>
+                      
+                            <div class="sub-item">
+                                <%= image_tag("wifi_maroon.svg", size: "20") %>
+                                <%= content_tag :p, "WiFi" %>
+                            </div>
+
+                            <div class="sub-item">
+                                <%= image_tag("wheelchair_maroon.svg", size: "20") %>
+                                <%= content_tag :p, "Wheelchair Accessible" %>
+			    </div>
+                </div>   
+	</div>
+
+	<!--
     <% if !@yelp_review_info.empty? %>
         <%= content_tag :h2, @yelp_review_info["name"] %>
         <%= content_tag :h3, @yelp_review_info["is_closed"] ? "Currently Closed" : "Currently Open" %>
@@ -34,4 +143,5 @@
     		<%= link_to 'Leave A Review', controller: "reviews", action: "leave_review", id: params[:id] %>
 	</div>    
     <% end %>
+	-->
 </div>
