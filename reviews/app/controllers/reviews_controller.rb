@@ -38,7 +38,9 @@ class ReviewsController < ApplicationController
     @yelp_review_info = business(@yelp_review_id)
     #@user_reviews is an array of type Review. See the types in reviews/db/schema.rb 
     @user_reviews = Review.where(business_id: params[:id])
-    # FOR VIWAT <3: @avg_user_rating = @user_reviews.map{ |review| review["rating"]}.reduce(:+).to_f / @user_reviews.size
+    # FOR VIWAT
+   @avg_user_price = @user_reviews.map{ |review| review["price"]}.reduce(:+).to_f / @user_reviews.size 
+   @avg_user_rating = @user_reviews.map{ |review| review["rating"]}.reduce(:+).to_f / @user_reviews.size
   end
 
   def emergency

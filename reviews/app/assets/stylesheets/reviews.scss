@@ -461,7 +461,7 @@ img{
 	display: flex;
 	flex-direction: column;
 	width: 70%;
-	height: 350px;
+	height: 400px;
 	margin: auto;
 	margin-top: 30px;
   	margin-bottom: 30px;
@@ -470,7 +470,7 @@ img{
 
 .structure-1 {
 	display: flex;
-	flex-flow: column wrap;
+	flex-flow: row;
 	width: 100%;
 	height: 100%;
 	flex: 1 percentage(4/7);
@@ -480,7 +480,9 @@ img{
         flex-flow: column wrap;
         width: 100%;
         height: 100%;
+	justify-content: space-around;
         flex: 1 percentage(2/7);
+	padding: 20px;
 }
 
 .structure-3 {
@@ -489,6 +491,7 @@ img{
         width: 100%;
         height: 100%;
         flex: 1 percentage(1/7);
+	padding: 20px;
 }
 
 .show-image {
@@ -504,8 +507,8 @@ img{
 	flex-wrap: wrap;
 	width: 85%;
 	height: 100%;
-	.sub-text-box-1 {
-		height: 33%;
+	.show-sub-text-box {
+		height: 33.3%;
 		.show-title-box {
 			width: 50%;
 			display: flex;
@@ -519,8 +522,7 @@ img{
                 		width: 75%;
             		}
 			.show-sub-item {
-                		width: auto;
-                		max-width: fit-content;
+                		width: 200px;
                 		padding: 5px 20px 5px 0px;
                 		font-size: 20px;
                 		color: #888888;
