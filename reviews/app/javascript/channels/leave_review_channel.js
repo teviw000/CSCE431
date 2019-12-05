@@ -14,7 +14,7 @@ $(document).on("turbolinks:load", function() {
         // If comment section is empty
         if ($("#review_comment").val() === "") {
             alert("Please leave a comment");
-            return false;
+            return false; //test text
         }
         // If no button selected for rating
         if ($("#review_rating_block").children("input:checked").length === 0) {
