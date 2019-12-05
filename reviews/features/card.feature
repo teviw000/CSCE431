@@ -8,4 +8,4 @@ Scenario: Test for card presence
     When I fill in "near" with "College Station"
     When I fill in "find" with "Tacos"
     When I press "button"
-    Then I should see class "card"
+    Then I should see class "our-card"
