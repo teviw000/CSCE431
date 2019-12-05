@@ -487,25 +487,49 @@ img{
 
 .structure-3 {
         display: flex;
-        flex-flow: column wrap;
+        flex-flow: row wrap;
         width: 100%;
         height: 100%;
         flex: 1 percentage(1/7);
 	padding: 20px;
+	.sub-item {
+		display: flex;
+		flex: 1 percentage (1/5);
+		align-item: center;
+		min-width: 300px;
+	}
 }
 
 .show-image {
 	display: flex;
- 	width: 15%;
+ 	width: 13%;
 	img {
 		padding: 20px;
 	}
 }
 
+.structure-split {
+	display: flex;
+        flex-flow: column;
+	width: 100%;
+}
+
+.show-rating {
+	display: flex;
+	text-align: right;
+	width: 100%;
+}
+
+.show-button {
+	display: flex;
+	text-align: right;
+	width: 100%;
+}
+
 .show-text-box {
 	display: flex;
 	flex-wrap: wrap;
-	width: 85%;
+	width: 87%;
 	height: 100%;
 	.show-sub-text-box {
 		height: 33.3%;
@@ -516,11 +540,23 @@ img{
          		&.right {
                			text-align: right;
                			width: 25%;
-            			}
+            		}
             		&.left {
                 		text-align: left;
                 		width: 75%;
             		}
+			&.s1-left {
+				text-align: center;
+				width: 33.3%;
+			}
+			&.s1-center {
+                                text-align: center;
+                                width: 33.3%;
+                        }
+			&.s1-right {
+                                text-align: center;
+                                width: 33.3%;
+                        }
 			.show-sub-item {
                 		width: 200px;
                 		padding: 5px 20px 5px 0px;

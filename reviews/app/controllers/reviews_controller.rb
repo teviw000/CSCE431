@@ -45,6 +45,10 @@ class ReviewsController < ApplicationController
 
     # TODO search through categories.alias and delete underscore if they ahve them and capitalize letters
 
+    # Tags for show page (bottom)
+
+    # Find current day for hours
+    
   end
 
   def emergency
