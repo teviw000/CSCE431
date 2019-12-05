@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
         user_info = request.env["omniauth.auth"]
 
         if params[:hd] != 'tamu.edu'
-            redirect_to(root_path) and return
+            redirect_to root_path and return
         end
 
         user           = User.new
