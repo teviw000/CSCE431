@@ -59,13 +59,19 @@ class ReviewsController < ApplicationController
                    @yelp_review_info["hours"][0]["open"][5]["start"],
                    @yelp_review_info["hours"][0]["open"][6]["start"]
                   ]
-
+    
+    @hours_open.map{ |i|
+     if i == nil
+       i. 
+    }
+ 
     @hours_open.each { |x|
-    if 
+    if x.length == 4 
       x.insert(2,":")
       if x[2] == ":" && x[3] == ":"
         x.tap {|s| s.slice!(2) }
       end 
+    end
     }
     @hours_closed = [@yelp_review_info["hours"][0]["open"][0]["end"],
                    @yelp_review_info["hours"][0]["open"][1]["end"],

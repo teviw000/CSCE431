@@ -1,5 +1,5 @@
 <div class="show page">
-    <h1>See Reviews Here</h1>
+  <h1>See Reviews Here</h1>
 	<div class="show-card" >
 		<div class="structure-1" >
 			<div class="show-image" >
@@ -7,7 +7,7 @@
 			</div>
 			<div class="show-text-box" >
  				<div class="show-sub-text-box show-business-info" >
-					<div class="show-title-box left" >
+				  <div class="show-title-box left" >
 						<div class="show-sub-item2" >
 							<%= content_tag :h1, @yelp_review_info["name"] %>
 						</div>
@@ -17,88 +17,88 @@
 						<div class="show-sub-item" >
 							<%= content_tag :p, @show_alias %>
 						</div>
-						<div class="show-sub-item">	
-		        				<% if @avg_user_price < 0.5%>
-                               	    				<%= content_tag :p, "No Price Information" %>
-                               				<% elsif @avg_user_price < 1.5%>
-                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               				<% elsif @avg_user_price < 2.5%>
-                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               				<% elsif @avg_user_price < 3.5%>
-                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               				<% elsif @avg_user_price < 4.5%>
-                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               	 			   	<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               	 			   	<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                              				<% elsif @avg_user_price > 4.5%>
-                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               					<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               				<% end %>
-						Dollar Rating     		 		
-						</div> 
+						<div class="show-sub-item">
+		          <% if @avg_user_price < 0.5%>
+                <%= content_tag :p, "No Price Information" %>
+              <% elsif @avg_user_price < 1.5%>
+                <%= image_tag("dollar-sign_grey.svg", size: "20") %>
+              <% elsif @avg_user_price < 2.5%>
+                <%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                <%= image_tag("dollar-sign_grey.svg", size: "20") %>
+            	<% elsif @avg_user_price < 3.5%>
+                <%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                <%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                <%= image_tag("dollar-sign_grey.svg", size: "20") %>
+              <% elsif @avg_user_price < 4.5%>
+                <%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                <%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                <%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                <%= image_tag("dollar-sign_grey.svg", size: "20") %>
+              <% elsif @avg_user_price > 4.5%>
+                <%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                <%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                <%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                <%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                <%= image_tag("dollar-sign_grey.svg", size: "20") %>
+              <% end %>
+						Dollar Rating
+						</div>
 						<div class="break"></div>
-					</div>
-					<div class="show-title-box right" >
-						<div class="structure-split" >
-							<div class="show-rating" >
-								<% if @avg_user_rating < 0.5%>
-                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
-                                   					<%= image_tag("gigs_grey.svg", size: "20") %>
-                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
-                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
-                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
-                                				<% elsif @avg_user_rating < 1.5%>
-                              	      					<%= image_tag("gigs_maroon.svg", size: "20") %>
-                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
-                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
-                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
-                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
-                                				<% elsif @avg_user_rating < 2.5%>
-                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
-                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
-                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
-                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
-                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
-                                				<% elsif @avg_user_rating < 3.5%>
-                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
-                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
-                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
-                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
-                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
-                                				<% elsif @avg_user_rating < 4.5%>
-                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
-                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
-                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
-                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
-                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
-                                				<% elsif @avg_user_rating > 4.5%>
-                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
-                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
-                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
-                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
-                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
-                                				<% end %>
+					  </div>
+					  <div class="show-title-box right" >
+						  <div class="structure-split" >
+							  <div class="show-rating" >
+								  <% if @avg_user_rating < 0.5%>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                  <% elsif @avg_user_rating < 1.5%>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                  <% elsif @avg_user_rating < 2.5%>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                  <% elsif @avg_user_rating < 3.5%>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                <% elsif @avg_user_rating < 4.5%>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                <% elsif @avg_user_rating > 4.5%>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                <% end %>
 								Rating Here
 							</div>
 							<div class="show-button" >
 								<div id="leave_review">
-        							        <button type="button" class="btn btn-default btn-lg">
-        							        <%= link_to 'Leave A Review', controller: "reviews", action: "leave_review", id: params[:id] %>
-        							</div>
+        				  <button type="button" class="btn btn-default btn-lg">
+        				    <%= link_to 'Leave A Review', controller: "reviews", action: "leave_review", id: params[:id] %>
+        				</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="show-sub-text-box address" %>
 					<%= @yelp_review_info["location"]["display_address"] %>
-					
+
 				</div>
 				<div class="show-sub-text-box show-business-hours" >
 					<div class="show-sub-item s1-left" >
@@ -107,109 +107,102 @@
 							<%= "CLOSED" %>
 						<% else %>
 							<%= @hours_open[0] %>
-        	                                        <%= "-" %>
-                	                                <%= @hours_closed[0] %>
-						<% end %>	
+        	    <%= "-" %>
+              <%= @hours_closed[0] %>
+						<% end %>
 					</div>
 					<div class="show-sub-item s1-left" >
 						<%= content_tag :h2, "Tuesday" %>
-                                                <% if (@hours_open == NULL || @hours_closed == NULL) %>
+            <% if (@hours_open == NULL || @hours_closed == NULL) %>
 							<%= "CLOSED" %>
 						<% else %>
 							<%= @hours_open[1] %>
 							<%= "-" %>
-							<%= @hours_closed[1] %> 
-                                        	<% end %>
+							<%= @hours_closed[1] %>
+            <% end %>
 					</div>
 					<div class="show-sub-item s1-left" >
 						<%= content_tag :h2, "Wednesday" %>
-                                        	<% if (@hours_open == NULL || @hours_closed == NULL) %>
-                                                        <%= "CLOSED" %>
-                                                <% else %>
+            <% if (@hours_open == NULL || @hours_closed == NULL) %>
+              <%= "CLOSED" %>
+            <% else %>
 							<%= @hours_open[2] %>
-                                                	<%= "-" %>
-                                                	<%= @hours_closed[2] %>
-                                        	<% end %>
+              <%= "-" %>
+              <%= @hours_closed[2] %>
+            <% end %>
 					</div>
 					<div class="show-sub-item s1-left" >
 						<%= content_tag :h2, "Thursday" %>
-                                                <% if (@hours_open == NULL || @hours_closed == NULL) %>
-                                                        <%= "CLOSED" %>
-                                                <% else %>
+            <% if (@hours_open == NULL || @hours_closed == NULL) %>
+              <%= "CLOSED" %>
+            <% else %>
 							<%= @hours_open[3] %>
-                                                	<%= "-" %>
-                                                	<%= @hours_closed[3] %>
-                                        	<% end %>
+              <%= "-" %>
+              <%= @hours_closed[3] %>
+            <% end %>
 					</div>
 					<div class="show-sub-item s1-left" >
 						<%= content_tag :h2, "Friday" %>
-                                                <% if (@hours_open == NULL || @hours_closed == NULL) %>
-                                                        <%= "CLOSED" %>
-                                                <% else %>
+            <% if (@hours_open == NULL || @hours_closed == NULL) %>
+              <%= "CLOSED" %>
+            <% else %>
 							<%= @hours_open[4] %>
-                                                	<%= "-" %>
-                                                	<%= @hours_closed[4] %>
-                                        	<% end %>
+              <%= "-" %>
+              <%= @hours_closed[4] %>
+            <% end %>
 					</div>
 					<div class="show-sub-item s1-left" >
 						<%= content_tag :h2, "Saturday" %>
-                                                <% if (@hours_open == NULL || @hours_closed == NULL) %>
-                                                        <%= "CLOSED" %>
-                                                <% else %>
+            <% if (@hours_open == NULL || @hours_closed == NULL) %>
+              <%= "CLOSED" %>
+            <% else %>
 							<%= @hours_open[5] %>
-                                         	        <%= "-" %>
-                                                	<%= @hours_closed[5] %>
-						<% end %>                                        
+              <%= "-" %>
+              <%= @hours_closed[5] %>
+						<% end %>
 					</div>
 					<div class="show-sub-item s1-left" >
 						<%= content_tag :h2, "Sunday" %>
-                                                <% if (@hours_open == NULL || @hours_closed == NULL) %>
-                                                        <%= "CLOSED" %>
-                                                <% else %>
+            <% if (@hours_open == NULL || @hours_closed == NULL) %>
+              <%= "CLOSED" %>
+            <% else %>
 							<%= @hours_open[6] %>
-                                                	<%= "-" %>
-                                                	<%= @hours_closed[6] %>
-                                        	<% end %>	
+              <%= "-" %>
+              <%= @hours_closed[6] %>
+            <% end %>
 					</div>
 					<div class="show-sub-item s1-center" >
 						<%= content_tag :h2, "Contact:" %>
 						<%= content_tag :h2, @yelp_review_info["display_phone"] %>
 					</div>
 				</div>
-				</div>
-			</div>
-
+		  </div>
+		</div>
 		<div class="structure-2" >
 			<h2>Aggie Reviews Portion</h2>
 		</div>
-                <div class="structure-3" >
-			
-                            <div class="sub-item">
-                                <%= image_tag("gigs_maroon.svg", size: "20") %>
-                                <%= content_tag :p, "Cash Only" %>
-                            </div>
-                        
-                        
-                            <div class="sub-item">
-                                <%= image_tag("circle-check_maroon.svg", size: "20") %>
-                                <%= content_tag :p, "Speaks English" %>
-                            </div>
-                       
-                            <div class="sub-item">
-                                <%= image_tag("dollar-sign_maroon.svg", size: "20") %>
-                                <%= content_tag :p, "Tips Encouraged" %>
-                            </div>
-                      
-                            <div class="sub-item">
-                                <%= image_tag("wifi_maroon.svg", size: "20") %>
-                                <%= content_tag :p, "WiFi" %>
-                            </div>
-
-                            <div class="sub-item">
-                                <%= image_tag("wheelchair_maroon.svg", size: "20") %>
-                                <%= content_tag :p, "Wheelchair Accessible" %>
-			    </div>
-                </div>   
+    <div class="structure-3" >
+      <div class="sub-item">
+        <%= image_tag("gigs_maroon.svg", size: "20") %>
+        <%= content_tag :p, "Cash Only" %>
+      </div>
+      <div class="sub-item">
+          <%= image_tag("circle-check_maroon.svg", size: "20") %>
+          <%= content_tag :p, "Speaks English" %>
+      </div>
+      <div class="sub-item">
+        <%= image_tag("dollar-sign_maroon.svg", size: "20") %>
+        <%= content_tag :p, "Tips Encouraged" %>
+      </div>
+      <div class="sub-item">
+        <%= image_tag("wifi_maroon.svg", size: "20") %>
+        <%= content_tag :p, "WiFi" %>
+      </div>
+      <div class="sub-item">
+        <%= image_tag("wheelchair_maroon.svg", size: "20") %>
+        <%= content_tag :p, "Wheelchair Accessible" %>
+		  </div>
+    </div>
 	</div>
 
 	<!--
@@ -239,13 +232,13 @@
         <h4>Phone Number:
                 <%= @yelp_review_info["display_phone"] %>
         </h4>
-	
+
 	<%= image_tag @yelp_review_info["image_url"], size: "200" %>
 
 	<div id="leave_review">
 		<button type="button" class="btn btn-default btn-lg">
     		<%= link_to 'Leave A Review', controller: "reviews", action: "leave_review", id: params[:id] %>
-	</div>    
+	</div>
     <% end %>
 	-->
 </div>
