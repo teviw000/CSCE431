@@ -44,9 +44,7 @@
 						Dollar Rating     		 		
 						</div> 
 						<div class="break"></div>
-						<div class="sub-item address">
-                               				<%= content_tag :div, @yelp_review_info["location"]["display_address"] %>                           			</div>
-						</div>
+					</div>
 					<div class="show-title-box right" >
 						<div class="structure-split" >
 							<div class="show-rating" >
@@ -97,44 +95,52 @@
 							</div>
 						</div>
 					</div>
-					</div>
-				<div class="show-sub-text-box show-aggie-reviews" >
+				</div>
+				<div class="show-sub-text-box address" %>
+					<%= @yelp_review_info["location"]["display_address"] %>
+				</div>
+				<div class="show-sub-text-box show-business-hours" >
 					<div class="show-sub-item s1-left" >
+						<%= content_tag :h2, "Monday" %>
 						<%= @hours_open[0] %>
-						<%= content_tag :h2, "Hours:" %>
-						<%= @yelp_review_info["hours"][0]["open"][0]["start"] %>
-                				<%= " - " %>
-                				<%= @yelp_review_info["hours"][0]["open"][0]["end"] %>
+                                                <%= "-" %>
+                                                <%= @hours_closed[0] %>
 					</div>
 					<div class="show-sub-item s1-left" >
-                                                <%= @yelp_review_info["hours"][0]["open"][1]["start"] %>
-                                                <%= " - " %>
-                                                <%= @yelp_review_info["hours"][0]["open"][1]["end"] %>
+						<%= content_tag :h2, "Tuesday" %>
+                                                <%= @hours_open[1] %>
+						<%= "-" %>
+						<%= @hours_closed[1] %> 
                                         </div>
 					<div class="show-sub-item s1-left" >
-                                                <%= @yelp_review_info["hours"][0]["open"][2]["start"] %>
-                                                <%= " - " %>
-                                                <%= @yelp_review_info["hours"][0]["open"][2]["end"] %>
+						<%= content_tag :h2, "Wednesday" %>
+                                        	<%= @hours_open[2] %>
+                                                <%= "-" %>
+                                                <%= @hours_closed[2] %>
                                         </div>
 					<div class="show-sub-item s1-left" >
-                                                <%= @yelp_review_info["hours"][0]["open"][3]["start"] %>
-                                                <%= " - " %>
-                                                <%= @yelp_review_info["hours"][0]["open"][3]["end"] %>
+						<%= content_tag :h2, "Thursday" %>
+                                                <%= @hours_open[3] %>
+                                                <%= "-" %>
+                                                <%= @hours_closed[3] %>
                                         </div>
 					<div class="show-sub-item s1-left" >
-                                                <%= @yelp_review_info["hours"][0]["open"][4]["start"] %>
-                                                <%= " - " %>
-                                                <%= @yelp_review_info["hours"][0]["open"][4]["end"] %>
+						<%= content_tag :h2, "Friday" %>
+                                                <%= @hours_open[4] %>
+                                                <%= "-" %>
+                                                <%= @hours_closed[4] %>
                                         </div>
 					<div class="show-sub-item s1-left" >
-                                                <%= @yelp_review_info["hours"][0]["open"][5]["start"] %>
-                                                <%= " - " %>
-                                                <%= @yelp_review_info["hours"][0]["open"][5]["end"] %>
+						<%= content_tag :h2, "Saturday" %>
+                                                <%= @hours_open[5] %>
+                                                <%= "-" %>
+                                                <%= @hours_closed[5] %>
                                         </div>
 					<div class="show-sub-item s1-left" >
-                                                <%= @yelp_review_info["hours"][0]["open"][6]["start"] %>
-                                                <%= " - " %>
-                                                <%= @yelp_review_info["hours"][0]["open"][6]["end"] %>
+						<%= content_tag :h2, "Sunday" %>
+                                                <%= @hours_open[6] %>
+                                                <%= "-" %>
+                                                <%= @hours_closed[6] %>
                                         </div>
 					<div class="show-sub-item s1-center" >
 						<%= content_tag :h2, "Contact:" %>
@@ -143,6 +149,7 @@
 				</div>
 				</div>
 			</div>
+
 		<div class="structure-2" >
 			<h2>Aggie Reviews Portion</h2>
 		</div>

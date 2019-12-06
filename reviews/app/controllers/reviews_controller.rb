@@ -56,10 +56,13 @@ class ReviewsController < ApplicationController
 		   @yelp_review_info["hours"][0]["open"][5]["start"],
 		   @yelp_review_info["hours"][0]["open"][1]["start"]
 		  ]
-    @hours_open.each do |index|
-	#@hours_open.insert(2,'d')
-    end
-    @hours_open = [@yelp_review_info["hours"][0]["open"][0]["end"],
+    @hours_open.each { |x| 
+      x.insert(2,":")
+      if x[2] == ":" && x[3] == ":"
+        x.tap {|s| s.slice!(2) }
+      end 
+    }
+    @hours_closed = [@yelp_review_info["hours"][0]["open"][0]["end"],
                    @yelp_review_info["hours"][0]["open"][1]["end"],
                    @yelp_review_info["hours"][0]["open"][2]["end"],
                    @yelp_review_info["hours"][0]["open"][3]["end"],
@@ -67,7 +70,12 @@ class ReviewsController < ApplicationController
                    @yelp_review_info["hours"][0]["open"][5]["end"],
                    @yelp_review_info["hours"][0]["open"][1]["end"]
                   ]
-    
+    @hours_closed.each { |y| 
+      y.insert(2,":")
+      if y[2] == ":" && y[3] == ":"
+        y.tap {|s| s.slice!(2) }
+      end 
+    }    
   end
 
   def emergency

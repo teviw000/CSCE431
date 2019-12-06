@@ -460,8 +460,10 @@ img{
 .show-card {
 	display: flex;
 	flex-direction: column;
-	width: 70%;
-	height: 400px;
+	max-width: 70%;
+	width: auto;
+	height: auto;
+	min-height: 400px;
 	margin: auto;
 	margin-top: 30px;
   	margin-bottom: 30px;
@@ -534,9 +536,8 @@ img{
 	.show-sub-text-box {
 		height: 33.3%;
 		.show-title-box {
-			width: 50%;
 			display: flex;
-        		flex-wrap: wrap;
+			flex-flow: row;
          		&.right {
                			text-align: right;
                			width: 25%;
@@ -558,7 +559,8 @@ img{
                                 width: 33.3%;
                         }
 			.show-sub-item {
-                		width: 200px;
+                		width: auto;
+				min-width: fit-content;
                 		padding: 5px 20px 5px 0px;
                 		font-size: 20px;
                 		color: #888888;
@@ -578,10 +580,14 @@ img{
                 		}
                 		&.address {
                     			width: auto;
+					min-width: fit-content;
+					justify-content: space-around;
+					margin:0 10px 10px 0;
                 		}
 			}
 			.show-sub-item2 {
-				width: 200px;
+				width: auto;
+				min-width: fit-content;
                                 padding: 5px 20px 5px 0px;
                                 font-size: 20px;
                                 color: maroon;
@@ -598,22 +604,24 @@ img{
         		flex-grow: 1;
         	}
     	}
-    	.show-aggie-reviews {
+    	.show-business-hours {
         	display: flex;
         	min-height: 25%;
        		height: auto;
         	width: 100%;
 		justify-content: space-between;
-        	.show-sub-item {
-            		width: auto;
-            		padding: 5px 15px 5px 0px;
-            		font-size: 20px;
-            		color: black;
-            		img {
-                		height: auto;
-                		padding-top: 7px;
-            		}
-        	}
+		.show-bus-container {
+        		.show-sub-item {
+            			width: auto;
+            			padding: 5px 15px 5px 0px;
+            			font-size: 20px;
+            			color: black;
+            			img {
+                			height: auto;
+                			padding-top: 7px;
+            			}
+        		}
+		}
     	}
     	.show-tag-info {
         	display: flex;
