@@ -8,7 +8,7 @@
 			<div class="show-text-box" >
  				<div class="show-sub-text-box show-business-info" >
 				  <div class="show-title-box left" >
-						<div class="show-sub-item2" >
+						<div class="show-sub-item" >
 							<%= content_tag :h1, @yelp_review_info["name"] %>
 						</div>
 						<div class="show-sub-item" >
@@ -96,9 +96,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="show-sub-text-box address" %>
+				<div class="show-sub-item address" %>
 					<%= @yelp_review_info["location"]["display_address"] %>
-
 				</div>
 				<div class="show-sub-text-box show-business-hours" >
 					<div class="show-sub-item s1-left" >
@@ -183,23 +182,23 @@
 		</div>
     <div class="structure-3" >
       <div class="sub-item">
-        <%= image_tag("gigs_maroon.svg", size: "20") %>
+        <%= image_tag("gigs_maroon.svg", size: "35") %>
         <%= content_tag :p, "Cash Only" %>
       </div>
       <div class="sub-item">
-          <%= image_tag("circle-check_maroon.svg", size: "20") %>
+          <%= image_tag("circle-check_maroon.svg", size: "35") %>
           <%= content_tag :p, "Speaks English" %>
       </div>
       <div class="sub-item">
-        <%= image_tag("dollar-sign_maroon.svg", size: "20") %>
+        <%= image_tag("dollar-sign_maroon.svg", size: "35") %>
         <%= content_tag :p, "Tips Encouraged" %>
       </div>
       <div class="sub-item">
-        <%= image_tag("wifi_maroon.svg", size: "20") %>
+        <%= image_tag("wifi_maroon.svg", size: "35") %>
         <%= content_tag :p, "WiFi" %>
       </div>
       <div class="sub-item">
-        <%= image_tag("wheelchair_maroon.svg", size: "20") %>
+        <%= image_tag("wheelchair_maroon.svg", size: "35") %>
         <%= content_tag :p, "Wheelchair Accessible" %>
 		  </div>
     </div>
