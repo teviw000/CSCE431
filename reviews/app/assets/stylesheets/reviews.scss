@@ -492,11 +492,11 @@ img{
         height: 100%;
         flex: 1 percentage(1/7);
 	padding: 20px;
+	justify-content: space-evenly;
+	
 	.sub-item {
 		display: flex;
-		flex: 1 percentage (1/5);
-		align-item: center;
-		min-width: 300px;
+		justify-content: space-between;
 	}
 }
 
@@ -516,13 +516,13 @@ img{
 
 .show-rating {
 	display: flex;
-	text-align: right;
+	justify-content: flex-end;
 	width: 100%;
 }
 
 .show-button {
 	display: flex;
-	text-align: right;
+	justify-content: flex-end;
 	width: 100%;
 }
 
@@ -603,6 +603,7 @@ img{
         	min-height: 25%;
        		height: auto;
         	width: 100%;
+		justify-content: space-between;
         	.show-sub-item {
             		width: auto;
             		padding: 5px 15px 5px 0px;

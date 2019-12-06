@@ -12,26 +12,29 @@
 							<%= content_tag :h1, @yelp_review_info["name"] %>
 						</div>
 						<div class="show-sub-item" >
+							<%= content_tag :p, @yelp_review_info["is_closed"] ? "Currently Closed" : "Currently Open" %>
+						</div>
+						<div class="show-sub-item" >
 							<%= content_tag :p, @yelp_review_info["categories"][0]["alias"] %>
 						</div>
 						<div class="show-sub-item">	
-		        				<% if @avg_user_rating < 0.5%>
+		        				<% if @avg_user_price < 0.5%>
                                	    				<%= content_tag :p, "No Price Information" %>
-                               				<% elsif @avg_user_rating < 1.5%>
+                               				<% elsif @avg_user_price < 1.5%>
                                	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               				<% elsif @avg_user_rating < 2.5%>
-                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               				<% elsif @avg_user_rating < 3.5%>
+                               				<% elsif @avg_user_price < 2.5%>
                                	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
                                	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                               				<% elsif @avg_user_price < 3.5%>
                                	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               				<% elsif @avg_user_rating < 4.5%>
                                	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                               	 			   	<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                               				<% elsif @avg_user_price < 4.5%>
                                	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
                                	 			   	<%= image_tag("dollar-sign_grey.svg", size: "20") %>
-                              				<% elsif @avg_user_rating > 4.5%>
+                               	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                               	 			   	<%= image_tag("dollar-sign_grey.svg", size: "20") %>
+                              				<% elsif @avg_user_price > 4.5%>
                                	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
                                	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
                                	    				<%= image_tag("dollar-sign_grey.svg", size: "20") %>
@@ -47,7 +50,44 @@
 					<div class="show-title-box right" >
 						<div class="structure-split" >
 							<div class="show-rating" >
-								Aggie Review
+								<% if @avg_user_rating < 0.5%>
+                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
+                                   					<%= image_tag("gigs_grey.svg", size: "20") %>
+                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
+                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
+                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
+                                				<% elsif @avg_user_rating < 1.5%>
+                              	      					<%= image_tag("gigs_maroon.svg", size: "20") %>
+                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
+                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
+                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
+                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
+                                				<% elsif @avg_user_rating < 2.5%>
+                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
+                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
+                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
+                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
+                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
+                                				<% elsif @avg_user_rating < 3.5%>
+                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
+                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
+                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
+                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
+                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
+                                				<% elsif @avg_user_rating < 4.5%>
+                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
+                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
+                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
+                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
+                                    					<%= image_tag("gigs_grey.svg", size: "20") %>
+                                				<% elsif @avg_user_rating > 4.5%>
+                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
+                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
+                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
+                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
+                                    					<%= image_tag("gigs_maroon.svg", size: "20") %>
+                                				<% end %>
+								Rating Here
 							</div>
 							<div class="show-button" >
 								<div id="leave_review">
@@ -60,17 +100,45 @@
 					</div>
 				<div class="show-sub-text-box show-aggie-reviews" >
 					<div class="show-sub-item s1-left" >
+						<%= @hours_open[0] %>
 						<%= content_tag :h2, "Hours:" %>
 						<%= @yelp_review_info["hours"][0]["open"][0]["start"] %>
                 				<%= " - " %>
                 				<%= @yelp_review_info["hours"][0]["open"][0]["end"] %>
 					</div>
+					<div class="show-sub-item s1-left" >
+                                                <%= @yelp_review_info["hours"][0]["open"][1]["start"] %>
+                                                <%= " - " %>
+                                                <%= @yelp_review_info["hours"][0]["open"][1]["end"] %>
+                                        </div>
+					<div class="show-sub-item s1-left" >
+                                                <%= @yelp_review_info["hours"][0]["open"][2]["start"] %>
+                                                <%= " - " %>
+                                                <%= @yelp_review_info["hours"][0]["open"][2]["end"] %>
+                                        </div>
+					<div class="show-sub-item s1-left" >
+                                                <%= @yelp_review_info["hours"][0]["open"][3]["start"] %>
+                                                <%= " - " %>
+                                                <%= @yelp_review_info["hours"][0]["open"][3]["end"] %>
+                                        </div>
+					<div class="show-sub-item s1-left" >
+                                                <%= @yelp_review_info["hours"][0]["open"][4]["start"] %>
+                                                <%= " - " %>
+                                                <%= @yelp_review_info["hours"][0]["open"][4]["end"] %>
+                                        </div>
+					<div class="show-sub-item s1-left" >
+                                                <%= @yelp_review_info["hours"][0]["open"][5]["start"] %>
+                                                <%= " - " %>
+                                                <%= @yelp_review_info["hours"][0]["open"][5]["end"] %>
+                                        </div>
+					<div class="show-sub-item s1-left" >
+                                                <%= @yelp_review_info["hours"][0]["open"][6]["start"] %>
+                                                <%= " - " %>
+                                                <%= @yelp_review_info["hours"][0]["open"][6]["end"] %>
+                                        </div>
 					<div class="show-sub-item s1-center" >
 						<%= content_tag :h2, "Contact:" %>
 						<%= content_tag :h2, @yelp_review_info["display_phone"] %>
-					</div>
-					<div class="show-sub-item s1-right" >
-						About
 					</div>
 				</div>
 				</div>

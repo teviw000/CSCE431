@@ -47,7 +47,26 @@ class ReviewsController < ApplicationController
 
     # Tags for show page (bottom)
 
-    # Find current day for hours
+    # Find current day for hours separately by colo
+    @hours_open = [@yelp_review_info["hours"][0]["open"][0]["start"], 
+		   @yelp_review_info["hours"][0]["open"][1]["start"],
+		   @yelp_review_info["hours"][0]["open"][2]["start"],
+		   @yelp_review_info["hours"][0]["open"][3]["start"],
+		   @yelp_review_info["hours"][0]["open"][4]["start"],
+		   @yelp_review_info["hours"][0]["open"][5]["start"],
+		   @yelp_review_info["hours"][0]["open"][1]["start"]
+		  ]
+    @hours_open.each do |index|
+	#@hours_open.insert(2,'d')
+    end
+    @hours_open = [@yelp_review_info["hours"][0]["open"][0]["end"],
+                   @yelp_review_info["hours"][0]["open"][1]["end"],
+                   @yelp_review_info["hours"][0]["open"][2]["end"],
+                   @yelp_review_info["hours"][0]["open"][3]["end"],
+                   @yelp_review_info["hours"][0]["open"][4]["end"],
+                   @yelp_review_info["hours"][0]["open"][5]["end"],
+                   @yelp_review_info["hours"][0]["open"][1]["end"]
+                  ]
     
   end
 
