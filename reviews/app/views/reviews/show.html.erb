@@ -15,7 +15,7 @@
 							<%= content_tag :p, @yelp_review_info["is_closed"] ? "Currently Closed" : "Currently Open" %>
 						</div>
 						<div class="show-sub-item" >
-							<%= content_tag :p, @yelp_review_info["categories"][0]["alias"] %>
+							<%= content_tag :p, @show_alias %>
 						</div>
 						<div class="show-sub-item">	
 		        				<% if @avg_user_price < 0.5%>
@@ -98,50 +98,79 @@
 				</div>
 				<div class="show-sub-text-box address" %>
 					<%= @yelp_review_info["location"]["display_address"] %>
+					
 				</div>
 				<div class="show-sub-text-box show-business-hours" >
 					<div class="show-sub-item s1-left" >
 						<%= content_tag :h2, "Monday" %>
-						<%= @hours_open[0] %>
-                                                <%= "-" %>
-                                                <%= @hours_closed[0] %>
+						<% if (@hours_open == NULL || @hours_closed == NULL) %>
+							<%= "CLOSED" %>
+						<% else %>
+							<%= @hours_open[0] %>
+        	                                        <%= "-" %>
+                	                                <%= @hours_closed[0] %>
+						<% end %>	
 					</div>
 					<div class="show-sub-item s1-left" >
 						<%= content_tag :h2, "Tuesday" %>
-                                                <%= @hours_open[1] %>
-						<%= "-" %>
-						<%= @hours_closed[1] %> 
-                                        </div>
+                                                <% if (@hours_open == NULL || @hours_closed == NULL) %>
+							<%= "CLOSED" %>
+						<% else %>
+							<%= @hours_open[1] %>
+							<%= "-" %>
+							<%= @hours_closed[1] %> 
+                                        	<% end %>
+					</div>
 					<div class="show-sub-item s1-left" >
 						<%= content_tag :h2, "Wednesday" %>
-                                        	<%= @hours_open[2] %>
-                                                <%= "-" %>
-                                                <%= @hours_closed[2] %>
-                                        </div>
+                                        	<% if (@hours_open == NULL || @hours_closed == NULL) %>
+                                                        <%= "CLOSED" %>
+                                                <% else %>
+							<%= @hours_open[2] %>
+                                                	<%= "-" %>
+                                                	<%= @hours_closed[2] %>
+                                        	<% end %>
+					</div>
 					<div class="show-sub-item s1-left" >
 						<%= content_tag :h2, "Thursday" %>
-                                                <%= @hours_open[3] %>
-                                                <%= "-" %>
-                                                <%= @hours_closed[3] %>
-                                        </div>
+                                                <% if (@hours_open == NULL || @hours_closed == NULL) %>
+                                                        <%= "CLOSED" %>
+                                                <% else %>
+							<%= @hours_open[3] %>
+                                                	<%= "-" %>
+                                                	<%= @hours_closed[3] %>
+                                        	<% end %>
+					</div>
 					<div class="show-sub-item s1-left" >
 						<%= content_tag :h2, "Friday" %>
-                                                <%= @hours_open[4] %>
-                                                <%= "-" %>
-                                                <%= @hours_closed[4] %>
-                                        </div>
+                                                <% if (@hours_open == NULL || @hours_closed == NULL) %>
+                                                        <%= "CLOSED" %>
+                                                <% else %>
+							<%= @hours_open[4] %>
+                                                	<%= "-" %>
+                                                	<%= @hours_closed[4] %>
+                                        	<% end %>
+					</div>
 					<div class="show-sub-item s1-left" >
 						<%= content_tag :h2, "Saturday" %>
-                                                <%= @hours_open[5] %>
-                                                <%= "-" %>
-                                                <%= @hours_closed[5] %>
-                                        </div>
+                                                <% if (@hours_open == NULL || @hours_closed == NULL) %>
+                                                        <%= "CLOSED" %>
+                                                <% else %>
+							<%= @hours_open[5] %>
+                                         	        <%= "-" %>
+                                                	<%= @hours_closed[5] %>
+						<% end %>                                        
+					</div>
 					<div class="show-sub-item s1-left" >
 						<%= content_tag :h2, "Sunday" %>
-                                                <%= @hours_open[6] %>
-                                                <%= "-" %>
-                                                <%= @hours_closed[6] %>
-                                        </div>
+                                                <% if (@hours_open == NULL || @hours_closed == NULL) %>
+                                                        <%= "CLOSED" %>
+                                                <% else %>
+							<%= @hours_open[6] %>
+                                                	<%= "-" %>
+                                                	<%= @hours_closed[6] %>
+                                        	<% end %>	
+					</div>
 					<div class="show-sub-item s1-center" >
 						<%= content_tag :h2, "Contact:" %>
 						<%= content_tag :h2, @yelp_review_info["display_phone"] %>

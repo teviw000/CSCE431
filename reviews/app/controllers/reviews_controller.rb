@@ -43,20 +43,25 @@ class ReviewsController < ApplicationController
     @avg_user_rating = @user_reviews.map{ |review| review["rating"]}.reduce(:+).to_f / @user_reviews.size
     # TODO search through display_address and delete commas and brackets
 
+	
     # TODO search through categories.alias and delete underscore if they ahve them and capitalize letters
+    @show_alias = [@yelp_review_info["categories"][0]["alias"]]
+    
 
     # Tags for show page (bottom)
 
     # Find current day for hours separately by colo
-    @hours_open = [@yelp_review_info["hours"][0]["open"][0]["start"], 
-		   @yelp_review_info["hours"][0]["open"][1]["start"],
-		   @yelp_review_info["hours"][0]["open"][2]["start"],
-		   @yelp_review_info["hours"][0]["open"][3]["start"],
-		   @yelp_review_info["hours"][0]["open"][4]["start"],
-		   @yelp_review_info["hours"][0]["open"][5]["start"],
-		   @yelp_review_info["hours"][0]["open"][1]["start"]
-		  ]
-    @hours_open.each { |x| 
+    @hours_open = [@yelp_review_info["hours"][0]["open"][0]["start"],
+                   @yelp_review_info["hours"][0]["open"][1]["start"],
+                   @yelp_review_info["hours"][0]["open"][2]["start"],
+                   @yelp_review_info["hours"][0]["open"][3]["start"],
+                   @yelp_review_info["hours"][0]["open"][4]["start"],
+                   @yelp_review_info["hours"][0]["open"][5]["start"],
+                   @yelp_review_info["hours"][0]["open"][6]["start"]
+                  ]
+
+    @hours_open.each { |x|
+    if 
       x.insert(2,":")
       if x[2] == ":" && x[3] == ":"
         x.tap {|s| s.slice!(2) }
@@ -68,7 +73,7 @@ class ReviewsController < ApplicationController
                    @yelp_review_info["hours"][0]["open"][3]["end"],
                    @yelp_review_info["hours"][0]["open"][4]["end"],
                    @yelp_review_info["hours"][0]["open"][5]["end"],
-                   @yelp_review_info["hours"][0]["open"][1]["end"]
+                   @yelp_review_info["hours"][0]["open"][6]["end"]
                   ]
     @hours_closed.each { |y| 
       y.insert(2,":")
