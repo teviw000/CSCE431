@@ -478,28 +478,33 @@ img{
 	flex: 1 percentage(4/7);
 }
 .structure-2 {
-        display: flex;
-        flex-flow: column wrap;
-        width: 100%;
-        height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  height: 100%;
 	justify-content: space-around;
-        flex: 1 percentage(2/7);
+  flex: 1 percentage(2/7);
 	padding: 20px;
 }
 
 .structure-3 {
-        display: flex;
-        flex-flow: row wrap;
-        width: 100%;
-        height: 100%;
-        flex: 1 percentage(1/7);
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
 	padding: 20px;
 	justify-content: space-evenly;
-
-	.sub-item {
-		display: flex;
-		justify-content: space-between;
-	}
+  .sub-structure-3{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+	 .sub-item {
+     flex-grow: 1;
+		 justify-content: space-between;
+	  }
+  }
 }
 
 .show-image {
