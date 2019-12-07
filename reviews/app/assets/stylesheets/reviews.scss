@@ -310,7 +310,7 @@ img{
     display: none;
 }
 .container {
-    display: none; 	
+    display: none;
 }
 
 .menu-button {
@@ -498,13 +498,16 @@ img{
   box-shadow: 5px 5px 10px #888888;
 }
 
-.structure-1 {
+.user-structure {
 	display: flex;
 	flex-flow: row;
 	width: 100%;
 	height: 100%;
+  padding: 20px;
   .sub-structure {
     flex-grow: 1;
+    flex-flow: column;
+    align-items: flex-end;
     justify-content: space-between;
     &.right {
       text-align: right;
@@ -514,15 +517,60 @@ img{
       text-align: left;
       width: 75%;
     }
-   }
+    .structure-item {
+      display: flex;
+      flex-grow: 1;
+    }
+  }
+}
+.structure-1 {
+	display: flex;
+	flex-flow: row;
+	width: 100%;
+	height: 100%;
+  .sub-structure {
+    flex-grow: 1;
+    flex-flow: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    &.right {
+      text-align: right;
+      width: 25%;
+    }
+    &.left {
+      text-align: left;
+      width: 75%;
+    }
+    .structure-item {
+      display: flex;
+      flex-grow: 1;
+    }
+  }
 }
 .structure-2 {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row;
+  flex-wrap: wrap;
   width: 100%;
   height: 100%;
-	justify-content: space-around;
 	padding: 20px;
+  .sub-structure-2 {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    &.right {
+      text-align: right;
+      width: 25%;
+    }
+    &.left {
+      text-align: left;
+      width: 75%;
+    }
+    .structure-item {
+      flex-grow: 1;
+    }
+  }
 }
 
 .structure-3 {
