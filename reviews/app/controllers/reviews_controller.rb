@@ -39,7 +39,6 @@ class ReviewsController < ApplicationController
     #@user_reviews is an array of type Review. See the types in reviews/db/schema.rb
     @user_reviews = Review.where(business_id: params[:id])
     # FOR VIWAT
-    @test = 1
     if @avg_user_price = @user_reviews.map{ |review| review["price"]}.reduce(:+).to_f / @user_reviews.size == nil
       @avg_user_price = 0
     else
@@ -58,7 +57,8 @@ class ReviewsController < ApplicationController
                         ]
 
     # TODO search through categories.alias and delete underscore if they ahve them and capitalize letters
-    @show_alias = [@yelp_review_info["categories"][0]["alias"]]
+    @show_alias = @yelp_review_info["categories"][0]["alias"]
+    @show_alias[0] = @show_alias[0].capitalize() 
 
     # Find current day for hours separately by colo
     @hours_open = [@yelp_review_info["hours"][0]["open"][0]["start"],
