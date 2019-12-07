@@ -10,11 +10,11 @@ $(document).on("turbolinks:load", function() {
             alert("Please log in before leaving a review")
             return false;
         }
-
+        /*
         // If comment section is empty
         if ($("#review_comment").val() === "") {
             alert("Please leave a comment");
-            return false;
+            return false; //test text
         }
         // If no button selected for rating
         if ($("#review_rating_block").children("input:checked").length === 0) {
@@ -61,6 +61,7 @@ $(document).on("turbolinks:load", function() {
             alert("Please specify whether this place is wheelchair accessible");
             return false;
         }
+        */
         return true
     });
 });
