@@ -58,7 +58,7 @@ class ReviewsController < ApplicationController
 
     # TODO search through categories.alias and delete underscore if they ahve them and capitalize letters
     @show_alias = @yelp_review_info["categories"][0]["alias"]
-    @show_alias[0] = @show_alias[0].capitalize() 
+    @show_alias[0] = @show_alias[0].capitalize()
 
     # Find current day for hours separately by colo
     @hours_open = [@yelp_review_info["hours"][0]["open"][0]["start"],
@@ -72,7 +72,7 @@ class ReviewsController < ApplicationController
 
     @hours_open.map{ |i|
      if i == nil
-
+       i = 0000
      end
     }
 
@@ -92,6 +92,13 @@ class ReviewsController < ApplicationController
                    @yelp_review_info["hours"][0]["open"][5]["end"],
                    @yelp_review_info["hours"][0]["open"][6]["end"]
                   ]
+
+    @hours_closed.map{ |i|
+      if i == nil
+       i = 0000
+      end
+    }
+
     @hours_closed.each { |y|
       y.insert(2,":")
       if y[2] == ":" && y[3] == ":"
