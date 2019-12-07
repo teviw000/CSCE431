@@ -475,7 +475,6 @@ img{
 	flex-flow: row;
 	width: 100%;
 	height: 100%;
-	flex: 1 percentage(4/7);
 }
 .structure-2 {
   display: flex;
@@ -483,7 +482,6 @@ img{
   width: 100%;
   height: 100%;
 	justify-content: space-around;
-  flex: 1 percentage(2/7);
 	padding: 20px;
 }
 
@@ -542,27 +540,18 @@ img{
 		height: 33.3%;
 		.show-title-box {
 			display: flex;
+      width: 50%;
 			flex-flow: row;
       flex-wrap: wrap;
         &.right {
           text-align: right;
           width: 25%;
+          flex-wrap: wrap;
         }
         &.left {
         	text-align: left;
           width: 75%;
-        }
-			  &.s1-left {
-				  text-align: center;
-				  width: 33.3%;
-			  }
-			  &.s1-center {
-          text-align: center;
-          width: 33.3%;
-        }
-			  &.s1-right {
-          text-align: center;
-          width: 33.3%;
+          flex-wrap: wrap;
         }
 		  .show-sub-item {
         width: auto;
@@ -570,6 +559,7 @@ img{
         padding: 5px 20px 5px 0px;
         font-size: 20px;
         color: #888888;
+        flex-grow: 1;
           img {
             height: auto;
             padding-top: 7px;
@@ -578,13 +568,14 @@ img{
             width: auto;
             font-weight: bold;
             text-transform: uppercase;
-            color: black;
+            color: maroon;
             &:hover {
               color: #500000;
               text-decoration: none;
             }
           }
           &.address {
+            padding: 10px;
             width: auto;
 					  min-width: fit-content;
 					  justify-content: space-around;
@@ -607,10 +598,24 @@ img{
     height: 50%;
     width: 100%;
     padding: 10px;
+    flex-grow: 1;
     .show-sub-item {
       flex-grow: 1;
     }
   }
+
+  .show-business-address {
+    display: flex;
+    min-height: 50%;
+    height: 50%;
+    width: 100%;
+    padding: 10px;
+    flex-grow: 1;
+    .show-sub-item {
+      flex-grow: 1;
+    }
+  }
+
   .show-business-hours {
     display: flex;
     min-height: 25%;

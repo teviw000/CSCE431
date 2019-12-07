@@ -42,13 +42,14 @@ class ReviewsController < ApplicationController
     @avg_user_price = @user_reviews.map{ |review| review["price"]}.reduce(:+).to_f / @user_reviews.size
     @avg_user_rating = @user_reviews.map{ |review| review["rating"]}.reduce(:+).to_f / @user_reviews.size
     # TODO search through display_address and delete commas and brackets
-
+    @display_address = [@yelp_review_info["location"]["address1"],
+                        @yelp_review_info["location"]["city"],
+                        @yelp_review_info["location"]["state"],
+                        @yelp_review_info["location"]["zip_code"],
+                        ]
 
     # TODO search through categories.alias and delete underscore if they ahve them and capitalize letters
     @show_alias = [@yelp_review_info["categories"][0]["alias"]]
-
-
-    # Tags for show page (bottom)
 
     # Find current day for hours separately by colo
     @hours_open = [@yelp_review_info["hours"][0]["open"][0]["start"],
