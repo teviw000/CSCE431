@@ -19,6 +19,7 @@
   							<%= content_tag :p, @show_alias %>
   						</div>
   						<div class="show-sub-item">
+
   		          <% if @avg_user_price < 0.5%>
                   <%= content_tag :p, "No Price Information" %>
                 <% elsif @avg_user_price < 1.5%>
@@ -59,37 +60,37 @@
 					  <div class="show-title-box right" >
 						  <div class="structure-split" >
 							  <div class="show-rating" >
-								  <% if @avg_user_rating < 0.5%>
+								  <% if @avg_user_rating < 0.5 %>
                     <%= image_tag("gigs_grey.svg", size: "20") %>
                     <%= image_tag("gigs_grey.svg", size: "20") %>
                     <%= image_tag("gigs_grey.svg", size: "20") %>
                     <%= image_tag("gigs_grey.svg", size: "20") %>
                     <%= image_tag("gigs_grey.svg", size: "20") %>
-                  <% elsif @avg_user_rating < 1.5%>
+                  <% elsif @avg_user_rating < 1.5 %>
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                     <%= image_tag("gigs_grey.svg", size: "20") %>
                     <%= image_tag("gigs_grey.svg", size: "20") %>
                     <%= image_tag("gigs_grey.svg", size: "20") %>
                     <%= image_tag("gigs_grey.svg", size: "20") %>
-                  <% elsif @avg_user_rating < 2.5%>
+                  <% elsif @avg_user_rating < 2.5 %>
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                     <%= image_tag("gigs_grey.svg", size: "20") %>
                     <%= image_tag("gigs_grey.svg", size: "20") %>
                     <%= image_tag("gigs_grey.svg", size: "20") %>
-                  <% elsif @avg_user_rating < 3.5%>
+                  <% elsif @avg_user_rating < 3.5 %>
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                     <%= image_tag("gigs_grey.svg", size: "20") %>
                     <%= image_tag("gigs_grey.svg", size: "20") %>
-                <% elsif @avg_user_rating < 4.5%>
+                <% elsif @avg_user_rating < 4.5 %>
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                     <%= image_tag("gigs_grey.svg", size: "20") %>
-                <% elsif @avg_user_rating > 4.5%>
+                <% elsif @avg_user_rating > 4.5 %>
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
@@ -215,15 +216,15 @@
     </div>
 	</div>
 
+      <% if @user_reviews == nil %>
         <div class="our-card">
-          <%= content_tag :p, @display_address[0] %>
-          <%= content_tag :p, ", " %>
-          <%= content_tag :p, @display_address[1] %>
-          <%= content_tag :p, ", " %>
-          <%= content_tag :p, @display_address[2] %>
-          <%= content_tag :p, ", " %>
-          <%= content_tag :p, @display_address[3] %>
+          no reviews
         </div>
+      <% else %>
+        <div class="our-card">
+          user reviews
+        </div>
+      <% end %>
 
 
 	<!--

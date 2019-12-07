@@ -39,8 +39,17 @@ class ReviewsController < ApplicationController
     #@user_reviews is an array of type Review. See the types in reviews/db/schema.rb
     @user_reviews = Review.where(business_id: params[:id])
     # FOR VIWAT
-    @avg_user_price = @user_reviews.map{ |review| review["price"]}.reduce(:+).to_f / @user_reviews.size
-    @avg_user_rating = @user_reviews.map{ |review| review["rating"]}.reduce(:+).to_f / @user_reviews.size
+    @test = 1
+    if @avg_user_price = @user_reviews.map{ |review| review["price"]}.reduce(:+).to_f / @user_reviews.size == nil
+      @avg_user_price = 0
+    else
+      @avg_user_price = @user_reviews.map{ |review| review["price"]}.reduce(:+).to_f / @user_reviews.size
+    end
+    if @avg_user_rating = @user_reviews.map{ |review| review["rating"]}.reduce(:+).to_f / @user_reviews.size == nil
+      @avg_user_rating = 0
+    else
+      @avg_user_rating = @user_reviews.map{ |review| review["rating"]}.reduce(:+).to_f / @user_reviews.size
+    end
     # TODO search through display_address and delete commas and brackets
     @display_address = [@yelp_review_info["location"]["address1"],
                         @yelp_review_info["location"]["city"],
