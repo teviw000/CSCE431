@@ -38,7 +38,6 @@ class ReviewsController < ApplicationController
     @yelp_review_info = business(@yelp_review_id)
     #@user_reviews is an array of type Review. See the types in reviews/db/schema.rb
     @user_reviews = Review.where(business_id: params[:id])
-    # FOR VIWAT
     # Average user price
     if @avg_user_price = @user_reviews.map{ |review| review["price"]}.reduce(:+).to_f / @user_reviews.size == nil
       @avg_user_price = 0
@@ -52,9 +51,18 @@ class ReviewsController < ApplicationController
       @avg_user_rating = @user_reviews.map{ |review| review["rating"]}.reduce(:+).to_f / @user_reviews.size
     end
     # Average user safety
-    @avg_user_safety = get_average(@user_reviews, "5")
+    if @avg_user_safety = @user_reviews.map{ |review| review["safety"]}.reduce(:+).to_f / @user_reviews.size == nil
+      @avg_user_safety = 0
+    else
+      @avg_user_safety = @user_reviews.map{ |review| review["safety"]}.reduce(:+).to_f / @user_reviews.size
+    end
     # Average user service
-    @avg_user_service = get_average(@user_reviews, "6")
+    if @avg_user_service = @user_reviews.map{ |review| review["service"]}.reduce(:+).to_f / @user_reviews.size == nil
+      @avg_user_service = 0
+    else
+      @avg_user_service = @user_reviews.map{ |review| review["service"]}.reduce(:+).to_f / @user_reviews.size
+    end
+
     # Majority tag values
     @user_bools = get_tags(@user_reviews)
     if @user_bools.include? ("cash_only")
@@ -87,14 +95,13 @@ class ReviewsController < ApplicationController
       @avg_user_wheelchair = 1
     end
 
-    # TODO search through display_address and delete commas and brackets
+    # Address call
     @display_address = [@yelp_review_info["location"]["address1"],
                         @yelp_review_info["location"]["city"],
                         @yelp_review_info["location"]["state"],
                         @yelp_review_info["location"]["zip_code"],
                         ]
-
-    # TODO search through categories.alias and delete underscore if they ahve them and capitalize letters
+    # Alias capitalization
     @show_alias = @yelp_review_info["categories"][0]["alias"]
     @show_alias[0] = @show_alias[0].capitalize()
 
@@ -108,6 +115,7 @@ class ReviewsController < ApplicationController
                    @yelp_review_info["hours"][0]["open"][6]["start"]
                   ]
 
+    # TODO possible nil handler for hours?
     @hours_open.map{ |i|
      if i == nil
        i = 0000
@@ -122,6 +130,7 @@ class ReviewsController < ApplicationController
       end
     end
     }
+    
     @hours_closed = [@yelp_review_info["hours"][0]["open"][0]["end"],
                    @yelp_review_info["hours"][0]["open"][1]["end"],
                    @yelp_review_info["hours"][0]["open"][2]["end"],
