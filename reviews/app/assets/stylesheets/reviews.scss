@@ -518,7 +518,10 @@ img{
       width: 75%;
     }
     .structure-item {
-      display: flex;
+      display: inline-flex;
+      flex-grow: 1;
+    }
+    .structure-item2 {
       flex-grow: 1;
     }
   }
@@ -558,7 +561,6 @@ img{
     display: flex;
     flex-flow: row;
     height: 100%;
-    width: 100%;
     justify-content: space-between;
     &.right {
       text-align: right;
@@ -569,7 +571,9 @@ img{
       width: 75%;
     }
     .structure-item {
+      width: 25%;
       flex-grow: 1;
+      display: inline-flex;
     }
   }
 }
@@ -588,6 +592,7 @@ img{
     height: 100%;
     width: 100%;
 	 .sub-item {
+     display: inline-block;
      flex-grow: 1;
 		 justify-content: space-between;
 	  }
@@ -605,6 +610,12 @@ img{
 .structure-split {
 	display: flex;
   flex-flow: column;
+	width: 100%;
+}
+
+.structure-split2 {
+	display: flex;
+  flex-flow: row;
 	width: 100%;
 }
 

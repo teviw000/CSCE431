@@ -188,7 +188,7 @@
       </div>
       <div class="sub-structure-2" >
         <div class="structure-item" >
-          <p>Service: </p>
+          <%= content_tag :h3, "Service: " %>
           <% if @avg_user_service < 0.5 == 0 %>
             <%= image_tag("gigs_grey.svg", size: "20") %>
             <%= image_tag("gigs_grey.svg", size: "20") %>
@@ -318,81 +318,92 @@
   		  </div>
       </div>
     </div>
-	</div>
+</div>
   <!-- All user cards for business -->
-  <% if @user_reviews.is_a?(Array) && @user_reviews.length != 0 %>
+  <% if @user_reviews.length != 0 %>
     <div id="cards">
       <% @user_reviews.each_with_index do |result, index| %>
         <div class="show-user-card">
           <div class="user-structure" >
             <div class="sub-structure left" >
-              <%= content_tag :h3, @user_reviews[2] %>
+              <div class="structure-item" >
+                <%= content_tag :h2, @anon_names.sample %>
+                <%= content_tag :h2, rand(10)  %>
+              </div>
+              <div class="structure-item2" >
+                <%= content_tag :p, "comments from user" %>
+              </div>
             </div>
             <div class="sub-structure right" >
-              <div class="structure-item" >
-                <% if result[3] == 0 %>
-                  <%= image_tag("gigs_grey.svg", size: "20") %>
-                  <%= image_tag("gigs_grey.svg", size: "20") %>
-                  <%= image_tag("gigs_grey.svg", size: "20") %>
-                  <%= image_tag("gigs_grey.svg", size: "20") %>
-                  <%= image_tag("gigs_grey.svg", size: "20") %>
-                <% elsif result[3] == 1 %>
-                  <%= image_tag("gigs_maroon.svg", size: "20") %>
-                  <%= image_tag("gigs_grey.svg", size: "20") %>
-                  <%= image_tag("gigs_grey.svg", size: "20") %>
-                  <%= image_tag("gigs_grey.svg", size: "20") %>
-                  <%= image_tag("gigs_grey.svg", size: "20") %>
-                <% elsif result[3] == 2 %>
-                  <%= image_tag("gigs_maroon.svg", size: "20") %>
-                  <%= image_tag("gigs_maroon.svg", size: "20") %>
-                  <%= image_tag("gigs_grey.svg", size: "20") %>
-                  <%= image_tag("gigs_grey.svg", size: "20") %>
-                  <%= image_tag("gigs_grey.svg", size: "20") %>
-                <% elsif result[3] == 3 %>
-                  <%= image_tag("gigs_maroon.svg", size: "20") %>
-                  <%= image_tag("gigs_maroon.svg", size: "20") %>
-                  <%= image_tag("gigs_maroon.svg", size: "20") %>
-                  <%= image_tag("gigs_grey.svg", size: "20") %>
-                  <%= image_tag("gigs_grey.svg", size: "20") %>
-              <% elsif result[3] == 4 %>
-                  <%= image_tag("gigs_maroon.svg", size: "20") %>
-                  <%= image_tag("gigs_maroon.svg", size: "20") %>
-                  <%= image_tag("gigs_maroon.svg", size: "20") %>
-                  <%= image_tag("gigs_maroon.svg", size: "20") %>
-                  <%= image_tag("gigs_grey.svg", size: "20") %>
-              <% elsif result[3] == 5 %>
-                  <%= image_tag("gigs_maroon.svg", size: "20") %>
-                  <%= image_tag("gigs_maroon.svg", size: "20") %>
-                  <%= image_tag("gigs_maroon.svg", size: "20") %>
-                  <%= image_tag("gigs_maroon.svg", size: "20") %>
-                  <%= image_tag("gigs_maroon.svg", size: "20") %>
-              <% end %>
-                <%= content_tag :h3, "Rating" %>
-              </div>
-              <div class="structure-item" >
-                <% if result[4] == 1 %>
-                  <%= image_tag("gigs_maroon.svg", size: "25") %>
-                <% else %>
-                  <%= image_tag("gigs_grey.svg", size: "25") %>
+              <div class="structure-split2" >
+                <div class="structure-item" >
+                  <% if result[3] == 0 %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                  <% elsif result[3] == 1 %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                  <% elsif result[3] == 2 %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                  <% elsif result[3] == 3 %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                <% elsif result[3] == 4 %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_grey.svg", size: "20") %>
+                <% elsif result[3] == 5 %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
+                    <%= image_tag("gigs_maroon.svg", size: "20") %>
                 <% end %>
-                <%= content_tag :h3, "Price" %>
+                  <%= content_tag :h3, "Rating" %>
+                </div>
+                <div class="structure-item" >
+                  <% if result[4] == 1 %>
+                    <%= image_tag("gigs_maroon.svg", size: "25") %>
+                  <% else %>
+                    <%= image_tag("gigs_grey.svg", size: "25") %>
+                  <% end %>
+                  <%= content_tag :h3, "Price" %>
+                </div>
               </div>
-              <div class="structure-item" >
-                <% if result[5] == 1 %>
-                  <%= image_tag("gigs_maroon.svg", size: "25") %>
-                <% else %>
-                  <%= image_tag("gigs_grey.svg", size: "25") %>
-                <% end %>
-                <%= content_tag :h3, "Safety" %>
+              <div class="structure-split2" >
+                <div class="structure-item" >
+                  <% if result[5] == 1 %>
+                    <%= image_tag("gigs_maroon.svg", size: "25") %>
+                  <% else %>
+                    <%= image_tag("gigs_grey.svg", size: "25") %>
+                  <% end %>
+                  <%= content_tag :h3, "Safety" %>
+                </div>
+                <div class="structure-item" >
+                  <% if result[6] == 1 %>
+                    <%= image_tag("gigs_maroon.svg", size: "25") %>
+                  <% else %>
+                    <%= image_tag("gigs_grey.svg", size: "25") %>
+                  <% end %>
+                  <%= content_tag :h3, "Service" %>
+                </div>
               </div>
-              <div class="structure-item" >
-                <% if result[6] == 1 %>
-                  <%= image_tag("gigs_maroon.svg", size: "25") %>
-                <% else %>
-                  <%= image_tag("gigs_grey.svg", size: "25") %>
-                <% end %>
-                <%= content_tag :h3, "Service" %>
-              </div>
+
                 <% if result[3] == 0 %>
                   <%= image_tag("gigs_grey.svg", size: "20") %>
                   <%= image_tag("gigs_grey.svg", size: "20") %>
