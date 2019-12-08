@@ -16,18 +16,17 @@
     <body>
         <nav class="nav">
             <%= link_to "WHOOP!", reviews_path(), :id => "tamu_logo_link", :class => "logo" %>
-            <div style="flex-grow:1 "></div>
               <div class="nav-actions"> 
-                  <%=link_to "CONTACT", reviews_emergency_path(), :id => "contact", :class => "link nav-links"%>
-                  <% if logged_in? %>
-                    <%=link_to "LOGOUT", logout_path(), :id => "logout", :class => "link nav-links"%>
-                    <%if !current_user.img.nil?%>
-                      <%= image_tag current_user.img, class: "img-circle", height: '50', width: '50'%>
-                    <%end%>
-                  <%else%>
-                    <%=link_to "LOGIN", login_path(), :id => "login", :class => "link nav-links"%>
+                <%=link_to "CONTACT", reviews_emergency_path(), :id => "contact", :class => "link nav-links"%>
+                <% if logged_in? %>
+                  <%=link_to "LOGOUT", logout_path(), :id => "logout", :class => "link nav-links"%>
+                  <%if !current_user.img.nil?%>
+                    <%= image_tag current_user.img, class: "img-circle", height: '50', width: '50'%>
                   <%end%>
-            </div>
+                <%else%>
+                  <%=link_to "LOGIN", login_path(), :id => "login", :class => "link nav-links"%>
+                <%end%>
+              </div>
             <!-- Mobile Menu - only visable under 750px width-->
             <button class="navbar-toggle pull-right  menu-button" type="button" data-toggle="collapse" data-target="#dropdown-menu">
                 <i class="material-icons b"> menu </i>
