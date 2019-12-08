@@ -39,16 +39,54 @@ class ReviewsController < ApplicationController
     #@user_reviews is an array of type Review. See the types in reviews/db/schema.rb
     @user_reviews = Review.where(business_id: params[:id])
     # FOR VIWAT
+    # Average user price
     if @avg_user_price = @user_reviews.map{ |review| review["price"]}.reduce(:+).to_f / @user_reviews.size == nil
       @avg_user_price = 0
     else
       @avg_user_price = @user_reviews.map{ |review| review["price"]}.reduce(:+).to_f / @user_reviews.size
     end
+    # Average user rating
     if @avg_user_rating = @user_reviews.map{ |review| review["rating"]}.reduce(:+).to_f / @user_reviews.size == nil
       @avg_user_rating = 0
     else
       @avg_user_rating = @user_reviews.map{ |review| review["rating"]}.reduce(:+).to_f / @user_reviews.size
     end
+    # Average user safety
+    @avg_user_safety = get_average(@user_reviews, "5")
+    # Average user service
+    @avg_user_service = get_average(@user_reviews, "6")
+    # Majority tag values
+    @user_bools = get_tags(@user_reviews)
+    if @user_bools.include? ("cash_only")
+      @avg_user_cash_only = 1
+    else
+      @avg_user_cash_only = 0
+    end
+
+    if @user_bools.include? ("english")
+      @avg_user_english = 1
+    else
+      @avg_user_english = 1
+    end
+
+    if @user_bools.include? ("tips")
+      @avg_user_tips = 1
+    else
+      @avg_user_tips = 1
+    end
+
+    if @user_bools.include? ("wifi")
+      @avg_user_wifi = 1
+    else
+      @avg_user_wifi = 1
+    end
+
+    if @user_bools.include? ("wheelchair")
+      @avg_user_wheelchair = 1
+    else
+      @avg_user_wheelchair = 1
+    end
+
     # TODO search through display_address and delete commas and brackets
     @display_address = [@yelp_review_info["location"]["address1"],
                         @yelp_review_info["location"]["city"],
