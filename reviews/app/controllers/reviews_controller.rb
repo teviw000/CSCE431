@@ -38,6 +38,12 @@ class ReviewsController < ApplicationController
     @yelp_review_info = business(@yelp_review_id)
     #@user_reviews is an array of type Review. See the types in reviews/db/schema.rb
     @user_reviews = Review.where(business_id: params[:id])
+    puts "Is this an array: "
+    puts @user_reviews.is_a?(Array)
+    puts @user_reviews.length != 0
+
+    # Anon names
+    @anon_names = ["Rudder", "Zachary", "Mosher", "Heldenfels", "Moses", "Nagle", "Olsen", "Penberthy" , "Reed", "Thompson"]
     # Average user price
     if @avg_user_price = @user_reviews.map{ |review| review["price"]}.reduce(:+).to_f / @user_reviews.size == nil
       @avg_user_price = 0
@@ -130,7 +136,7 @@ class ReviewsController < ApplicationController
       end
     end
     }
-    
+
     @hours_closed = [@yelp_review_info["hours"][0]["open"][0]["end"],
                    @yelp_review_info["hours"][0]["open"][1]["end"],
                    @yelp_review_info["hours"][0]["open"][2]["end"],
