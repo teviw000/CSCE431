@@ -4,6 +4,7 @@
 require "json"
 require "http"
 require "optparse"
+require "set"
 module ReviewsHelper
     # Place holders for Yelp Fusion's API key. Grab it
     # from https://www.yelp.com/developers/v3/manage_app
@@ -201,5 +202,52 @@ module ReviewsHelper
         new_results = old_results.select {|result| result["rating"] != -1}
         other_results = old_results.select {|result| result["rating"] == -1}
         return new_results + other_results
+    end
+
+    def get_best_reviewed_first(old_results)
+        new_results = old_results.sort_by {|result| -result['rating']}
+    end
+
+    def get_low_price_first(old_results)
+        new_results = old_results.select {|result| result['price'] != -1}
+        other_results = old_results.select {|result| result['price'] == -1}
+        new_results = new_results.sort_by {|result| result['price']}
+        new_results += other_results
+    end
+
+    def get_high_price_first(old_results)
+        new_results = old_results.select {|result| result['price'] != -1}
+        other_results = old_results.select {|result| result['price'] == -1}
+        new_results = new_results.sort_by {|result| -result['price']}
+        new_results += other_results
+    end
+
+    def get_tags_first(old_results, tags)
+        new_results = old_results.select {|result| (tags - result['tags']).empty?}
+        other_results = old_results.select {|result| !(tags - result['tags']).empty?}
+        # puts(other_results)
+
+        return new_results += other_results
+    end
+
+    def get_tags_from_params()
+        tags = []
+
+        if !params['cash_only'].blank?
+            tags.push('cash_only')
+        end
+        if !params['english'].blank?
+            tags.push('english')
+        end
+        if !params['tips'].blank?
+            tags.push('tips')
+        end
+        if !params['wifi'].blank?
+            tags.push('wifi')
+        end
+        if !params['wheelchair'].blank?
+            tags.push('wheelchair')
+        end
+        return tags
     end
 end
