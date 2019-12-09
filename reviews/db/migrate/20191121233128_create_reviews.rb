@@ -14,7 +14,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.boolean :tips
       t.boolean :wifi
       t.boolean :wheelchair
-
+      t.string :name
       t.timestamps
     end
   end

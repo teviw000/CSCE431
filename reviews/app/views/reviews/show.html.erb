@@ -244,7 +244,7 @@
 				<div class="show-user-card">
 					<div class="gen-info-bar column">
 						<div class="email-box">
-							<%= content_tag :h2, result["user_email"] %>
+							<%= content_tag :h2, result["name"].nil? ? "Anonymous" : result["name"] %>
 						</div>
 						<div class="rating-box">
 							<div class="rating-imgs" >
