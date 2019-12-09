@@ -571,6 +571,43 @@ img{
 	margin-top: 30px;
     margin-bottom: 30px;
     box-shadow: 5px 5px 10px #888888;
+    .column {
+        padding: 5px 20px 5px 20px;
+        display: flex;
+    }
+    .gen-info-bar {
+        padding-top: 10px;
+        .email-box {
+            width: 50%;
+            h2 {
+                font-size: 22px;
+            }
+        }
+        .rating-box {
+            width: 50%;
+            .rating-imgs {
+                float: right;
+            }
+        }
+    }
+    .comment-bar {
+        p {
+            font-style: italic;
+            font-size: 16px;
+            color: #888888;
+            display: inline;
+        }
+    }
+    .rating-bar {
+        .structure-item {
+            width: auto;
+            min-width: 33.3%;
+            display: flex;
+            .sub-item {
+                padding-right: 10px;
+            }
+        }
+    }
 }
 
 .user-structure {
@@ -688,17 +725,22 @@ img{
 	padding: 20px;
   .sub-structure-3{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     height: 100%;
     width: 100%;
 	 .sub-item {
-        display: inline-block;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         flex-grow: 1;
-        justify-content: space-between;
-        color: #500000;
-        font-size: 18px;
         width: auto;
-        max-width: 100px;
+        p {
+            color: #500000;
+            font-size: 18px;
+            text-transform: uppercase;
+            padding-left: 5px;
+        }
 	  }
   }
 }
