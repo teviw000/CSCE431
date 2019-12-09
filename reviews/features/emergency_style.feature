@@ -9,16 +9,16 @@ Scenario: Test for header
     Then I should see class "header1"
 
     Then I should see class "flex-container"
-    Then I should see class "column"
-    Then I should see id "tamu"
-    
-    Then I should see id "police"
-
-
-    Given I am on the emergency page
-    Then I should see class "flex-container"
-    Then I should see class "column"
-    Then I should see id "tamu_office"
+    Then I should see class "column_1"
+    Then I should see class "column_2"
+    Then I should see class "column3"
+    Then I should see class "column4"
+    Then I should see class "column5"
+    Then I should see class "column6"
+    Then I should see class "column7"
+    Then I should see class "column8"
+    Then I should see class "column9"
+    Then I should see class "column10"
 
 
 

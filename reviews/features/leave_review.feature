@@ -6,7 +6,7 @@ I want to go to create a review for a location
 Scenario: Test Leave a Review Button
 	Given I am on the show_mad_taco page
 	Then I should see id "leave_review"
-	Then I should see class "btn"
+	Then I should see id "leave_review"
 	When I follow "Leave A Review"
 	Then I should see class "reviews-card"
 

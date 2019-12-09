@@ -16,7 +16,7 @@
 							<div class="show-sub-item" >
 								<%= content_tag :p, @show_alias %>
 							</div>
-							<div class="show-sub-item">
+							<div class="show-sub-item" id="price-info">
 								<% if @avg_user_price < 0.5%>
 									<%= content_tag :p, "No Price Information" %>
 								<% elsif @avg_user_price < 1.5%>
