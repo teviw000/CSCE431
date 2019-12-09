@@ -45,13 +45,13 @@ class ReviewsController < ApplicationController
     # Anon names
     @anon_names = ["Rudder", "Zachary", "Mosher", "Heldenfels", "Moses", "Nagle", "Olsen", "Penberthy" , "Reed", "Thompson"]
     # Average user price
-    if @avg_user_price = @user_reviews.map{ |review| review["price"]}.reduce(:+).to_f / @user_reviews.size == nil
+    if @user_reviews.map{ |review| review["price"]}.reduce(:+).to_f / @user_reviews.size == nil
       @avg_user_price = 0
     else
       @avg_user_price = @user_reviews.map{ |review| review["price"]}.reduce(:+).to_f / @user_reviews.size
     end
     # Average user rating
-    if @avg_user_rating = @user_reviews.map{ |review| review["rating"]}.reduce(:+).to_f / @user_reviews.size == nil
+    if @user_reviews.map{ |review| review["rating"]}.reduce(:+).to_f / @user_reviews.size == nil
       @avg_user_rating = 0
     else
       @avg_user_rating = @user_reviews.map{ |review| review["rating"]}.reduce(:+).to_f / @user_reviews.size
