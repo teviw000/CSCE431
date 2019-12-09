@@ -62,6 +62,7 @@ class ReviewsController < ApplicationController
     @yelp_review_id = params[:id]
     #To see typing of @yelp_review_info, see https://www.yelp.com/developers/documentation/v3/business
     @yelp_review_info = business(@yelp_review_id)
+    puts @yelp_review_info["hours"].nil?
     #@user_reviews is an array of type Review. See the types in reviews/db/schema.rb
     @user_reviews = Review.where(business_id: params[:id])
 

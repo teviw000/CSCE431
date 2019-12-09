@@ -5,13 +5,21 @@
 				<%= image_tag @yelp_review_info["image_url"], size: "220" %>
 			</div>
 			<div class="show-text-box" >
- 				<div class="show-sub-text-box show-business-info" >
+ 			  <div class="show-sub-text-box show-business-info" >
 				  <div class="show-title-box left" >
   						<div class="show-sub-item title" >
   							<%= content_tag :h1, @yelp_review_info["name"] %>
   						</div>
   						<div class="show-sub-item" >
-  							<%= content_tag :p, @yelp_review_info["is_closed"] ? "Currently Closed" : "Currently Open" %>
+                <% if @yelp_review_info["hours"].nil? %>
+                  <%= content_tag :p, "Unknown If Currently Open" %>
+                <% elsif @yelp_review_info["hours"]["is_open_now"].nil? %>
+                  <%= content_tag :p, "Unknown If Currently Open" %>
+                <% elsif @yelp_review_info["hours"] == true %>
+                  <%= content_tag :p, "Open Now" %>
+                <% else %>
+                  <%= content_tag :p, "Closed Now" %>
+                <% end %>
   						</div>
   						<div class="show-sub-item" >
   							<%= content_tag :p, @show_alias %>
@@ -96,8 +104,7 @@
 							</div>
 							<div class="show-button" >
 								<div id="leave_review">
-        				  <button type="button" class="btn btn-default btn-lg">
-        				    <%= link_to 'Leave A Review', controller: "reviews", action: "leave_review", id: params[:id] %>
+                  <%= link_to 'Leave A Review', {controller: "reviews", action: "leave_review", id: params[:id]}, class: "action-buttons" %>
         				</div>
 							</div>
 						</div>
@@ -164,7 +171,7 @@
         <% end %>
         </div>
         <div class="structure-item" >
-          <p>Safety: </p>
+          <%= content_tag :h3, "Safety: "%>
           <% if @avg_user_safety < 0.5 == 0 %>
             <%= image_tag("gigs_grey.svg", size: "20") %>
             <%= image_tag("gigs_grey.svg", size: "20") %>
@@ -209,46 +216,46 @@
       <div class="sub-structure-3" >
         <div class="sub-item">
           <% if @avg_user_cash_only > 0.5 %>
-            <%= image_tag("gigs_maroon.svg", size: "35") %>
+            <%= image_tag("gigs_maroon.svg", size: "25") %>
             <%= content_tag :p, "Cash Only" %>
           <% else %>
-            <%= image_tag("gigs.svg", size: "35") %>
+            <%= image_tag("gigs.svg", size: "25") %>
             <%= content_tag :p, "Cash Only" %>
           <% end %>
         </div>
         <div class="sub-item">
           <% if @avg_user_english > 0.5 %>
-            <%= image_tag("circle-check_maroon.svg", size: "35") %>
+            <%= image_tag("circle-check_maroon.svg", size: "25") %>
             <%= content_tag :p, "Speaks English" %>
           <% else %>
-            <%= image_tag("circle-check.svg", size: "35") %>
+            <%= image_tag("circle-check.svg", size: "25") %>
             <%= content_tag :p, "Speaks English" %>
           <% end %>
         </div>
         <div class="sub-item">
           <% if @avg_user_tips > 0.5 %>
-            <%= image_tag("dollar-sign_maroon.svg", size: "35") %>
+            <%= image_tag("dollar-sign_maroon.svg", size: "25") %>
             <%= content_tag :p, "Tips Encouraged" %>
           <% else %>
-            <%= image_tag("dollar-sign.svg", size: "35") %>
+            <%= image_tag("dollar-sign.svg", size: "25") %>
             <%= content_tag :p, "Tips Encouraged" %>
           <% end %>
         </div>
         <div class="sub-item">
           <% if @avg_user_wifi  > 0.5 %>
-            <%= image_tag("wifi_maroon.svg", size: "35") %>
+            <%= image_tag("wifi_maroon.svg", size: "25") %>
             <%= content_tag :p, "WiFi" %>
           <% else %>
-            <%= image_tag("wifi.svg", size: "35") %>
+            <%= image_tag("wifi.svg", size: "25") %>
             <%= content_tag :p, "WiFi" %>
           <% end %>
         </div>
         <div class="sub-item">
           <% if @avg_user_wheelchair > 0.5 %>
-            <%= image_tag("wheelchair_maroon.svg", size: "35") %>
+            <%= image_tag("wheelchair_maroon.svg", size: "25") %>
             <%= content_tag :p, "Wheelchair Accessible" %>
           <% else %>
-            <%= image_tag("wheelchair.svg", size: "35") %>
+            <%= image_tag("wheelchair.svg", size: "25") %>
             <%= content_tag :p, "Wheelchair Accessible" %>
           <% end %>
   		  </div>
