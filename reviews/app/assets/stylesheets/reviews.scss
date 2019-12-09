@@ -52,21 +52,24 @@ img{
 }
 
 #sort_by {
+    display: flex;
+    justify-content: space-evenly;
     .sort_container {
-        display: block;
+        display: inline;
         position: relative;
         padding-left: 35px;
         margin-bottom: 12px;
         cursor: pointer;
         font-size: 22px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
         input {
             position: absolute;
             opacity: 0;
             cursor: pointer;
+            top: 4px;
+            left: 0px;
+            width: 25px;
+            height: 25px;
+            z-index: 2;
             &:checked ~ .checkmark {
                 background-color: #500000;
                 border-radius: 5px;
@@ -85,7 +88,7 @@ img{
                 top: 3px;
                 width: 6px;
                 height: 12px;
-                border: solid #888888;
+                border: solid white;
                 border-width: 0 2px 2px 0;
                 background-color: transparent;
                 border-radius: 0;
@@ -93,10 +96,11 @@ img{
         }
         .checkmark {
             position: absolute;
-            top: 0px;
+            top: 4px;
             left: 0px;
             height: 25px;
             width: 25px;
+            z-index: 1;
             background-color: transparent;
             border-radius: 5px;
             border: 2px solid #888888;

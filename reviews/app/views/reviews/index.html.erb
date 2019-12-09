@@ -59,7 +59,7 @@
         <%= check_box_tag("wheelchair", "true", !params["wheelchair"].nil?) %>
         <span class="checkmark"></span>
     <% end %>
-    <%= submit_tag "Submit", id: "submit_sort"%>
+    <%= submit_tag "Submit", id: "submit_sort", class: "action-buttons"%>
 </div>
 <% if @display_results.is_a?(Array) && @display_results.length != 0 %>
     <div id="cards">
