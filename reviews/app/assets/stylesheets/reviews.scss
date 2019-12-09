@@ -436,6 +436,7 @@ img{
         flex-direction: row !important;
         justify-content: space-between;
         align-content: center !important;
+        margin-right: 0 !important; 
     }
 
     .b {
@@ -465,6 +466,9 @@ img{
     .container { 
         padding: 0 !important;  
         display: inline-flex; 
+        justify-content: flex-end;
+        width: 40% !important;
+        margin-right: 0 !important; 
 
       }
     .index-subheading {
