@@ -127,21 +127,22 @@
 //    font-size: 1.5em; 
 }
 
+
 .column-1 { 
 //    width: 25%; 
     display: flex !important; 
-    //flex-direction: column;
+//    flex-direction: column;
     //justify-content: space-between !important;
     font-size: 1.5em; 
     margin-right: 0px !important;
     margin-left: 0px !important;
 }
 
+
 .column-2 {
 //    width: 50%; 
     display: flex !important; 
     align-items: center !important; 
-    //flex-direction: column;
     justify-content: space-between !important;
     font-size: 1.5em; 
     margin-right: 0 !important;
@@ -160,6 +161,7 @@
     justify-content: space-between !important; 
     margin-bottom: 20px;  
 }
+
 .rate-row { 
     display: flex;
     width: 48%;

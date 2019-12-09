@@ -37,7 +37,7 @@
                 </fieldset>
             </div>
             <div id="review_safety_block" class="rate-row">
-                <%= f.label :safety, "Safety:", :class => "label"  %>
+                <%= f.label :safety, "Safety:", :class => "label" %>
                 <fieldset class="rating">
                       <%= f.radio_button(:safety, "5") %> <%= f.label(:safety.to_s + "_5" ) %> 
                       <%= f.radio_button(:safety, "4") %> <%= f.label(:safety.to_s + "_4" ) %> 
@@ -47,7 +47,7 @@
                 </fieldset>
             </div>
             <div id="review_service_block" class="rate-row">
-                <%= f.label :service, "Service:", :class => "label"  %>
+                <%= f.label :service, "Service:", :class => "label" %>
                 <fieldset class="rating">
                       <%= f.radio_button(:service, "5") %> <%= f.label(:service.to_s + "_5" ) %> 
                       <%= f.radio_button(:service, "4") %> <%= f.label(:service.to_s + "_4" ) %> 
@@ -58,7 +58,7 @@
             </div>
         </div>
         
-        <div class="tags-section"> 
+       <div class="tags-section"> 
             <div id="review_cash_only_block" class="tags-row">
                 <div class=column-1>
                     <%= f.label :cash_only, "Do they only accept Cash?", value: true, class: "tags-text" %><br />
