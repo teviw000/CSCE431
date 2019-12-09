@@ -5,7 +5,7 @@ Feature: Get info from Search box
 
 Scenario: Test that search bar has multiple parts
     Given I am on the home page
-    Then I should see class "search_bar"
+    Then I should see class "search-flex"
     Then I should see id "sb_near"
     Then I should see id "sb_find"
     Then I should see id "sb_search"

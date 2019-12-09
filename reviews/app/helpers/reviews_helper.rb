@@ -245,9 +245,6 @@ module ReviewsHelper
         if !params['wifi'].blank?
             tags.push('wifi')
         end
-        if !params['english'].blank?
-            tags.push('english')
-        end
         if !params['wheelchair'].blank?
             tags.push('wheelchair')
         end

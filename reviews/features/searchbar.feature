@@ -5,6 +5,6 @@ Feature: Create search bar
 
 Scenario: Test for search bar presence 
     Given I am on the home page
-    Then I should see class "search_bar"    
+    Then I should see class "search-flex"    
    
     
