@@ -5,4 +5,4 @@ Feature: Create emergency page
 
 Scenario: Test for emergency presence
     Given I am on the emergency page
-    Then I should see class "emergency"
+    Then I should see class "emergency-background"

@@ -5,5 +5,5 @@ Feature: create review page
 
 Scenario: Test for review presence
     Given I am on the review page
-    Then I should see id "review_page"
+    Then I should see class "reviews-card"
     Then I should see id "new_review"

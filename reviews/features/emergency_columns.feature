@@ -5,5 +5,4 @@ I want to be able to have easy access to TAMU emergency contacts.
 
 Scenario: Test for TAMU emergency resources
     Given I am on the emergency page
-    Then I should see class "emergency_info"
     Then I should see id "tamu"
