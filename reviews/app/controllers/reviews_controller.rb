@@ -54,17 +54,13 @@ class ReviewsController < ApplicationController
       @avg_user_rating = @user_reviews.map{ |review| review["rating"]}.reduce(:+).to_f / @user_reviews.size
     end
     # Average user safety
-    if @avg_user_safety = @user_reviews.map{ |review| review["safety"]}.reduce(:+).to_f / @user_reviews.size == nil
+
       @avg_user_safety = 0
-    else
-      @avg_user_safety = @user_reviews.map{ |review| review["safety"]}.reduce(:+).to_f / @user_reviews.size
-    end
+
     # Average user service
-    if @avg_user_service = @user_reviews.map{ |review| review["service"]}.reduce(:+).to_f / @user_reviews.size == nil
+
       @avg_user_service = 0
-    else
-      @avg_user_service = @user_reviews.map{ |review| review["service"]}.reduce(:+).to_f / @user_reviews.size
-    end
+
 
     # Majority tag values
     @user_bools = get_tags(@user_reviews)
@@ -114,7 +110,7 @@ class ReviewsController < ApplicationController
     rescue => exception
       hours = []
     end
-    
+
     days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     @hours = {
       "Monday" => "Closed",
@@ -138,7 +134,7 @@ class ReviewsController < ApplicationController
         if (start.to_i > 1200)
           # After noon
           start_string = (start.to_i - 1200).to_s + " pm"
-        else 
+        else
           # Before noon
           start_string = (start.to_i).to_s + " am"
         end
@@ -147,7 +143,7 @@ class ReviewsController < ApplicationController
         if (end_.to_i > 1200)
           # After noon
           end_string = (end_.to_i - 1200).to_s + " pm"
-        else 
+        else
           # Before noon
           end_string = (end_.to_i).to_s + " am"
         end

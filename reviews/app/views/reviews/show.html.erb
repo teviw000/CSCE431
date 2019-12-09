@@ -262,7 +262,7 @@
         <div class="show-user-card">
           <div class="user-structure" >
             <div class="sub-structure left" >
-              <div class="structure-item" >
+              <div class="structure-item right" >
                 <%= content_tag :h2, result["user_email"] %>
               </div>
               <div class="structure-item2" >
@@ -272,6 +272,10 @@
             <div class="sub-structure right" >
               <div class="structure-split2" >
                 <div class="structure-item" >
+                   <div class="sub-item" >
+                    <%= content_tag :h3, "Rating: " %>
+                  </div>
+                  <div class="sub-item2" >
                   <% if result["rating"].nil? %>
                     <%= content_tag :h4, "No User Rating"%>
                   <% elsif result["rating"] ==0 %>
@@ -311,9 +315,13 @@
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                 <% end %>
-                  <%= content_tag :h3, "Rating" %>
+              </div>
                 </div>
                 <div class="structure-item" >
+                  <div class="sub-item" >
+                    <%= content_tag :h3, "Safety: " %>
+                  </div>
+                  <div class="sub-item2" >
                   <% if result["safety"].nil? %>
                     <%= content_tag :h4, "No User Safety Rating"%>
                   <% elsif result["safety"] ==0 %>
@@ -353,11 +361,15 @@
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                 <% end %>
-                  <%= content_tag :h3, "Safety" %>
+              </div>
                 </div>
               </div>
               <div class="structure-split2" >
-                <div class="structure-item" >
+                <div class="structure-item right" >
+                  <div class="sub-item" >
+                    <%= content_tag :h3, "Price:" %>
+                  </div>
+                  <div class="sub-item2" >
                   <% if result["price"].nil? %>
                     <%= content_tag :h4, "No User Price Rating"%>
                   <% elsif result["price"] ==0 %>
@@ -397,9 +409,13 @@
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                 <% end %>
-                  <%= content_tag :h3, "Price" %>
+              </div>
                 </div>
                 <div class="structure-item" >
+                  <div class="sub-item" >
+                    <%= content_tag :h3, "Service: " %>
+                  </div>
+                  <div class="sub-item2" >
                   <% if result["service"].nil? %>
                     <%= content_tag :h4, "No User Service Rating"%>
                   <% elsif result["service"] ==0 %>
@@ -439,8 +455,8 @@
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                     <%= image_tag("gigs_maroon.svg", size: "20") %>
                 <% end %>
-                  <%= content_tag :h3, "Service" %>
                 </div>
+              </div>
               </div>
             </div>
           </div>
