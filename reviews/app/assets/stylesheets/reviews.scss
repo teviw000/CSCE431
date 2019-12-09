@@ -51,6 +51,77 @@ img{
     float: left;
 }
 
+#sort_by {
+    display: flex;
+    justify-content: space-evenly;
+    .sort_container {
+        display: inline;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            top: 4px;
+            left: 0px;
+            width: 25px;
+            height: 25px;
+            z-index: 2;
+            &:checked ~ .checkmark {
+                background-color: #500000;
+                border-radius: 5px;
+                -webkit-transform: rotate(0deg) sacle(1);
+                -ms-transform: rotate(0deg) scale(1);
+                transform: rotate(0deg) scale(1);
+                opacity: 1;
+                border: 2px solid #500000;
+            }
+            &:checked ~ .checkmark::after {
+                -webkit-transform: rotate(45deg) scale(1);
+                -ms-transform: rotate(45deg) scale(1);
+                transform: rotate(45deg) scale(1);
+                opacity: 1;
+                left: 8px;
+                top: 3px;
+                width: 6px;
+                height: 12px;
+                border: solid white;
+                border-width: 0 2px 2px 0;
+                background-color: transparent;
+                border-radius: 0;
+            }
+        }
+        .checkmark {
+            position: absolute;
+            top: 4px;
+            left: 0px;
+            height: 25px;
+            width: 25px;
+            z-index: 1;
+            background-color: transparent;
+            border-radius: 5px;
+            border: 2px solid #888888;
+            &::after {
+                position: absolute;
+                content: "";
+                left: 12px;
+                top: 12px;
+                height: 0px;
+                width: 0px;
+                border-radius: solid #500000;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(0def) scale(0);
+                -ms-transform: rotate(0deg) scale(0);
+                transform: rotate(0deg) scale(0);
+                opacity: 1;
+            }
+        }
+    }
+}
+
 .our-card {
     display: flex;
     flex-direction: row;
@@ -436,6 +507,7 @@ img{
         flex-direction: row !important;
         justify-content: space-between;
         align-content: center !important;
+        margin-right: 0 !important; 
     }
 
     .b {
@@ -462,9 +534,12 @@ img{
         fill: white !important;
         color: white !important;
     }
-    .container {
-        padding: 0 !important;
-        display: inline-flex;
+    .container { 
+        padding: 0 !important;  
+        display: inline-flex; 
+        justify-content: flex-end;
+        width: 40% !important;
+        margin-right: 0 !important; 
 
       }
     .index-subheading {

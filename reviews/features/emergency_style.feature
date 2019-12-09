@@ -7,14 +7,11 @@ Scenario: Test for header
     Given I am on the emergency page
     Then I should see class "emergency-background"
     Then I should see class "header1"
-    Then I should see class "emergency"
-    Then I should see id "get_help_page"   
 
     Then I should see class "flex-container"
     Then I should see class "column"
     Then I should see id "tamu"
     
-    Then I should see class "column"
     Then I should see id "police"
 
 
@@ -22,9 +19,6 @@ Scenario: Test for header
     Then I should see class "flex-container"
     Then I should see class "column"
     Then I should see id "tamu_office"
-  
-    Then I should see class "column"
-    Then I should see id "other"
 
 
 

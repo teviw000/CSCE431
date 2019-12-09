@@ -19,7 +19,33 @@ class ReviewsController < ApplicationController
         @results = yelp_help(@find, @near)
         #To see typing of @results, see https://www.yelp.com/developers/documentation/v3/business_search
       end
+
       @display_results = get_display_results(@results)
+      if !params['best_reviews'].blank?
+        puts(params['best_reviews'])
+        if params['best_reviews'] == 'true'
+          @display_results = get_best_reviewed_first(@display_results)
+        end
+      end
+
+      if !params['price'].blank?
+        puts(params['price'])
+        if params['price'] == 'high'
+          @display_results = get_high_price_first(@display_results)
+        end
+        if params['price'] == 'low'
+          @display_results = get_low_price_first(@display_results)
+        end
+      end
+
+      tags = get_tags_from_params()
+
+      if !tags.empty?
+        # puts(tags)
+        @display_results = get_tags_first(@display_results,tags)
+      end
+      
+
       @display_results = get_correct_order(@display_results)
     else
       @display_results = []
