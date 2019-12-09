@@ -17,7 +17,7 @@
     <!--Out of 5 Ratings-->
         <div class="rate"> 
             <div id="review_rating_block" class="rate-row">
-                <%= f.label :rating, "Rating:" %>
+                <%= f.label :rating, "Rating:", :class => "label" %>
                 <fieldset class="rating">
                       <%= f.radio_button(:rating, "5") %> <%= f.label(:rating.to_s + "_5" ) %> 
                       <%= f.radio_button(:rating, "4") %> <%= f.label(:rating.to_s + "_4" ) %> 
@@ -27,8 +27,8 @@
                 </fieldset>
             </div>
             <div id="review_price_block" class="rate-row">
-                <%= f.label :price, "Price:"%>
-                <fieldset class="rating">
+                <%= f.label :price, "Price:", :class => "label" %>
+                <fieldset class="price">
                       <%= f.radio_button(:price, "5") %> <%= f.label(:price.to_s + "_5" ) %> 
                       <%= f.radio_button(:price, "4") %> <%= f.label(:price.to_s + "_4" ) %> 
                       <%= f.radio_button(:price, "3") %> <%= f.label(:price.to_s + "_3" ) %> 
@@ -37,7 +37,7 @@
                 </fieldset>
             </div>
             <div id="review_safety_block" class="rate-row">
-                <%= f.label :safety, "Safety:" %>
+                <%= f.label :safety, "Safety:", :class => "label" %>
                 <fieldset class="rating">
                       <%= f.radio_button(:safety, "5") %> <%= f.label(:safety.to_s + "_5" ) %> 
                       <%= f.radio_button(:safety, "4") %> <%= f.label(:safety.to_s + "_4" ) %> 
@@ -47,7 +47,7 @@
                 </fieldset>
             </div>
             <div id="review_service_block" class="rate-row">
-                <%= f.label :service, "Service:" %>
+                <%= f.label :service, "Service:", :class => "label" %>
                 <fieldset class="rating">
                       <%= f.radio_button(:service, "5") %> <%= f.label(:service.to_s + "_5" ) %> 
                       <%= f.radio_button(:service, "4") %> <%= f.label(:service.to_s + "_4" ) %> 
@@ -58,7 +58,7 @@
             </div>
         </div>
         
-        <div class="tags-section"> 
+       <div class="tags-section"> 
             <div id="review_cash_only_block" class="tags-row">
                 <div class=column-1>
                     <%= f.label :cash_only, "Do they only accept Cash?", value: true, class: "tags-text" %><br />

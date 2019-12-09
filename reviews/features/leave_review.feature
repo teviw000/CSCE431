@@ -40,4 +40,3 @@ Scenario: Leave a Review
 	When I fill in "near" with "College Station"
 	When I fill in "find" with "tacos"
 	When I press "button"
-	
