@@ -55,6 +55,7 @@ module ReviewsHelper
         params = {
             term: term,
             location: location,
+            limit: 50,
         }
         response = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
         response.parse
@@ -66,6 +67,7 @@ module ReviewsHelper
             term: term,
             latitude: latitude,
             longitude: longitude,
+            limit: 50,
         }
         response = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
         response.parse
@@ -90,18 +92,15 @@ module ReviewsHelper
     def business(business_id)
         url = "#{API_HOST}#{BUSINESS_PATH}#{business_id}"
         response = HTTP.auth("Bearer #{API_KEY}").get(url)
-        # puts(response)
         return response.parse
     end
 
     def get_display_results(yelp_result)
         display_results = []
         if (!yelp_result.is_a?(Hash))
-            puts "not a hash"
             return display_results
         end
         if (!yelp_result.key?("businesses"))
-            puts "no businesses"
             return display_results
         end
         yelp_result["businesses"].each do |biz|
@@ -141,6 +140,9 @@ module ReviewsHelper
     end
 
     def get_average(reviews, key)
+        if reviews.select{|review| review[key].nil?}.length == reviews.length
+            return -1
+        end
         count = 0
         total = 0
         reviews.each do |review| 
@@ -155,47 +157,16 @@ module ReviewsHelper
         return (total.to_f / count.to_f)
     end
 
+    # If "true" for a tag occurs more often than "false", that tag is included
     def get_tags(reviews)
-        count = reviews.length
-        cash_only_count = 0
-        english_count = 0
-        tips_count = 0
-        wifi_count = 0
-        wheelchair_count = 0
-        reviews.each do |review|
-            if (review["cash_only"] == true)
-                cash_only_count += 1
-            end
-            if (review["english"] == true)
-                english_count += 1
-            end
-            if (review["tips"] == true)
-                tips_count += 1
-            end
-            if (review["wifi"] == true)
-                wifi_count += 1
-            end
-            if (review["wheelchair"] == true)
-                wheelchair_count += 1
+        tags = ["cash_only", "english", "tips", "wifi", "wheelchair"]
+        ret_tags = []
+        tags.each do |tag|
+            if reviews.select{|review| review[tag] == true}.length > reviews.select{|review| review[tag] == false}.length
+                ret_tags.push(tag)
             end
         end
-        tags = []
-        if (cash_only_count > count/2)
-            tags.push("cash_only")
-        end
-        if (english_count > count / 2)
-            tags.push("english")
-        end
-        if (tips_count > count / 2)
-            tags.push("tips")
-        end
-        if (wifi_count > count / 2)
-            tags.push("wifi")
-        end
-        if (wheelchair_count > count / 2)
-            tags.push("wheelchair")
-        end
-        return tags
+        return ret_tags
     end
 
     def get_correct_order(old_results)
@@ -225,7 +196,6 @@ module ReviewsHelper
     def get_tags_first(old_results, tags)
         new_results = old_results.select {|result| (tags - result['tags']).empty?}
         other_results = old_results.select {|result| !(tags - result['tags']).empty?}
-        # puts(other_results)
 
         return new_results += other_results
     end

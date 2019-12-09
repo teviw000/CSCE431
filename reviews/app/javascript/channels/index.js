@@ -34,7 +34,7 @@ $(document).on("turbolinks:load", function() {
     // If there are cards, scroll to them
     if ($("#cards").length === 1) {
         $([document.documentElement, document.body]).animate({
-            scrollTop: $("#sort_by").offset().top - 50 
+            scrollTop: $("#sort_by").offset().top 
         }, 1000);
     }
 

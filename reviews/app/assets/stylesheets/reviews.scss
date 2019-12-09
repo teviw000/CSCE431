@@ -380,8 +380,8 @@ img{
 .b {
     display: none;
 }
-.container { 	
-    display: none; 	
+.container {
+    display: none;
 }
 
 .menu-button {
@@ -554,26 +554,165 @@ img{
 	max-width: 70%;
 	width: auto;
 	height: auto;
-	min-height: 400px;
 	margin: auto;
 	margin-top: 30px;
-  margin-bottom: 30px;
-  box-shadow: 5px 5px 10px #888888;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 10px #888888;
 }
 
+.show-user-card {
+	display: flex;
+	flex-direction: column;
+	max-width: 70%;
+	width: auto;
+	height: auto;
+	margin: auto;
+	margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 10px #888888;
+    .column {
+        padding: 5px 20px 5px 20px;
+        display: flex;
+    }
+    .gen-info-bar {
+        padding-top: 10px;
+        .email-box {
+            width: 50%;
+            h2 {
+                font-size: 22px;
+            }
+        }
+        .rating-box {
+            width: 50%;
+            .rating-imgs {
+                float: right;
+            }
+        }
+    }
+    .comment-bar {
+        p {
+            font-style: italic;
+            font-size: 16px;
+            color: #888888;
+            display: inline;
+        }
+    }
+    .rating-bar {
+        .structure-item {
+            width: auto;
+            min-width: 33.3%;
+            display: flex;
+            .sub-item {
+                padding-right: 10px;
+            }
+        }
+    }
+}
+
+.user-structure {
+	display: flex;
+	flex-flow: row;
+	width: 100%;
+	height: 100%;
+  padding: 20px;
+  .sub-structure {
+    flex-grow: 1;
+    flex-flow: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    &.right {
+      text-align: right;
+      width: 40%;
+    }
+    &.left {
+      text-align: left;
+      width: 60%;
+    }
+    .structure-split2 {
+    	display: flex;
+      flex-flow: row;
+    	width: 100%;
+        .structure-item {
+          display: flex;
+          flex-grow: 1;
+          display: inline-flex;
+          .sub-item {
+            display: flex;
+            width: 25%;
+            text-align: left;
+            padding-right: 3px;
+            padding-left: 5px;
+            flex-grow: 1;
+          }
+          .sub-item2 {
+            display: flex;
+            width: 50%;
+            justify-content: flex-start;
+
+            flex-grow: 1;
+          }
+        }
+        .structure-item2 {
+          max-width: fit-content;
+          flex-grow: 1;
+        }
+
+    }
+  }
+}
 .structure-1 {
 	display: flex;
 	flex-flow: row;
 	width: 100%;
 	height: 100%;
+  .sub-structure {
+    flex-grow: 1;
+    flex-flow: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    &.right {
+      text-align: right;
+      width: 25%;
+    }
+    &.left {
+      text-align: left;
+      width: 75%;
+    }
+    .structure-item {
+      display: flex;
+      flex-grow: 1;
+    }
+  }
 }
 .structure-2 {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column;
+  flex-wrap: wrap;
   width: 100%;
   height: 100%;
-	justify-content: space-around;
 	padding: 20px;
+  .sub-structure-2 {
+    display: flex;
+    flex-flow: row;
+    height: 100%;
+    justify-content: space-between;
+    &.right {
+      text-align: right;
+      width: 25%;
+    }
+    &.left {
+      text-align: left;
+      width: 75%;
+    }
+    .structure-item {
+      width: 25%;
+      flex-grow: 1;
+      display: inline-flex;
+      h3 {
+          padding-right: 15px;
+      }
+    }
+  }
 }
 
 .structure-3 {
@@ -583,15 +722,24 @@ img{
   width: 100%;
   height: 100%;
 	padding: 20px;
-	justify-content: space-evenly;
   .sub-structure-3{
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-between;
     height: 100%;
     width: 100%;
 	 .sub-item {
-     flex-grow: 1;
-		 justify-content: space-between;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        width: auto;
+        p {
+            color: #500000;
+            font-size: 18px;
+            text-transform: uppercase;
+            padding-left: 5px;
+        }
 	  }
   }
 }
@@ -610,16 +758,21 @@ img{
 	width: 100%;
 }
 
+
+
 .show-rating {
 	display: flex;
 	justify-content: flex-end;
 	width: 100%;
+  padding-right: 15px;
 }
 
 .show-button {
 	display: flex;
 	justify-content: flex-end;
-	width: 100%;
+    width: 100%;
+    min-width: 130px;
+    padding: 5px 15px 0px 0px;
 }
 
 .show-text-box {
@@ -628,137 +781,137 @@ img{
 	width: 85%;
 	height: 100%;
 	.show-sub-text-box {
-		height: 33.3%;
+        height: 33.3%;
+        display: flex;
+        flex-wrap: wrap;
 		.show-title-box {
 			display: flex;
-      width: 50%;
+            width: 50%;
 			flex-flow: row;
-      flex-wrap: wrap;
-        &.right {
-          text-align: right;
-          width: 25%;
-          flex-wrap: wrap;
-        }
-        &.left {
-        	text-align: left;
-          width: 75%;
-          flex-wrap: wrap;
-        }
-		  .show-sub-item {
-        width: auto;
-				min-width: fit-content;
-        padding: 5px 20px 5px 0px;
-        font-size: 20px;
-        color: #888888;
-        flex-grow: 1;
-          img {
-            height: auto;
-            padding-top: 7px;
-          }
-          &.title {
-            width: auto;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: maroon;
-            &:hover {
-              color: #500000;
-              text-decoration: none;
+            flex-wrap: wrap;
+            &.right {
+                text-align: right;
+                width: 30%;
+                flex-wrap: wrap;
             }
-          }
-          &.address {
-            padding: 10px;
-            width: auto;
-					  min-width: fit-content;
-					  justify-content: space-around;
-					  margin:0 10px 10px 0;
-          }
-			  }
-			  .show-sub-item2 {
-				  width: auto;
-				  min-width: fit-content;
-          padding: 5px 20px 5px 0px;
-          font-size: 20px;
-          color: maroon;
-			  }
-		 }
+            &.left {
+                text-align: left;
+                width: 70%;
+                flex-wrap: wrap;
+            }
+            .show-sub-item {
+                width: auto;
+                min-width: fit-content;
+                padding: 5px 20px 5px 0px;
+                font-size: 20px;
+                color: #888888;
+                flex-grow: 1;
+                img {
+                    height: auto;
+                    padding-top: 7px;
+                }
+                &.title {
+                    width: auto;
+                    text-transform: uppercase;
+                    color: #500000;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                    h1 {
+                        font-weight: bold;
+                    }
+                }
+                &.address {
+                    padding: 10px;
+                    width: auto;
+                    min-width: fit-content;
+                    justify-content: space-around;
+                    margin:0 10px 10px 0;
+                }
+            }
+            .show-sub-item2 {
+                width: auto;
+                min-width: fit-content;
+                padding: 5px 20px 5px 0px;
+                font-size: 20px;
+                color: maroon;
+            }       
+        }
 	}
 	.show-business-info {
-    display: flex;
-    justify-content: space-around;
-    min-height: 50%;
-    height: 50%;
-    width: 100%;
-    padding: 10px;
-    flex-grow: 1;
-    .show-sub-item {
-      flex-grow: 1;
-    }
-  }
-
-  .show-business-address {
-    display: flex;
-    min-height: 50%;
-    height: 50%;
-    width: 100%;
-    padding: 10px;
-    flex-grow: 1;
-    .show-sub-item {
-      flex-grow: 1;
-    }
-  }
-
-  .show-business-hours {
-    display: flex;
-    min-height: 25%;
-    height: auto;
-    width: 100%;
-		justify-content: space-between;
-    padding: 15px;
-		.show-bus-container {
-      display: flex;
-      .show-sub-item {
+        display: flex;
+        justify-content: space-around;
+        min-height: 50%;
+        height: 50%;
+        width: 100%;
+        padding: 10px;
         flex-grow: 1;
-        width: auto;
-        padding: 5px 15px 5px 0px;
-        font-size: 20px;
-        color: black;
-        img {
-          height: auto;
-          padding-top: 7px;
+        .show-sub-item {
+            flex-grow: 1;
         }
-      }
-		}
-  }
-  .show-tag-info {
-    display: flex;
-    flex-wrap: wrap;
-    height: auto;
-    min-height: 25%;
-    width: 100%;
-    .show-sub-item {
-      width: auto;
-      //padding: 5px 30px 5px 0px;
-      font-size: 18px;
-      color: #500000;
-      text-transform: uppercase;
-      font-weight: bold;
-      height: auto;
-      img {
-        display: inline-block;
-        float: none;
-      }
-      p {
-        display: inline-block;
-        white-space: nowrap;
-        margin-right: 15px;
-        margin-bottom: 0px;
-      }
     }
-  }
-  .break {
-    flex-basis: 100%;
-    height: 0px;
-  }
+    .show-business-address {
+        display: flex;
+        min-height: 50%;
+        height: 50%;
+        width: 100%;
+        padding: 10px;
+        flex-grow: 1;
+        .show-sub-item {
+            flex-grow: 1;
+        }
+    }
+    .show-business-hours {
+        display: flex;
+        min-height: 25%;
+        height: auto;
+        width: 100%;
+		justify-content: space-between;
+        padding: 15px;
+		.show-bus-container {
+            display: flex;
+        }
+        .show-sub-item {
+            flex-grow: 2;
+            width: auto;
+            padding: 5px 15px 5px 0px;
+            color: black;
+            img {
+                height: auto;
+                padding-top: 7px;
+            }
+        }
+    }
+    .show-tag-info {
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 25%;
+        width: 100%;
+        .show-sub-item {
+            width: auto;
+            //padding: 5px 30px 5px 0px;
+            font-size: 18px;
+            color: #500000;
+            text-transform: uppercase;
+            font-weight: bold;
+            height: auto;
+            img {
+                display: inline-block;
+                float: none;
+            }
+            p {
+                display: inline-block;
+                white-space: nowrap;
+                margin-right: 15px;
+                margin-bottom: 0px;
+            }
+        }
+    }
+    .break {
+        flex-basis: 100%;
+        height: 0px;
+    }
 }
 
 
