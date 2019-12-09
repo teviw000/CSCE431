@@ -14,6 +14,14 @@
                 <%= f.text_field :user_email, value: "not logged in"%>
             <%end%>
         </div>
+        <div id="review_user_name_block" style="display: none">
+            <%= f.label :name %>
+            <%if logged_in?%>
+                <%= f.text_field :name, value: current_user.name%>
+            <%else%>
+                <%= f.text_field :name, value: "No Name"%>
+            <%end%>
+        </div>
     <!--Out of 5 Ratings-->
         <div class="rate"> 
             <div id="review_rating_block" class="rate-row">
@@ -131,6 +139,22 @@
                     </div>
                     <div>
                         <%= f.radio_button :wheelchair, false, :checked => false, :value => false %>
+                        <span>No</span>
+                    </div>
+                </div>
+            </div>
+            <div id="anonymous_block" class="tags-row">
+                <div class="column-1">
+                    <label class="tags-text">Would you like to submit anonymously?
+                    </label>
+                </div>
+                <div class="column-2">
+                    <div>
+                        <input type="radio" id="review_anonymous_yes">
+                        <span>Yes</span>
+                    </div>
+                    <div>
+                        <input type="radio" id="review_anonymous_no">
                         <span>No</span>
                     </div>
                 </div>

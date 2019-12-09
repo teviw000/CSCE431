@@ -5,9 +5,10 @@ Feature: create show page
 
 Scenario: Test the show page
     Given I am on the show_mad_taco page
-    Then I should see "See Reviews Here"
-    Then I should see "Rating"
-    Then I should see "Price"
-    Then I should see "Address"
-    Then I should see "Hours"
-    Then I should see "Phone Number"
+    Then I should see class "show-card"
+    Then I should see class "show-image"
+    Then I should see class "show-title-box"
+    Then I should see class "show-rating"
+    Then I should see id "price-info"
+    Then I should see id "leave_review"
+    Then I should see class "show-business-hours"

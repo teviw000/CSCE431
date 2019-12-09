@@ -185,7 +185,7 @@ class ReviewsController < ApplicationController
 	end
 
 	def review_params
-		allow = [:business_id, :user_email, :comment, :rating, :price, :safety, :service, :cash_only, :english, :tips, :wifi, :wheelchair]
+		allow = [:business_id, :user_email, :comment, :rating, :price, :safety, :service, :cash_only, :english, :tips, :wifi, :wheelchair, :name]
 		params.require(:review).permit(allow)
 	end
 

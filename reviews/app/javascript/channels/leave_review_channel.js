@@ -10,6 +10,9 @@ $(document).on("turbolinks:load", function() {
             alert("Please log in before leaving a review")
             return false;
         }
+        if ($("#review_anonymous_yes:checked").length === 1) {
+            $("#review_name").val("Anonymous");
+        }
         /*
         // If comment section is empty
         if ($("#review_comment").val() === "") {
