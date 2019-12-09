@@ -38,9 +38,6 @@ class ReviewsController < ApplicationController
     @yelp_review_info = business(@yelp_review_id)
     #@user_reviews is an array of type Review. See the types in reviews/db/schema.rb
     @user_reviews = Review.where(business_id: params[:id])
-    puts "Is this an array: "
-    puts @user_reviews.is_a?(Array)
-    puts @user_reviews.length != 0
 
     # Anon names
     @anon_names = ["Rudder", "Zachary", "Mosher", "Heldenfels", "Moses", "Nagle", "Olsen", "Penberthy" , "Reed", "Thompson"]
@@ -111,53 +108,65 @@ class ReviewsController < ApplicationController
     @show_alias = @yelp_review_info["categories"][0]["alias"]
     @show_alias[0] = @show_alias[0].capitalize()
 
-    # Find current day for hours separately by colo
-    @hours_open = [@yelp_review_info["hours"][0]["open"][0]["start"],
-                   @yelp_review_info["hours"][0]["open"][1]["start"],
-                   @yelp_review_info["hours"][0]["open"][2]["start"],
-                   @yelp_review_info["hours"][0]["open"][3]["start"],
-                   @yelp_review_info["hours"][0]["open"][4]["start"],
-                   @yelp_review_info["hours"][0]["open"][5]["start"],
-                   @yelp_review_info["hours"][0]["open"][6]["start"]
-                  ]
-
-    # TODO possible nil handler for hours?
-    @hours_open.map{ |i|
-     if i == nil
-       i = 0000
-     end
+    # Get open hours for each day of the week
+    begin
+      hours = @yelp_review_info["hours"][0]["open"]
+    rescue => exception
+      hours = []
+    end
+    
+    days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    @hours = {
+      "Monday" => "Closed",
+      "Tuesday" => "Closed",
+      "Wednesday" => "Closed",
+      "Thursday" => "Closed",
+      "Friday" => "Closed",
+      "Saturday" => "Closed",
+      "Sunday" => "Closed"
     }
+    if (hours.length == 0)
+      @hours.keys.each{|day| @hours[day] = "No Hours Posted"}
+    else
+      hours.each do |times|
+        start = times["start"]
+        start_string = ""
+        end_ = times["end"]
+        end_string = ""
 
-    @hours_open.each { |x|
-    if x.length == 4
-      x.insert(2,":")
-      if x[2] == ":" && x[3] == ":"
-        x.tap {|s| s.slice!(2) }
+        # Format start time
+        if (start.to_i > 1200)
+          # After noon
+          start_string = (start.to_i - 1200).to_s + " pm"
+        else 
+          # Before noon
+          start_string = (start.to_i).to_s + " am"
+        end
+        start_string = start_string.insert(1, ":")
+        # Format end time
+        if (end_.to_i > 1200)
+          # After noon
+          end_string = (end_.to_i - 1200).to_s + " pm"
+        else 
+          # Before noon
+          end_string = (end_.to_i).to_s + " am"
+        end
+        end_string = end_string.insert(1, ":")
+
+        # Format display string
+        string_time = ""
+        if (start == end_)
+          string_time = "Open 24 Hours"
+        elsif (end_.to_i < start.to_i)
+          string_time = "Open 24 Hours to " + end_string
+        else
+          string_time = start_string + " - " + end_string
+        end
+
+        # Put display string in @hours for a specific day
+        @hours[days[times["day"]]] = string_time
       end
     end
-    }
-
-    @hours_closed = [@yelp_review_info["hours"][0]["open"][0]["end"],
-                   @yelp_review_info["hours"][0]["open"][1]["end"],
-                   @yelp_review_info["hours"][0]["open"][2]["end"],
-                   @yelp_review_info["hours"][0]["open"][3]["end"],
-                   @yelp_review_info["hours"][0]["open"][4]["end"],
-                   @yelp_review_info["hours"][0]["open"][5]["end"],
-                   @yelp_review_info["hours"][0]["open"][6]["end"]
-                  ]
-
-    @hours_closed.map{ |i|
-      if i == nil
-       i = 0000
-      end
-    }
-
-    @hours_closed.each { |y|
-      y.insert(2,":")
-      if y[2] == ":" && y[3] == ":"
-        y.tap {|s| s.slice!(2) }
-      end
-    }
   end
 
   def emergency
