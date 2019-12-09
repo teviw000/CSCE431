@@ -18,7 +18,6 @@ RSpec.describe ReviewsHelper, type: :helper do
   describe "#search" do
     it "Checks that a search has a response with businesses" do
       response = helper.search("food","colleg station")
-      # puts(response)
       expect(response["total"].to_i).to be > 0
     end    
   end
@@ -36,7 +35,6 @@ RSpec.describe ReviewsHelper, type: :helper do
       id = "_CgYVNP8zavac_XKLpKwoQ"
       name = "Howdy's Texas Grill'd Pizza"
       resposne = helper.business(id)
-      puts(response["name"])
       expect(response.status).to eq 200
     end
   end
@@ -44,7 +42,6 @@ RSpec.describe ReviewsHelper, type: :helper do
   describe "#get_display_results" do  
     it "Checks that the reviews are correct and builds the objects" do
       response_list = helper.get_display_results(helper.search("food","college station"))
-      # puts (response_list)
       # checks that the first response for food in college station is Mad Taco
       expect(response_list[0]["name"]).to eq "Mad Taco"
     end
