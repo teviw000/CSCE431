@@ -34,34 +34,37 @@
         <% end %>
     </div>
 </div>
-<div id="sort_by">
-    <%= label_tag "Best Reviewed", nil, class: "sort_container" do %>Best Reviewed
-        <%= check_box_tag("best_reviewed", "true", params["best_reviews"] == "true") %>
-        <span class="checkmark"></span>
-    <% end %>
-    <%= label_tag "Lowest Price", nil, class: "sort_container" do%>Lowest Price
-        <%= check_box_tag("price_low", "true", params["price"] == "low") %>
-        <span class="checkmark"></span>
-    <% end %>
-    <%= label_tag "Highest Price", nil, class: "sort_container" do %>Highest Price
-        <%= check_box_tag("price_high", "true", params["price"] == "high") %>
-        <span class="checkmark"></span>
-    <% end %>
-    <%= label_tag "Has WiFi", nil, class: "sort_container" do %>Has WiFi
-        <%= check_box_tag("wifi", "true", !params["wifi"].nil?) %>
-        <span class="checkmark"></span>
-    <% end %>
-    <%= label_tag "Speaks English", nil, class: "sort_container" do %>Speaks English
-        <%= check_box_tag("english", "true", !params["english"].nil?) %>
-        <span class="checkmark"></span>
-    <% end %>
-    <%= label_tag "Wheelchair Accessible", nil, class: "sort_container" do %>Wheelchair Accessible
-        <%= check_box_tag("wheelchair", "true", !params["wheelchair"].nil?) %>
-        <span class="checkmark"></span>
-    <% end %>
-    <%= submit_tag "Submit", id: "submit_sort", class: "action-buttons"%>
-</div>
+
 <% if @display_results.is_a?(Array) && @display_results.length != 0 %>
+
+    <div id="sort_by">
+        <%= label_tag "Best Reviewed", nil, class: "sort_container" do %>Best Reviewed
+            <%= check_box_tag("best_reviewed", "true", params["best_reviews"] == "true") %>
+            <span class="checkmark"></span>
+        <% end %>
+        <%= label_tag "Lowest Price", nil, class: "sort_container" do%>Lowest Price
+            <%= check_box_tag("price_low", "true", params["price"] == "low") %>
+            <span class="checkmark"></span>
+        <% end %>
+        <%= label_tag "Highest Price", nil, class: "sort_container" do %>Highest Price
+            <%= check_box_tag("price_high", "true", params["price"] == "high") %>
+            <span class="checkmark"></span>
+        <% end %>
+        <%= label_tag "Has WiFi", nil, class: "sort_container" do %>Has WiFi
+            <%= check_box_tag("wifi", "true", !params["wifi"].nil?) %>
+            <span class="checkmark"></span>
+        <% end %>
+        <%= label_tag "Speaks English", nil, class: "sort_container" do %>Speaks English
+            <%= check_box_tag("english", "true", !params["english"].nil?) %>
+            <span class="checkmark"></span>
+        <% end %>
+        <%= label_tag "Wheelchair Accessible", nil, class: "sort_container" do %>Wheelchair Accessible
+            <%= check_box_tag("wheelchair", "true", !params["wheelchair"].nil?) %>
+            <span class="checkmark"></span>
+        <% end %>
+        <%= submit_tag "Submit", id: "submit_sort", class: "action-buttons"%>
+    </div>
+
     <div id="cards">
         <% @display_results.each_with_index do |result, index| %>
             <div class="our-card">
